@@ -16,6 +16,7 @@
     "vite": "^8.0.10"
   },
   "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
     "@ant-design/charts": "^2.6.7",
     "@ant-design/icons": "^6.2.2",
     "antd": "^6.3.7",

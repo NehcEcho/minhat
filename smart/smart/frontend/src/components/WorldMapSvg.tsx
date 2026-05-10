@@ -1,74 +1,49 @@
-/** World map SVG for Global Positioning */
+import { useAmap } from '../hooks/useAmap';
+import type { AmapMarker } from '../hooks/useAmap';
+
+const CENTER: [number, number] = [104.1954, 35.8617]; // 中国中心
+const CLUSTER_MARKERS: AmapMarker[] = [
+  { lng: 113.30, lat: 40.08, title: '大同矿区 (128台)', color: '#0052D9', size: 22 },
+  { lng: 117.20, lat: 39.13, title: '天津港区 (56台)', color: '#0052D9', size: 18 },
+  { lng: 121.47, lat: 31.23, title: '上海基地 (89台)', color: '#0052D9', size: 20 },
+  { lng: 106.55, lat: 29.57, title: '重庆基地 (43台)', color: '#0052D9', size: 16 },
+  { lng: 126.53, lat: 45.80, title: '哈尔滨基地 (201台)', color: '#0052D9', size: 24 },
+];
+
+const ALARM_MARKERS: AmapMarker[] = [
+  { lng: 114.30, lat: 37.50, title: '河北矿区-高危', color: '#D54941', size: 16 },
+  { lng: 109.50, lat: 33.50, title: '陕西矿区-高危', color: '#D54941', size: 16 },
+  { lng: 103.80, lat: 36.10, title: '甘肃矿区-高危', color: '#D54941', size: 16 },
+];
+
+const REGION_LABELS: AmapMarker[] = [
+  { lng: 104.20, lat: 35.86, title: '中国区总部', color: '#FF7D00', size: 14 },
+  { lng: 30.00, lat: 0.00, title: '非洲矿区', color: '#00B42A', size: 12 },
+  { lng: 50.00, lat: 28.00, title: '中东基地', color: '#00B42A', size: 12 },
+  { lng: -70.00, lat: 0.00, title: '南美矿区', color: '#00B42A', size: 12 },
+  { lng: 135.00, lat: -25.00, title: '澳洲基地', color: '#00B42A', size: 12 },
+];
+
 export default function WorldMapSvg({ width = '100%', height = '100%' }: { width?: string; height?: string }) {
+  const allMarkers: AmapMarker[] = [...CLUSTER_MARKERS, ...ALARM_MARKERS, ...REGION_LABELS];
+  const { ready } = useAmap('world-map-container', {
+    zoom: 4,
+    center: CENTER,
+    markers: allMarkers,
+  });
+
   return (
-    <svg viewBox="0 0 700 380" width={width} height={height} style={{ background: '#f5f8fc' }}>
-      <defs>
-        <pattern id="wgrid" width="25" height="25" patternUnits="userSpaceOnUse">
-          <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#e8edf3" strokeWidth={0.3} />
-        </pattern>
-      </defs>
-      <rect width="700" height="380" fill="url(#wgrid)" />
-
-      {/* Simplified continent outlines */}
-      <g fill="#e0e8f0" stroke="#c0c8d8" strokeWidth={1}>
-        {/* North America */}
-        <path d="M 60,60 L 180,50 L 200,70 L 210,120 L 190,180 L 160,200 L 130,190 L 80,150 L 60,110 Z" />
-        {/* South America */}
-        <path d="M 190,210 L 220,200 L 230,250 L 220,300 L 200,320 L 170,300 L 160,250 Z" />
-        {/* Europe */}
-        <path d="M 330,50 L 380,40 L 420,45 L 430,70 L 420,100 L 400,110 L 360,105 L 340,80 Z" />
-        {/* Africa */}
-        <path d="M 340,115 L 380,100 L 420,110 L 440,160 L 430,220 L 400,270 L 360,280 L 330,240 L 320,180 Z" />
-        {/* Asia */}
-        <path d="M 430,50 L 580,40 L 620,60 L 640,100 L 630,140 L 580,170 L 520,160 L 460,130 L 430,100 Z" />
-        {/* Australia */}
-        <path d="M 520,250 L 580,240 L 600,260 L 580,290 L 530,290 L 510,270 Z" />
-        {/* Southeast Asia */}
-        <path d="M 600,170 L 640,180 L 650,200 L 620,210" />
-        {/* Middle East */}
-        <path d="M 380,120 L 400,130 L 390,150 L 370,140 Z" />
-      </g>
-
-      {/* Clustered data points */}
-      {[
-        [490, 90, '128'],
-        [380, 100, '56'],
-        [200, 140, '89'],
-        [550, 270, '43'],
-        [140, 240, '201'],
-      ].map(([cx, cy, label]) => (
-        <g key={label}>
-          <circle cx={Number(cx)} cy={Number(cy)} r={20} fill="rgba(0,82,217,0.12)" stroke="#0052D9" strokeWidth={2} />
-          <text x={Number(cx)} y={Number(cy) + 5} fontSize={11} fill="#0052D9" textAnchor="middle" fontWeight="bold">{label}</text>
-        </g>
-      ))}
-
-      {/* High-risk alarm markers */}
-      {[
-        [420, 130, '高危'],
-        [320, 150, '高危'],
-        [180, 190, '高危'],
-      ].map(([cx, cy, label], i) => (
-        <g key={`alarm${i}`}>
-          <circle cx={Number(cx)} cy={Number(cy)} r={14} fill="rgba(213,73,65,0.1)">
-            <animate attributeName="r" values="14;24;14" dur="2s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite" />
-          </circle>
-          <circle cx={Number(cx)} cy={Number(cy)} r={5} fill="#D54941" />
-          <text x={Number(cx)} y={Number(cy) - 10} fontSize={8} fill="#D54941" textAnchor="middle" fontWeight="bold">{label}</text>
-        </g>
-      ))}
-
-      {/* Region labels */}
-      {[
-        [120, 100, '美洲'],
-        [380, 80, '欧洲'],
-        [510, 80, '亚太'],
-        [380, 210, '非洲'],
-        [550, 270, '澳洲'],
-      ].map(([x, y, label]) => (
-        <text key={label} x={Number(x)} y={Number(y)} fontSize={10} fill="#86909C" textAnchor="middle" fontWeight="bold">{label}</text>
-      ))}
-    </svg>
+    <div style={{ width, height, position: 'relative', background: '#f5f8fc' }}>
+      <div id="world-map-container" style={{ width: '100%', height: '100%' }} />
+      {!ready && (
+        <div style={{
+          position: 'absolute', inset: 0, display: 'flex',
+          alignItems: 'center', justifyContent: 'center',
+          color: '#86909C', fontSize: 14,
+        }}>
+          地图加载中...
+        </div>
+      )}
+    </div>
   );
 }

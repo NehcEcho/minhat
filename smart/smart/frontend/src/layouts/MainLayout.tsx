@@ -92,7 +92,7 @@ const pathToTopNav: Record<string, string> = {
 const pathToSelectedKeys: Record<string, string[]> = {
   '/dashboard': ['/dashboard'],
   '/eeg-monitor': ['safety-helmet'],
-  '/employee-management': ['/system'],
+  '/employee-management': ['sub-system'],
   '/global-position': ['safety-position'],
   '/track-replay': ['safety-track'],
   '/geo-fence': ['safety-fence'],
@@ -132,7 +132,7 @@ const pathToOpenKeys: Record<string, string[]> = {
   '/emergency-plan': ['disposal'],
   '/disposal-record': ['disposal'],
   '/shift-manage': ['disposal'],
-  '/system-integration': ['/system'],
+  '/system-integration': ['sub-system'],
 };
 
 type BreadcrumbMap = Record<string, { parent: string; parentIcon?: React.ReactNode; current: string }>;
@@ -273,7 +273,7 @@ export default function MainLayout() {
       getItem('处置记录', 'disposal-record', <ScheduleOutlined />),
       getItem('值班管理', 'disposal-shift', <FieldTimeOutlined />),
     ]),
-    getItem('系统管理', '/system', <SettingOutlined />, [
+    getItem('系统管理', 'sub-system', <SettingOutlined />, [
       getItem('人员管理', '/system', <IdcardOutlined />),
       getItem('智能服务', 'system-services', <ThunderboltOutlined />),
     ]),

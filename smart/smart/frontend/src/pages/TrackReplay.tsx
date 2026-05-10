@@ -12,6 +12,7 @@ import {
   HistoryOutlined, ReloadOutlined, FilterOutlined, FullscreenOutlined,
   DownloadOutlined, SearchOutlined, NodeIndexOutlined,
 } from '@ant-design/icons';
+import TrackMapSvg from '../components/TrackMapSvg';
 import dayjs from 'dayjs';
 
 const { Text, Title } = Typography;
@@ -131,7 +132,6 @@ export default function TrackReplay() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [playProgress, setPlayProgress] = useState(0);
   const [playSpeed, setPlaySpeed] = useState(1);
-  const [mapZoom, setMapZoom] = useState(1);
 
   const handlePlay = useCallback(() => {
     setIsPlaying(!isPlaying);
@@ -346,73 +346,7 @@ export default function TrackReplay() {
               styles={{ body: { padding: 0 } }}
             >
               <div className="track-map-wrapper">
-                <div className="track-map-grid" />
-
-                {/* SVG Mine Map */}
-                <svg style={{ position: 'absolute', inset: 0, zIndex: 1 }} viewBox="0 0 600 380">
-                  {/* Tunnel network */}
-                  <g fill="none" strokeWidth={20} strokeLinecap="round" strokeLinejoin="round" opacity={0.25}>
-                    <path d="M 20,180 L 580,175" stroke="#A8C8E8" />
-                    <path d="M 260,175 L 258,20" stroke="#A8C8E8" />
-                    <path d="M 140,175 L 138,360" stroke="#A8C8E8" />
-                    <path d="M 420,175 L 418,50" stroke="#A8C8E8" />
-                    <path d="M 260,100 L 418,50" stroke="#B8D4F0" />
-                    <path d="M 140,280 L 260,280" stroke="#B8D4F0" />
-                  </g>
-                  <g fill="none" stroke="#96B8D8" strokeWidth={1} strokeDasharray="6,4" opacity={0.4}>
-                    <path d="M 20,175 L 580,175" />
-                    <path d="M 260,175 L 260,20" />
-                    <path d="M 140,175 L 140,360" />
-                    <path d="M 420,175 L 420,50" />
-                    <path d="M 260,100 L 418,50" />
-                    <path d="M 140,280 L 260,280" />
-                  </g>
-
-                  {/* Trajectory path for MKH-001 */}
-                  <path d="M 60,178 Q 120,172 180,181 T 300,175 T 420,182 T 500,170"
-                    fill="none" stroke="#0052D9" strokeWidth={2.5} strokeDasharray="8,4"
-                    opacity={0.9}>
-                    <animate attributeName="stroke-dashoffset" from="0" to="-24" dur="1s" repeatCount="indefinite" />
-                  </path>
-
-                  {/* Trajectory path for MKH-002 */}
-                  <path d="M 260,170 Q 265,120 300,90 Q 350,60 418,52"
-                    fill="none" stroke="#2BA471" strokeWidth={2} strokeDasharray="6,4" opacity={0.7}>
-                    <animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.2s" repeatCount="indefinite" />
-                  </path>
-
-                  {/* Trajectory for MKH-003 */}
-                  <path d="M 140,178 Q 142,220 138,270 Q 180,278 220,282 Q 240,278 255,178"
-                    fill="none" stroke="#7B61FF" strokeWidth={2} strokeDasharray="5,5" opacity={0.7}>
-                    <animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.4s" repeatCount="indefinite" />
-                  </path>
-
-                  {/* Device markers */}
-                  <circle cx="180" cy="179" r="6" fill="#0052D9" stroke="#fff" strokeWidth={1.5} />
-                  <circle cx="380" cy="178" r="5" fill="#2BA471" stroke="#fff" strokeWidth={1.5} />
-                  <circle cx="255" cy="178" r="5" fill="#7B61FF" stroke="#fff" strokeWidth={1.5} />
-
-                  {/* Tunnel labels */}
-                  <g fill="#7A9ABA" fontSize={9}>
-                    <text x="30" y="168">主运输巷道</text>
-                    <text x="265" y="16">辅助运输巷</text>
-                    <text x="128" y="195" transform="rotate(-90,128,195)">回风巷道</text>
-                    <text x="423" y="45">联络巷</text>
-                  </g>
-                </svg>
-
-                {/* Zoom Controls */}
-                <div className="track-map-zoom">
-                  <div className="track-map-zoom-btn" onClick={() => setMapZoom((z) => Math.min(z + 0.2, 2))}>
-                    <ZoomInOutlined style={{ fontSize: 12 }} />
-                  </div>
-                  <div className="track-map-zoom-btn" onClick={() => setMapZoom((z) => Math.max(z - 0.2, 0.5))}>
-                    <ZoomOutOutlined style={{ fontSize: 12 }} />
-                  </div>
-                  <div className="track-map-zoom-btn">
-                    <FullscreenOutlined style={{ fontSize: 11 }} />
-                  </div>
-                </div>
+                <TrackMapSvg width="100%" height="100%" />
 
                 {/* Legend */}
                 <div className="track-map-legend" style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>

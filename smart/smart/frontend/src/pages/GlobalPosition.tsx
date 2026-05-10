@@ -618,63 +618,6 @@ export default function GlobalPosition() {
                 transition: 'transform 0.3s ease',
               }}>
                 <WorldMapSvg />
-                {/* Markers overlay */}
-                <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
-                  {/* Cluster markers */}
-                  {clusterMarkers.map((c, i) => (
-                    <div key={`cluster-${i}`} style={{
-                      position: 'absolute', left: c.left, top: c.top,
-                      width: 36, height: 36, borderRadius: '50%',
-                      background: `${c.color}1a`, border: `2px solid ${c.color}`,
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      transform: 'translate(-50%, -50%)',
-                      fontSize: 11, fontWeight: 700, color: c.color,
-                      boxShadow: `0 2px 8px ${c.color}22`,
-                    }}>
-                      {c.count}
-                    </div>
-                  ))}
-                  {/* Personnel markers */}
-                  {showPersonnel && personnelMarkers.map((m, i) => (
-                    <div key={`person-${i}`} style={{
-                      position: 'absolute', left: m.left, top: m.top,
-                      transform: 'translate(-50%, -50%)',
-                      width: 22, height: 22, borderRadius: '50%',
-                      background: '#0052D9', color: '#fff',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: 10, fontWeight: 700,
-                      boxShadow: '0 1px 6px rgba(0,82,217,0.35)',
-                    }}>
-                      {m.label}
-                    </div>
-                  ))}
-                  {/* Device markers */}
-                  {showDevices && deviceMarkers.map((m, i) => (
-                    <div key={`device-${i}`} style={{
-                      position: 'absolute', left: m.left, top: m.top,
-                      transform: 'translate(-50%, -50%)',
-                      width: 22, height: 22, borderRadius: '50%',
-                      background: '#7B61FF', color: '#fff',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: 10, fontWeight: 700,
-                      boxShadow: '0 1px 6px rgba(123,97,255,0.35)',
-                    }}>
-                      {m.label}
-                    </div>
-                  ))}
-                  {/* Alarm markers */}
-                  {showAlarms && alarmMarkers.map((a, i) => (
-                    <div key={`alarm-${i}`} style={{
-                      position: 'absolute', left: a.left, top: a.top,
-                      transform: 'translate(-50%, -50%)',
-                      fontSize: 18, fontWeight: 700, lineHeight: 1,
-                      color: a.level === '高' ? '#D54941' : a.level === '中' ? '#E37318' : '#FAAD14',
-                      filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.2))',
-                    }}>
-                      ▲
-                    </div>
-                  ))}
-                </div>
               </div>
               {/* Floating zoom controls */}
               <div style={{

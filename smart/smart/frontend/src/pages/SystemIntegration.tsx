@@ -18,6 +18,7 @@ import {
   streamStart, streamStop, getTalkWsUrl,
   getUserInfo, changePassword, getUserDevices,
 } from '../api';
+import TrackMapSvg from '../components/TrackMapSvg';
 
 const { Text } = Typography;
 
@@ -289,7 +290,7 @@ export default function SystemIntegration() {
               </div>
             )}
           </Modal>
-          <Image style={{ display: 'none' }} preview={{ visible: previewVisible, src: previewSrc, onVisibleChange: v => setPreviewVisible(v) }} />
+          <Image style={{ display: 'none' }} preview={{ open: previewVisible, src: previewSrc, onOpenChange: v => setPreviewVisible(v) }} />
           <Modal title="设备详情" open={devDetailModal} onCancel={() => setDevDetailModal(false)} footer={null} width={500}>
             {devDetail ? (
               <Descriptions bordered size="small" column={1}>
@@ -326,13 +327,26 @@ export default function SystemIntegration() {
     },
     {
       key: 'tracks', label: '轨迹', children: (
-        <Card className="svc-card" title="历史轨迹">
-          <div className="svc-toolbar"><Space>
-            <Select placeholder="选择设备" value={trackDeviceId || undefined} onChange={v => setTrackDeviceId(v)} style={{ width: 280 }} options={devOptions} showSearch filterOption={(inp, opt) => (opt?.label as string || '').toLowerCase().includes(inp.toLowerCase())} />
-            <Button type="primary" icon={<SearchOutlined />} onClick={loadTracks} loading={tracksLoading}>查询</Button>
-          </Space></div>
-          <Table columns={trackColumns} dataSource={tracks} rowKey={(r: any, i?: number) => `${r.longitude}-${r.latitude}-${i ?? 0}`} loading={tracksLoading} size="small" pagination={{ pageSize: 50 }} locale={{ emptyText: <Empty description="选择设备查询" /> }} scroll={{ x: 480 }} />
-        </Card>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <Card className="svc-card" title="轨迹地图" styles={{ body: { padding: 0 } }}>
+            <div style={{ height: 380, position: 'relative' }}>
+              {tracks.length > 0 ? (
+                <TrackMapSvg width="100%" height="100%" data={tracks} />
+              ) : (
+                <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#86909C', fontSize: 14 }}>
+                  选择设备查询轨迹
+                </div>
+              )}
+            </div>
+          </Card>
+          <Card className="svc-card" title="历史轨迹">
+            <div className="svc-toolbar"><Space>
+              <Select placeholder="选择设备" value={trackDeviceId || undefined} onChange={v => setTrackDeviceId(v)} style={{ width: 280 }} options={devOptions} showSearch filterOption={(inp, opt) => (opt?.label as string || '').toLowerCase().includes(inp.toLowerCase())} />
+              <Button type="primary" icon={<SearchOutlined />} onClick={loadTracks} loading={tracksLoading}>查询</Button>
+            </Space></div>
+            <Table columns={trackColumns} dataSource={tracks} rowKey={(r: any, i?: number) => `${r.longitude}-${r.latitude}-${r.recordedAt ?? Date.now()}-${i ?? 0}`} loading={tracksLoading} size="small" pagination={{ pageSize: 50 }} locale={{ emptyText: <Empty description="选择设备查询" /> }} scroll={{ x: 480 }} />
+          </Card>
+        </div>
       ),
     },
     {

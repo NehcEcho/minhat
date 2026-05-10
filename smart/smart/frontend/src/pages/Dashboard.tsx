@@ -419,7 +419,7 @@ export default function Dashboard() {
         <Row gutter={[12, 8]} className="dsh-kpi-row">
           {statCards.map((card) => (
             <Col span={4} key={card.key}>
-              <Card loading={loading} className="dsh-kpi-card" bodyStyle={{ padding: '10px 14px 6px' }}>
+              <Card loading={loading} className="dsh-kpi-card" styles={{ body: { padding: '10px 14px 6px' } }}>
                 <div className="dsh-kpi-inner">
                   <div className="dsh-kpi-icon" style={{ background: card.bg, color: card.color }}>
                     {card.icon}

@@ -158,7 +158,7 @@ export default function DataSync() {
     {
       title: '操作', dataIndex: 'key', key: 'action', width: 120, fixed: 'right',
       render: (key: number, rec: SyncTask) => (
-        <Space size={0} split={<span style={{ color: '#E5E6EB', margin: '0 6px' }}>|</span>}>
+        <Space size={0} separator={<span style={{ color: '#E5E6EB', margin: '0 6px' }}>|</span>}>
           <a
             style={{ fontSize: 12, color: rec.status === '同步中' ? '#BFBFBF' : '#1677FF' }}
             onClick={() => rec.status !== '同步中' && handleSync(key, rec.task_name)}

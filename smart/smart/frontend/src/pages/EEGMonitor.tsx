@@ -1023,7 +1023,7 @@ export default function EEGMonitor() {
             <div style={{ marginTop: 10 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
                 <Text type="secondary" style={{ fontSize: 11 }}>实时脑电波形</Text>
-                <Divider type="vertical" style={{ margin: 0, borderColor: '#E5E6EB' }} />
+                <Divider orientation="vertical" style={{ margin: 0, borderColor: '#E5E6EB' }} />
                 <Badge status="processing" text={<Text style={{ fontSize: 10, color: '#86909C' }}>实时采集</Text>} />
                 <Tooltip title="五频段脑电波形分析">
                   <InfoCircleOutlined style={{ fontSize: 11, color: '#86909C' }} />

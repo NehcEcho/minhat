@@ -718,58 +718,6 @@ export default function RealTimeMonitor() {
                 <TunnelMapSvg />
               </div>
 
-              {/* Camera FOV Cones (overlay on top of SVG map) */}
-              <svg style={{
-                position: 'absolute', inset: 0, width: '100%', height: '100%',
-                pointerEvents: 'none',
-              }} viewBox="0 0 500 320">
-                <defs>
-                  <radialGradient id="fovGrad-active">
-                    <stop offset="0%" stopColor="#3b82f6" stopOpacity={0.18} />
-                    <stop offset="100%" stopColor="#3b82f6" stopOpacity={0} />
-                  </radialGradient>
-                  <radialGradient id="fovGrad-stream">
-                    <stop offset="0%" stopColor="#22c55e" stopOpacity={0.15} />
-                    <stop offset="100%" stopColor="#22c55e" stopOpacity={0} />
-                  </radialGradient>
-                </defs>
-                {/* Camera FOVs */}
-                {[
-                  { x: 100, y: 80, angle: 45, active: true },
-                  { x: 180, y: 140, angle: -30, active: true },
-                  { x: 260, y: 100, angle: 15, active: true },
-                  { x: 200, y: 200, angle: 60, active: false },
-                  { x: 320, y: 180, angle: -45, active: true },
-                  { x: 380, y: 130, angle: -15, active: true },
-                  { x: 400, y: 220, angle: 30, active: false },
-                ].map((cam, i) => (
-                  <g key={i} style={{ animation: cam.active ? `pulse-fov ${2 + i * 0.3}s ease-in-out infinite` : 'none' }}>
-                    <path
-                      d={`M ${cam.x} ${cam.y} L ${cam.x + Math.cos((cam.angle - 20) * Math.PI / 180) * 50} ${cam.y + Math.sin((cam.angle - 20) * Math.PI / 180) * 50} A 55 55 0 0 1 ${cam.x + Math.cos((cam.angle + 20) * Math.PI / 180) * 50} ${cam.y + Math.sin((cam.angle + 20) * Math.PI / 180) * 50} Z`}
-                      fill={cam.active ? 'url(#fovGrad-active)' : 'url(#fovGrad-stream)'}
-                    />
-                    <line
-                      x1={cam.x} y1={cam.y}
-                      x2={cam.x + Math.cos((cam.angle - 20) * Math.PI / 180) * 45}
-                      y2={cam.y + Math.sin((cam.angle - 20) * Math.PI / 180) * 45}
-                      stroke={cam.active ? '#3b82f6' : '#d1d5db'}
-                      strokeWidth={0.5}
-                      strokeDasharray="3 4"
-                      opacity={0.6}
-                    />
-                    <line
-                      x1={cam.x} y1={cam.y}
-                      x2={cam.x + Math.cos((cam.angle + 20) * Math.PI / 180) * 45}
-                      y2={cam.y + Math.sin((cam.angle + 20) * Math.PI / 180) * 45}
-                      stroke={cam.active ? '#3b82f6' : '#d1d5db'}
-                      strokeWidth={0.5}
-                      strokeDasharray="3 4"
-                      opacity={0.6}
-                    />
-                  </g>
-                ))}
-              </svg>
-
               {/* Floating Zoom Controls */}
               <div style={{
                 position: 'absolute', top: 10, right: 10,
@@ -1026,7 +974,7 @@ export default function RealTimeMonitor() {
                       '0%': '#22c55e',
                       '100%': '#06b6d4',
                     }}
-                    trailColor="#f3f4f6"
+                    railColor="#f3f4f6"
                   />
                 </div>
               </Card>

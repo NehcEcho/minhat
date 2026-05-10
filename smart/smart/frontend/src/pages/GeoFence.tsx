@@ -14,6 +14,7 @@ import {
 } from '@ant-design/icons';
 import ReactECharts from 'echarts-for-react';
 import { getFenceList, createFence, updateFence, deleteFence } from '../api';
+import GeoFenceMapSvg from '../components/GeoFenceMapSvg';
 
 const { Text, Title } = Typography;
 
@@ -366,57 +367,7 @@ export default function GeoFence() {
               styles={{ body: { padding: 0 } }}
             >
               <div className="fence-map-wrapper">
-                <div className="fence-map-grid" />
-
-                <svg style={{ position: 'absolute', inset: 0, zIndex: 1 }} viewBox="0 0 700 360">
-                  {/* Tunnels */}
-                  <g fill="none" strokeWidth={18} strokeLinecap="round" strokeLinejoin="round" opacity={0.22}>
-                    <path d="M 20,160 L 680,155" stroke="#A8C8E8" />
-                    <path d="M 300,155 L 298,20" stroke="#A8C8E8" />
-                    <path d="M 160,155 L 158,350" stroke="#A8C8E8" />
-                    <path d="M 500,155 L 498,40" stroke="#A8C8E8" />
-                    <path d="M 300,100 L 498,40" stroke="#B8D4F0" />
-                  </g>
-
-                  {/* Fence overlays - colored rectangles */}
-                  {/* 一采区禁入围栏 */}
-                  <rect x="55" y="120" width="90" height="45" rx="4" fill="none" stroke="#FF4D4F" strokeWidth={2} strokeDasharray="5,3" opacity={0.6}>
-                    <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1s" repeatCount="indefinite" />
-                  </rect>
-                  <text x="100" y="148" fontSize={8} fill="#FF4D4F" textAnchor="middle" fontWeight="bold">一采区禁入</text>
-
-                  {/* 运输巷道超时围栏 */}
-                  <rect x="220" y="120" width="140" height="40" rx="4" fill="none" stroke="#FAAD14" strokeWidth={2} strokeDasharray="5,3" opacity={0.6}>
-                    <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.2s" repeatCount="indefinite" />
-                  </rect>
-                  <text x="290" y="145" fontSize={8} fill="#FAAD14" textAnchor="middle" fontWeight="bold">主运输巷超时</text>
-
-                  {/* 回风巷预警 */}
-                  <rect x="130" y="210" width="80" height="90" rx="4" fill="none" stroke="#1677FF" strokeWidth={2} strokeDasharray="5,3" opacity={0.6}>
-                    <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.4s" repeatCount="indefinite" />
-                  </rect>
-                  <text x="170" y="260" fontSize={8} fill="#1677FF" textAnchor="middle" fontWeight="bold">回风巷预警</text>
-
-                  {/* 采掘面安全围栏 */}
-                  <rect x="440" y="120" width="110" height="52" rx="4" fill="none" stroke="#E37318" strokeWidth={2} strokeDasharray="5,3" opacity={0.6}>
-                    <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="0.9s" repeatCount="indefinite" />
-                  </rect>
-                  <text x="495" y="150" fontSize={8} fill="#E37318" textAnchor="middle" fontWeight="bold">采掘面安全</text>
-
-                  {/* 变电所授权 */}
-                  <rect x="480" y="40" width="60" height="45" rx="4" fill="none" stroke="#2BA471" strokeWidth={2} strokeDasharray="5,3" opacity={0.6}>
-                    <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.1s" repeatCount="indefinite" />
-                  </rect>
-                  <text x="510" y="68" fontSize={8} fill="#2BA471" textAnchor="middle" fontWeight="bold">变电所</text>
-
-                  {/* Tunnel labels */}
-                  <g fill="#7A9ABA" fontSize={9}>
-                    <text x="30" y="148">主运输巷道</text>
-                    <text x="305" y="14">辅助运输巷</text>
-                    <text x="148" y="175" transform="rotate(-90,148,175)">回风巷道</text>
-                    <text x="503" y="35">联络巷</text>
-                  </g>
-                </svg>
+                <GeoFenceMapSvg width="100%" height="100%" />
 
                 <div className="fence-map-zoom">
                   <div className="fence-map-zoom-btn" onClick={() => setMapZoom((z) => Math.min(z + 0.2, 2))}><ZoomInOutlined style={{ fontSize: 12 }} /></div>
@@ -487,7 +438,7 @@ export default function GeoFence() {
           okText={editingFence ? '保存' : '创建'}
           cancelText="取消"
           width={560}
-          destroyOnClose
+          destroyOnHidden
         >
           <Form form={form} layout="vertical" style={{ marginTop: 8 }}>
             <Form.Item name="fenceName" label="围栏名称" rules={[{ required: true, message: '请输入围栏名称' }]}>

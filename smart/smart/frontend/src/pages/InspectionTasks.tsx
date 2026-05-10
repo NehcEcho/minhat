@@ -788,32 +788,6 @@ export default function InspectionTasks() {
                   transition: 'transform 0.25s ease',
                 }}>
                   <TunnelMapSvg width="100%" height="320" />
-
-                  {/* Inspection marker overlay on top of TunnelMapSvg */}
-                  <svg
-                    viewBox="0 0 500 320"
-                    style={{
-                      position: 'absolute', inset: 0, width: '100%', height: '100%',
-                      pointerEvents: 'none',
-                    }}
-                  >
-                    {/* Completed (green) pins */}
-                    <InspPin x={100} y={80} color="#2BA471" label="3" delay={0} />
-                    <InspPin x={380} y={130} color="#2BA471" label="9" delay={0.05} />
-                    <InspPin x={80} y={230} color="#2BA471" label="1" delay={0.1} />
-
-                    {/* In Progress (blue) pins */}
-                    <InspPin x={260} y={100} color="#0052D9" label="4" delay={0.15} />
-                    <InspPin x={180} y={140} color="#0052D9" label="2" delay={0.2} />
-                    <InspPin x={320} y={180} color="#0052D9" label="8" delay={0.25} />
-
-                    {/* Abnormal (red) pins */}
-                    <InspPin x={400} y={220} color="#D54941" label="5" delay={0.3} />
-
-                    {/* Not Started (gray) */}
-                    <InspPin x={220} y={185} color="#C9CDD4" label="6" delay={0.35} />
-                    <InspPin x={450} y={100} color="#C9CDD4" label="7" delay={0.4} />
-                  </svg>
                 </div>
 
                 {/* Zoom Controls */}

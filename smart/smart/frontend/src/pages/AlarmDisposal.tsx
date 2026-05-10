@@ -17,6 +17,7 @@ import {
   FilterOutlined, SyncOutlined, FullscreenOutlined,
   ExpandOutlined, CompressOutlined, AimOutlined as TargetOutlined,
 } from '@ant-design/icons';
+import AlarmMapSvg from '../components/AlarmMapSvg';
 
 // ==================== Types ====================
 
@@ -454,7 +455,7 @@ export default function AlarmDisposal() {
                   <Statistic
                     value={s.value}
                     suffix={<span style={{ fontSize: 14, fontWeight: 400, color: '#86909C' }}>{s.suffix}</span>}
-                    valueStyle={{ fontSize: 28, fontWeight: 700, color: '#1D2129', lineHeight: 1.2 }}
+                    styles={{ content: { fontSize: 28, fontWeight: 700, color: '#1D2129', lineHeight: 1.2 } }}
                   />
                   <div className="adm-trend-text" style={{ color: s.up ? '#FF4D4F' : '#52C41A' }}>
                     {s.up ? <CaretUpOutlined /> : <CaretDownOutlined />}
@@ -516,82 +517,7 @@ export default function AlarmDisposal() {
             styles={{ body: { padding: 0 } }}
           >
             <div className="adm-map-box">
-              <div className="adm-map-grid" />
-
-              {/* Detailed Mine Map SVG */}
-              <svg style={{ position: 'absolute', inset: 0, zIndex: 1 }} viewBox="0 0 600 360">
-                {/* Tunnel paths */}
-                <g fill="none" strokeWidth={18} strokeLinecap="round" strokeLinejoin="round" opacity={0.3}>
-                  <path d="M 20,180 L 580,175" stroke="#A8C8E8" />
-                  <path d="M 280,175 L 278,20" stroke="#A8C8E8" />
-                  <path d="M 160,175 L 158,350" stroke="#A8C8E8" />
-                  <path d="M 440,175 L 438,60" stroke="#A8C8E8" />
-                  <path d="M 280,100 L 438,55" stroke="#B8D4F0" />
-                </g>
-                {/* Tunnel center lines */}
-                <g fill="none" stroke="#96B8D8" strokeWidth={1} strokeDasharray="6,4" opacity={0.5}>
-                  <path d="M 20,175 L 580,175" />
-                  <path d="M 280,175 L 280,20" />
-                  <path d="M 160,175 L 160,350" />
-                  <path d="M 440,175 L 440,60" />
-                  <path d="M 280,100 L 438,55" />
-                </g>
-                {/* Tunnel labels */}
-                <g fill="#7A9ABA" fontSize={9}>
-                  <text x="30" y="168">主运输巷道</text>
-                  <text x="285" y="24">辅助运输巷</text>
-                  <text x="148" y="195" transform="rotate(-90, 148, 195)">回风巷道</text>
-                  <text x="442" y="55">联络巷</text>
-                </g>
-
-                {/* Equipment markers (Blue dots) */}
-                {[[80,172],[200,172],[350,172],[500,172],[140,250],[140,310]].map(([cx,cy],idx) => (
-                  <g key={`eq-${idx}`}>
-                    <circle cx={cx} cy={cy} r={5} fill="#0052D9" opacity={0.7} />
-                    <animate attributeName="opacity" values="0.7;0.4;0.7" dur={2 + idx * 0.3} repeatCount="indefinite" />
-                  </g>
-                ))}
-
-                {/* Environment markers (Yellow triangles) */}
-                {[[120,195],[340,190],[480,185],[260,130],[260,80]].map(([cx,cy],idx) => (
-                  <polygon key={`env-${idx}`} points={`${cx},${cy - 6} ${cx - 5},${cy + 4} ${cx + 5},${cy + 4}`}
-                    fill="#FAAD14" opacity={0.8} />
-                ))}
-
-                {/* Video markers (Grey dots) */}
-                {[[60,185],[430,185],[300,110]].map(([cx,cy],idx) => (
-                  <g key={`vid-${idx}`}>
-                    <circle cx={cx} cy={cy} r={4} fill="#8B8B8B" opacity={0.6} />
-                    <animate attributeName="opacity" values="0.6;0.3;0.6" dur={2.5 + idx * 0.4} repeatCount="indefinite" />
-                  </g>
-                ))}
-
-                {/* Resolved markers (Green dots) */}
-                {[[180,180],[410,185],[160,220],[160,280]].map(([cx,cy],idx) => (
-                  <circle key={`res-${idx}`} cx={cx} cy={cy} r={4} fill="#52C41A" opacity={0.6} />
-                ))}
-
-                {/* Personnel alarm markers (Red triangles) */}
-                {[[280,175],[240,180],[320,178],[400,180]].map(([cx,cy],idx) => (
-                  <polygon key={`per-${idx}`} points={`${cx},${cy - 7} ${cx - 6},${cy + 5} ${cx + 6},${cy + 5}`}
-                    fill="#FF4D4F" opacity={idx === 0 ? 1 : 0.7}>
-                    {idx === 0 && <animate attributeName="opacity" values="1;0.5;1" dur={1} repeatCount="indefinite" />}
-                  </polygon>
-                ))}
-
-                {/* Alarm "!" marker on selected position */}
-                <g transform="translate(280, 175)">
-                  <circle cx={0} cy={-14} r={7} fill="#FF4D4F" />
-                  <text x={0} y={-10} fontSize={9} fill="#fff" textAnchor="middle" fontWeight="bold">!</text>
-                </g>
-
-                {/* Area highlight circle */}
-                <circle cx="280" cy="175" r="35" fill="none" stroke="rgba(255,77,79,0.25)" strokeWidth={3}
-                  strokeDasharray="6,3">
-                  <animate attributeName="r" values="35;45;35" dur={2} repeatCount="indefinite" />
-                  <animate attributeName="opacity" values="1;0.3;1" dur={2} repeatCount="indefinite" />
-                </circle>
-              </svg>
+              <AlarmMapSvg width="100%" height="100%" />
 
               {/* Pulsating alarm indicator */}
               <div className="adm-pulse-center" />
@@ -765,7 +691,7 @@ export default function AlarmDisposal() {
                 <div style={{ fontSize: 11, color: '#86909C' }}>值班班长</div>
               </div>
             </div>
-            <Space direction="vertical" size={8} style={{ width: '100%' }}>
+            <Space orientation="vertical" size={8} style={{ width: '100%' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 12 }}>
                 <PhoneOutlined style={{ color: '#86909C', fontSize: 14 }} />
                 <span style={{ color: '#86909C' }}>电话：</span>
