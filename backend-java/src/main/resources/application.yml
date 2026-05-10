@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: smart-helmet-backend
+  datasource:
+    url: jdbc:sqlite:./smart-helmet.db
+    driver-class-name: org.sqlite.JDBC
+  sql:
+    init:
+      mode: always
+      encoding: UTF-8
+
+helmet:
+  api:
+    base-url: https://api.znhaas.net:2443
+    talk-websocket-base-url: wss://api.znhaas.net:2443
+    livekit-server-url: wss://webrtc.znhaas.net
+    connect-timeout-seconds: 10
+    read-timeout-seconds: 60
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
