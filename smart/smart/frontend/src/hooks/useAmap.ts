@@ -81,8 +81,8 @@ export function useAmap(
         mapRef.current = map;
         setReady(true);
       })
-      .catch(() => {
-        console.warn('[Amap] 加载失败，将跳过地图渲染');
+      .catch((err) => {
+        console.error('[Amap] 加载失败:', err);
       });
 
     return () => {

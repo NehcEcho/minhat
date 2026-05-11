@@ -3,7 +3,7 @@ services:
     build: ./backend
     container_name: smart-helmet-backend
     ports:
-      - "8000:8000"
+      - "9000:9000"
     environment:
       - UPSTREAM_BASE_URL=${UPSTREAM_BASE_URL:-https://api.znhaas.net:2443}
       - TALK_WS_BASE_URL=${TALK_WS_BASE_URL:-wss://api.znhaas.net:2443}
