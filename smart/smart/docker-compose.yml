@@ -1,0 +1,35 @@
+services:
+  backend:
+    build: ./backend
+    container_name: smart-helmet-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - UPSTREAM_BASE_URL=${UPSTREAM_BASE_URL:-https://api.znhaas.net:2443}
+      - TALK_WS_BASE_URL=${TALK_WS_BASE_URL:-wss://api.znhaas.net:2443}
+      - LIVEKIT_SERVER_URL=${LIVEKIT_SERVER_URL:-wss://webrtc.znhaas.net}
+      - GEMINI_API_URL=${GEMINI_API_URL:-}
+      - GEMINI_MODEL=${GEMINI_MODEL:-}
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - REQUEST_TIMEOUT_SECONDS=${REQUEST_TIMEOUT_SECONDS:-20}
+    volumes:
+      - smart_helmet_db:/app
+      - smart_helmet_storage:/app/storage/device-files
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        - VITE_AMAP_KEY=${VITE_AMAP_KEY:-}
+        - VITE_AMAP_SECURITY_CODE=${VITE_AMAP_SECURITY_CODE:-}
+    container_name: smart-helmet-frontend
+    ports:
+      - "5200:5200"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  smart_helmet_db:
+  smart_helmet_storage:
