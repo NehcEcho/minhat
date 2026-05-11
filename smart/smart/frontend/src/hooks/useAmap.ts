@@ -5,8 +5,8 @@ let amapPromise: Promise<typeof AMap> | null = null;
 
 function loadAMap(): Promise<typeof AMap> {
   if (!amapPromise) {
-    const key = import.meta.env.VITE_AMAP_KEY as string;
-    const securityJsCode = import.meta.env.VITE_AMAP_SECURITY_CODE as string;
+    const key = import.meta.env.VITE_AMAP_KEY as string || '480d04d806198ffcbfd8621fc45c3877';
+    const securityJsCode = import.meta.env.VITE_AMAP_SECURITY_CODE as string || '9ec51d36d0171631dc885ffca452441e';
 
     if (securityJsCode) {
       window._AMapSecurityConfig = { securityJsCode };
