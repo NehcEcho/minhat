@@ -6,7 +6,7 @@ from .api import (auth, dashboard, devices, employees, alarms, eeg,
                    fences, inspections, locations, talkgroups,
                    stream, playback, rtc, livekit,
                    eeg_analysis, intelligence, platform_cache,
-                   system, talk_relay)
+                   system, talk_relay, demo)
 
 Base.metadata.create_all(bind=engine)
 
@@ -50,6 +50,7 @@ app.include_router(eeg_analysis.router, tags=["EEG Analysis"])
 app.include_router(intelligence.router, tags=["Intelligence"])
 app.include_router(platform_cache.router, tags=["Platform Cache"])
 app.include_router(system.router, tags=["System"])
+app.include_router(demo.router, tags=["Demo"])
 
 @app.websocket("/ws/talk-relay")
 async def ws_talk_relay(websocket: WebSocket):

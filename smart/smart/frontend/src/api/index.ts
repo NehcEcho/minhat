@@ -179,4 +179,12 @@ export const getTalkWsUrl = (params: Record<string, unknown>) =>
 // System health
 export const getSystemHealth = () => api.get('/api/system/health');
 
+// Demo control
+export const triggerSOS = (deviceId: string) =>
+  api.post('/api/demo/trigger-sos', { device_id: deviceId });
+export const demoStreamStart = (serial: string) =>
+  api.get('/api/v1/stream/start', { params: { serial } });
+export const demoStreamStop = (serial: string) =>
+  api.get('/api/v1/stream/stop', { params: { serial } });
+
 export default api;

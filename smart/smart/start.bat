@@ -31,20 +31,20 @@ echo.
 
 echo [3/4] Starting backend (port 9000)...
 cd /d "%~dp0backend"
-start "Smart Helmet - Backend" cmd /k "title Smart Helmet Backend && uvicorn app.main:app --host 127.0.0.1 --port 9000"
+start "Smart Helmet - Backend" cmd /k "title Smart Helmet Backend && uvicorn app.main:app --host 0.0.0.0 --port 9000"
 echo [OK] Backend started.
 echo.
 
 echo [4/4] Starting frontend (port 5200)...
 cd /d "%~dp0frontend"
-start "Smart Helmet - Frontend" cmd /k "title Smart Helmet Frontend && npm run dev"
+start "Smart Helmet - Frontend" cmd /k "title Smart Helmet Frontend && npm run dev -- --host 0.0.0.0 --port 5200"
 echo [OK] Frontend started.
 echo.
 
 echo ========================================
 echo   All services started!
-echo   Backend:  http://127.0.0.1:9000
-echo   Frontend: http://127.0.0.1:5200
+echo   Backend:  http://10.134.21.110:9000
+echo   Frontend: http://10.134.21.110:5200
 echo ========================================
 echo.
 echo Close this window to stop both services.

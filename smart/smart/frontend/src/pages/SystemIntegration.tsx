@@ -162,7 +162,7 @@ export default function SystemIntegration() {
     if (!talkUrl) return message.warning('请先获取中继URL');
     setTalkConnecting(true);
     try {
-      const ws = new WebSocket(`ws://127.0.0.1:8000/ws/talk-relay?serial=${talkUrl.serial}&code=${talkUrl.code}&token=${localStorage.getItem('token') || ''}&format=${talkUrl.format || 'pcm'}`);
+      const ws = new WebSocket(`ws://${window.location.hostname}:9000/ws/talk-relay?serial=${talkUrl.serial}&code=${talkUrl.code}&token=${localStorage.getItem('token') || ''}&format=${talkUrl.format || 'pcm'}`);
       ws.binaryType = 'arraybuffer';
       ws.onopen = () => { setTalkConnected(true); setTalkConnecting(false); message.success('已连接'); };
       ws.onclose = () => { setTalkConnected(false); setTalkConnecting(false); cleanupAudio(); };

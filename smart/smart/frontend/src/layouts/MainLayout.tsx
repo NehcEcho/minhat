@@ -2,7 +2,7 @@ import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import {
   Layout, Menu, Avatar, Dropdown, Badge, Space,
-  Breadcrumb, Input, Select, Typography,
+  Breadcrumb, Input, Select, Typography, Modal, Button,
 } from 'antd';
 import type { MenuProps } from 'antd';
 import {
@@ -203,6 +203,41 @@ export default function MainLayout() {
   // Force Menu remount (to apply defaultOpenKeys) only on non-sidebar navigation
   const [menuMountKey, setMenuMountKey] = useState(0);
 
+  // SOS alert state
+  const [sosOpen, setSosOpen] = useState(false);
+  const [sosMessage, setSosMessage] = useState('');
+  const [sosDeviceId, setSosDeviceId] = useState('');
+  const sosHandledRef = useRef(false);
+
+  useEffect(() => {
+    const wsUrl = `ws://${window.location.hostname}:9000/ws/demo`;
+    let ws: WebSocket;
+    let retryTimer: ReturnType<typeof setTimeout>;
+
+    const connect = () => {
+      ws = new WebSocket(wsUrl);
+      ws.onopen = () => {};
+      ws.onmessage = (e) => {
+        try {
+          const data = JSON.parse(e.data);
+          if (data.type === 'sos') {
+            setSosMessage(data.message);
+            setSosDeviceId(data.device_id);
+            sosHandledRef.current = false;
+            setSosOpen(true);
+          }
+        } catch {}
+      };
+      ws.onclose = () => { retryTimer = setTimeout(connect, 2000); };
+      ws.onerror = () => { ws.close(); };
+    };
+    connect();
+    return () => {
+      if (ws) ws.close();
+      clearTimeout(retryTimer);
+    };
+  }, []);
+
   useEffect(() => {
     const clickedKey = lastClickedKeyRef.current;
     if (clickedKey && menuKeyToPath[clickedKey] === location.pathname) {
@@ -288,11 +323,13 @@ export default function MainLayout() {
     items: [
       { key: 'profile', icon: <UserOutlined />, label: '个人信息' },
       { key: 'settings', icon: <SettingOutlined />, label: '系统设置' },
+      { key: 'democontrol', icon: <ThunderboltOutlined />, label: '演示操控台' },
       { type: 'divider' as const },
       { key: 'logout', icon: <LogoutOutlined />, label: '退出登录', danger: true },
     ],
     onClick: ({ key }: { key: string }) => {
       if (key === 'logout') handleLogout();
+      if (key === 'democontrol') window.open('/demo-control', '_blank');
     },
   }), [handleLogout]);
 
@@ -654,6 +691,143 @@ export default function MainLayout() {
           </Content>
         </Layout>
       </Layout>
+
+      <Modal
+        title={null}
+        open={sosOpen}
+        closable={true}
+        onCancel={() => { setSosOpen(false); sosHandledRef.current = true; }}
+        footer={null}
+        width="90vw"
+        style={{ top: 20 }}
+        styles={{
+          body: {
+            padding: 0,
+            background: 'linear-gradient(135deg, #2d0000 0%, #8b0000 50%, #1a0000 100%)',
+          },
+        }}
+        centered
+        destroyOnClose
+      >
+        <style>{`
+          .sos-overlay {
+            padding: 60px 40px;
+            text-align: center;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+          }
+          .sos-icon-area {
+            margin-bottom: 24px;
+          }
+          .sos-icon-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ff4d4f, #cf1322);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: sos-pop 0.8s ease-in-out infinite alternate;
+            box-shadow: 0 0 60px rgba(255,0,0,0.6), 0 0 120px rgba(255,0,0,0.3);
+          }
+          @keyframes sos-pop {
+            0% { transform: scale(1); box-shadow: 0 0 60px rgba(255,0,0,0.6); }
+            100% { transform: scale(1.08); box-shadow: 0 0 100px rgba(255,0,0,0.9); }
+          }
+          .sos-icon-text {
+            font-size: 64px;
+            line-height: 1;
+          }
+          .sos-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 12px;
+            text-shadow: 0 0 20px rgba(255,0,0,0.6);
+            animation: sos-blink 0.6s ease-in-out infinite alternate;
+          }
+          @keyframes sos-blink {
+            0% { opacity: 1; }
+            100% { opacity: 0.6; }
+          }
+          .sos-subtitle {
+            font-size: 18px;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 8px;
+          }
+          .sos-device {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffd666;
+            margin-bottom: 32px;
+            padding: 8px 24px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 8px;
+            display: inline-block;
+          }
+          .sos-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+          }
+          .sos-btn-handle {
+            height: 52px;
+            padding: 0 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 10px;
+            border: none;
+          }
+          .sos-btn-resolve {
+            background: linear-gradient(135deg, #52c41a, #389e0d);
+            color: #fff;
+          }
+          .sos-btn-resolve:hover {
+            background: linear-gradient(135deg, #73d13d, #52c41a) !important;
+          }
+          .sos-btn-dismiss {
+            background: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            border: 1px solid rgba(255,255,255,0.2) !important;
+          }
+          .sos-btn-dismiss:hover {
+            background: rgba(255,255,255,0.2) !important;
+          }
+        `}</style>
+        <div className="sos-overlay">
+          <div className="sos-icon-area">
+            <div className="sos-icon-circle">
+              <span className="sos-icon-text">🆘</span>
+            </div>
+          </div>
+          <div className="sos-title">⚠ 紧急告警 ⚠</div>
+          <div className="sos-subtitle">{sosMessage}</div>
+          <div className="sos-device">设备：{sosDeviceId}</div>
+          <div className="sos-actions">
+            <Button
+              className="sos-btn-handle sos-btn-resolve"
+              size="large"
+              onClick={() => {
+                setSosOpen(false);
+                sosHandledRef.current = true;
+              }}
+            >
+              ✓ 确认处置
+            </Button>
+            <Button
+              className="sos-btn-handle sos-btn-dismiss"
+              size="large"
+              onClick={() => {
+                setSosOpen(false);
+                sosHandledRef.current = true;
+              }}
+            >
+              稍后处理
+            </Button>
+          </div>
+        </div>
+      </Modal>
     </>
   );
 }

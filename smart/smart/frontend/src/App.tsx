@@ -23,6 +23,7 @@ import EmergencyPlan from './pages/EmergencyPlan';
 import DisposalRecord from './pages/DisposalRecord';
 import ShiftManage from './pages/ShiftManage';
 import SystemIntegration from './pages/SystemIntegration';
+import DemoControl from './pages/DemoControl';
 
 export default function App() {
   return (
@@ -53,6 +54,7 @@ export default function App() {
           <Route path="shift-manage" element={<ShiftManage />} />
           <Route path="system-integration" element={<SystemIntegration />} />
         </Route>
+        <Route path="/demo-control" element={<DemoControl />} />
       </Route>
     </Routes>
   );
