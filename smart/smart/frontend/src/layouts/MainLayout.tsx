@@ -38,6 +38,7 @@ import {
   FileTextOutlined,
   FieldTimeOutlined,
   SafetyOutlined,
+  CheckSquareOutlined,
 } from '@ant-design/icons';
 import { useAuthStore } from '../store';
 
@@ -87,6 +88,7 @@ const pathToTopNav: Record<string, string> = {
   '/data-asset': 'data',
   '/employee-management': 'system',
   '/system-integration': 'system',
+  '/reports': 'system',
 };
 
 const pathToSelectedKeys: Record<string, string[]> = {
@@ -111,6 +113,7 @@ const pathToSelectedKeys: Record<string, string[]> = {
   '/disposal-record': ['disposal-record'],
   '/shift-manage': ['disposal-shift'],
   '/system-integration': ['system-services'],
+  '/reports': ['reports'],
 };
 
 const pathToOpenKeys: Record<string, string[]> = {
@@ -133,6 +136,7 @@ const pathToOpenKeys: Record<string, string[]> = {
   '/disposal-record': ['disposal'],
   '/shift-manage': ['disposal'],
   '/system-integration': ['sub-system'],
+  '/reports': ['report-group'],
 };
 
 type BreadcrumbMap = Record<string, { parent: string; parentIcon?: React.ReactNode; current: string }>;
@@ -159,6 +163,7 @@ const breadcrumbMap: BreadcrumbMap = {
   '/shift-manage': { parent: '联动处置', current: '值班管理' },
   '/employee-management': { parent: '系统管理', current: '人员管理' },
   '/system-integration': { parent: '系统管理', current: '智能服务' },
+  '/reports': { parent: '工作作业', parentIcon: <CheckSquareOutlined />, current: '作业报告' },
 };
 
 const menuKeyToPath: Record<string, string> = {
@@ -185,6 +190,7 @@ const menuKeyToPath: Record<string, string> = {
   'disposal-shift': '/shift-manage',
   '/system': '/employee-management',
   'system-services': '/system-integration',
+  'reports': '/reports',
 };
 
 export default function MainLayout() {
@@ -208,6 +214,56 @@ export default function MainLayout() {
   const [sosMessage, setSosMessage] = useState('');
   const [sosDeviceId, setSosDeviceId] = useState('');
   const sosHandledRef = useRef(false);
+
+  // SOS alarm sound
+  const sosAudioCtxRef = useRef<AudioContext | null>(null);
+  const sosAlarmTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const playSosAlarm = () => {
+    try {
+      const ctx = sosAudioCtxRef.current || new AudioContext();
+      sosAudioCtxRef.current = ctx;
+
+      // Slow rising siren: gradual frequency sweep for a calmer alert
+      let t = ctx.currentTime + 0.1;
+        for (let i = 0; i < 6; i++) {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(440, t);
+          osc.frequency.linearRampToValueAtTime(780, t + 0.6);
+          gain.gain.setValueAtTime(0.25, t);
+          gain.gain.linearRampToValueAtTime(0.25, t + 0.4);
+          gain.gain.exponentialRampToValueAtTime(0.001, t + 0.9);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(t);
+          osc.stop(t + 1.0);
+          t += 1.2;
+        }
+    } catch {}
+  };
+
+  const stopSosAlarm = () => {
+    if (sosAudioCtxRef.current) {
+      sosAudioCtxRef.current.close();
+      sosAudioCtxRef.current = null;
+    }
+  };
+
+  useEffect(() => {
+    if (sosOpen) {
+      playSosAlarm();
+      sosAlarmTimerRef.current = setInterval(playSosAlarm, 3000);
+    } else {
+      if (sosAlarmTimerRef.current) clearInterval(sosAlarmTimerRef.current);
+      stopSosAlarm();
+    }
+    return () => {
+      if (sosAlarmTimerRef.current) clearInterval(sosAlarmTimerRef.current);
+      stopSosAlarm();
+    };
+  }, [sosOpen]);
 
   useEffect(() => {
     const wsUrl = `ws://${window.location.hostname}:9000/ws/demo`;
@@ -311,6 +367,9 @@ export default function MainLayout() {
     getItem('系统管理', 'sub-system', <SettingOutlined />, [
       getItem('人员管理', '/system', <IdcardOutlined />),
       getItem('智能服务', 'system-services', <ThunderboltOutlined />),
+    ]),
+    getItem('工作作业', 'report-group', <CheckSquareOutlined />, [
+      getItem('作业报告', 'reports', <FileTextOutlined />),
     ]),
   ], []);
 

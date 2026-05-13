@@ -24,6 +24,7 @@ import DisposalRecord from './pages/DisposalRecord';
 import ShiftManage from './pages/ShiftManage';
 import SystemIntegration from './pages/SystemIntegration';
 import DemoControl from './pages/DemoControl';
+import Reports from './pages/Reports';
 
 export default function App() {
   return (
@@ -53,6 +54,7 @@ export default function App() {
           <Route path="disposal-record" element={<DisposalRecord />} />
           <Route path="shift-manage" element={<ShiftManage />} />
           <Route path="system-integration" element={<SystemIntegration />} />
+          <Route path="reports" element={<Reports />} />
         </Route>
         <Route path="/demo-control" element={<DemoControl />} />
       </Route>

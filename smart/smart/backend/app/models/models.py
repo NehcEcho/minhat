@@ -309,3 +309,27 @@ class LocationPoint(Base):
     raw_json = Column(JSON)
     synced_at = Column(DateTime, default=datetime.utcnow)
     created_at = Column(DateTime, default=datetime.utcnow)
+
+
+class WorkReport(Base):
+    __tablename__ = "work_reports"
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String(200), nullable=False)
+    description = Column(Text, default="")
+    location = Column(String(200), default="")
+    worker_name = Column(String(100), default="")
+    status = Column(String(20), default="pending")
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    images = relationship("ReportImage", back_populates="report", cascade="all, delete-orphan")
+
+
+class ReportImage(Base):
+    __tablename__ = "report_images"
+    id = Column(Integer, primary_key=True, index=True)
+    report_id = Column(Integer, ForeignKey("work_reports.id"), nullable=False)
+    filename = Column(String(300), nullable=False)
+    annotations = Column(JSON, default=[])
+    sort_order = Column(Integer, default=0)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    report = relationship("WorkReport", back_populates="images")
