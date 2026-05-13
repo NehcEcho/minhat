@@ -8,3 +8,4 @@ dist/
 test-screenshots/
 .env
 *.log
+backend/app/storage/
