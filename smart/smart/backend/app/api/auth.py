@@ -12,10 +12,10 @@ router = APIRouter()
 def login(authorization: str = Depends(get_basic_authorization)):
     try:
         response = request_upstream("POST", "/login", headers={"Authorization": authorization})
-        if response.ok and isinstance(response.json_data, dict):
+        if response.ok and isinstance(response.json_data, dict) and response.json_data.get("code") == 0:
             payload = response.json_data.get("data") if isinstance(response.json_data.get("data"), dict) else {}
             return {
-                "code": response.json_data.get("code", 0),
+                "code": 0,
                 "msg": response.json_data.get("msg", "ok"),
                 "data": payload,
                 "token": payload.get("token"),

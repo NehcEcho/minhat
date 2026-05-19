@@ -23,7 +23,7 @@ def get_db():
         db.close()
 
 
-@router.get("/api/reports")
+@router.get("/reports")
 def list_reports(db: Session = Depends(get_db)):
     reports = db.query(WorkReport).order_by(WorkReport.created_at.desc()).all()
     return {"code": 0, "data": [
@@ -42,7 +42,7 @@ def list_reports(db: Session = Depends(get_db)):
     ]}
 
 
-@router.get("/api/reports/{report_id}")
+@router.get("/reports/{report_id}")
 def get_report(report_id: int, db: Session = Depends(get_db)):
     r = db.query(WorkReport).filter(WorkReport.id == report_id).first()
     if not r:
@@ -68,7 +68,7 @@ def get_report(report_id: int, db: Session = Depends(get_db)):
     }
 
 
-@router.post("/api/reports")
+@router.post("/reports")
 def create_report(
     title: str = Form(...),
     description: str = Form(""),
@@ -88,7 +88,7 @@ def create_report(
     return {"code": 0, "data": {"id": report.id}}
 
 
-@router.put("/api/reports/{report_id}")
+@router.put("/reports/{report_id}")
 def update_report(
     report_id: int,
     title: str = Form(None),
@@ -116,7 +116,7 @@ def update_report(
     return {"code": 0, "msg": "updated"}
 
 
-@router.delete("/api/reports/{report_id}")
+@router.delete("/reports/{report_id}")
 def delete_report(report_id: int, db: Session = Depends(get_db)):
     r = db.query(WorkReport).filter(WorkReport.id == report_id).first()
     if not r:
@@ -130,7 +130,7 @@ def delete_report(report_id: int, db: Session = Depends(get_db)):
     return {"code": 0, "msg": "deleted"}
 
 
-@router.post("/api/reports/{report_id}/images")
+@router.post("/reports/{report_id}/images")
 def upload_image(
     report_id: int,
     file: UploadFile = File(...),
@@ -162,7 +162,7 @@ def upload_image(
     return {"code": 0, "data": {"id": img.id, "filename": img.filename, "url": f"/api/reports/images/{img.id}"}}
 
 
-@router.get("/api/reports/images/{image_id}")
+@router.get("/reports/images/{image_id}")
 def serve_image(image_id: int, db: Session = Depends(get_db)):
     img = db.query(ReportImage).filter(ReportImage.id == image_id).first()
     if not img:
@@ -173,7 +173,7 @@ def serve_image(image_id: int, db: Session = Depends(get_db)):
     return FileResponse(file_path)
 
 
-@router.put("/api/reports/images/{image_id}/annotations")
+@router.put("/reports/images/{image_id}/annotations")
 def save_annotations(
     image_id: int,
     data: dict,
@@ -188,7 +188,7 @@ def save_annotations(
     return {"code": 0, "msg": "saved"}
 
 
-@router.delete("/api/reports/images/{image_id}")
+@router.delete("/reports/images/{image_id}")
 def delete_image(image_id: int, db: Session = Depends(get_db)):
     img = db.query(ReportImage).filter(ReportImage.id == image_id).first()
     if not img:
