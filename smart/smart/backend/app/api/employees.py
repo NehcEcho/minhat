@@ -55,9 +55,9 @@ def get_employee_list(
     page_index: int = Query(1),
     page: int | None = Query(None),
     page_size: int = Query(20),
-    name: str = Query(None),
-    department: str = Query(None),
-    status: str = Query(None),
+    name: str | None = Query(None),
+    department: str | None = Query(None),
+    status: str | None = Query(None),
     token: str = Depends(get_bearer_token),
     db: Session = Depends(get_db)
 ):

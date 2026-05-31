@@ -164,6 +164,8 @@ def sync_alarms(token: str, db: Session, start_time: int, end_time: int, page_si
                     fence_id=_to_int_or_none(alarm.get("fenceId")),
                     handled=handled,
                     raw_json=alarm,
+                    synced_at=datetime.now(timezone.utc),
+                    updated_at=datetime.now(timezone.utc),
                 ))
             count += 1
         db.commit()
@@ -207,6 +209,13 @@ def sync_locations(token: str, db: Session, device_ids: list[str], start_time: i
                 longitude = _to_str_or_none(point.get("longitude"))
                 latitude = _to_str_or_none(point.get("latitude"))
                 if not longitude or not latitude:
+                    continue
+
+                exists = db.query(LocationPoint).filter(
+                    LocationPoint.device_id == point_device_id,
+                    LocationPoint.recorded_at == recorded_at
+                ).first()
+                if exists:
                     continue
 
                 db.add(LocationPoint(

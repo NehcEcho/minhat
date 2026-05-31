@@ -1,6 +1,6 @@
-from datetime import datetime
+from datetime import datetime, timezone
 
-from fastapi import APIRouter, Depends, Query
+from fastapi import APIRouter, Depends, HTTPException, Query
 
 from ..auth import get_bearer_token
 from ..upstream import UpstreamApiError, request_upstream
@@ -11,17 +11,17 @@ router = APIRouter()
 @router.get("/api/v1/playback/recordlist")
 def playback_recordlist(
     serial: str | None = Query(None),
-    code: str = Query(None),
+    code: str | None = Query(None),
     device: str | None = Query(None),
     starttime: str | None = Query(None),
     start: str | None = Query(None),
-    endtime: str = Query(None),
+    endtime: str | None = Query(None),
     end: str | None = Query(None),
     token: str = Depends(get_bearer_token),
 ):
     serial = serial or device
     code = code or device or serial
-    starttime = starttime or start or datetime.utcnow().strftime("%Y-%m-%dT00:00:00")
+    starttime = starttime or start or datetime.now(timezone.utc).strftime("%Y-%m-%dT00:00:00")
     endtime = endtime or end
     try:
         response = request_upstream(
@@ -34,7 +34,7 @@ def playback_recordlist(
             return response.json_data
     except UpstreamApiError:
         pass
-    et = endtime or datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S")
+    et = endtime or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S")
     return {
         "DeviceID": code or "1",
         "Name": f"Channel {code or '1'}",
@@ -59,11 +59,11 @@ def playback_recordlist(
 @router.get("/api/v1/playback/start")
 def playback_start(
     serial: str | None = Query(None),
-    code: str = Query(None),
+    code: str | None = Query(None),
     device: str | None = Query(None),
     starttime: str | None = Query(None),
     start: str | None = Query(None),
-    endtime: str = Query(None),
+    endtime: str | None = Query(None),
     end: str | None = Query(None),
     download: bool = Query(False),
     audio: str = Query("config"),
@@ -74,7 +74,7 @@ def playback_start(
 ):
     serial = serial or device
     code = code or device or serial
-    starttime = starttime or start or datetime.utcnow().strftime("%Y-%m-%dT00:00:00")
+    starttime = starttime or start or datetime.now(timezone.utc).strftime("%Y-%m-%dT00:00:00")
     endtime = endtime or end
     try:
         response = request_upstream(
@@ -143,6 +143,8 @@ def playback_stop(
     token: str = Depends(get_bearer_token),
 ):
     streamid = streamid or f"playback_{device}_{device}" if device else streamid
+    if not streamid:
+        raise HTTPException(status_code=422, detail="streamid or device is required")
     try:
         response = request_upstream("GET", "/api/v1/playback/stop", token=token, params={"streamid": streamid})
         if response.ok:

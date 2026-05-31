@@ -38,7 +38,7 @@ async def talk_relay_handler(websocket: WebSocket) -> None:
         upstream_url = f"{settings.talk_websocket_base_url}/api/v1/control/ws-talk/{serial}/{code}"
         upstream_headers = {"Authorization": f"Bearer {token}"} if token else {}
 
-        upstream_ws = await websockets.connect(upstream_url, extra_headers=upstream_headers)
+        upstream_ws = await websockets.connect(upstream_url, additional_headers=upstream_headers)
 
         async def client_to_upstream():
             try:

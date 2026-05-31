@@ -60,7 +60,7 @@ def create_task(
     else:
         trend = "无显著异常"
 
-    now = datetime.now(timezone.utc).isoformat()
+    now = datetime.now(timezone.utc)
     record = EegAnalysisRecord(
         result_id=_build_result_id(),
         employee=employee_id,

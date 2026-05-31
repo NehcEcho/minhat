@@ -205,10 +205,12 @@ def get_cached_locations(
     db: Session = Depends(get_db),
 ):
     query = db.query(LocationPoint).filter(LocationPoint.device_id == device_id)
-    if start_time:
-        query = query.filter(LocationPoint.recorded_at >= start_time)
-    if end_time:
-        query = query.filter(LocationPoint.recorded_at <= end_time)
+    start_ms = start_time * 1000 if start_time is not None and start_time < 1e12 else start_time
+    end_ms = end_time * 1000 if end_time is not None and end_time < 1e12 else end_time
+    if start_ms is not None:
+        query = query.filter(LocationPoint.recorded_at >= start_ms)
+    if end_ms is not None:
+        query = query.filter(LocationPoint.recorded_at <= end_ms)
 
     items = query.order_by(LocationPoint.recorded_at.asc()).limit(limit).all()
 

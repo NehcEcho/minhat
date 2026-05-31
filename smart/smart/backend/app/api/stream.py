@@ -1,7 +1,7 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from urllib.parse import urlencode
 
-from fastapi import APIRouter, Depends, Query
+from fastapi import APIRouter, Depends, HTTPException, Query
 
 from ..auth import get_bearer_token
 from ..settings import settings
@@ -48,6 +48,8 @@ def stream_start(
 ):
     serial = serial or device
     code = code or device or serial
+    if not serial:
+        raise HTTPException(status_code=422, detail="serial or device is required")
     params = {"serial": serial, "code": code, "audio": audio}
     try:
         response = request_upstream("GET", "/api/v1/stream/start", token=token, params=params)
@@ -68,7 +70,7 @@ def stream_start(
         "HLS": f"http://stream.local/live/{sid}.m3u8",
         "RTSP": f"rtsp://stream.local/live/{sid}",
         "Transport": "TCP",
-        "StartAt": datetime.utcnow().isoformat(timespec="seconds"),
+        "StartAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "AudioEnable": audio in ("true", "config"),
     }
 
@@ -83,6 +85,8 @@ def stream_stop(
 ):
     serial = serial or device
     code = code or device or serial
+    if not serial:
+        raise HTTPException(status_code=422, detail="serial or device is required")
     try:
         response = request_upstream(
             "GET",

@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useRef } from 'react';
 import ReactECharts from 'echarts-for-react';
 import {
   Row, Col, Card, Table, Button, Tag, Space, Typography, Select, DatePicker, Input,
@@ -126,7 +126,8 @@ const deviceOptions = [
 export default function PlaybackManage() {
   const [selectedDevice, setSelectedDevice] = useState('all');
   const [searchText, setSearchText] = useState('');
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [playingDeviceId, setPlayingDeviceId] = useState<string | null>(null);
+  const playbackLockRef = useRef(false);
 
   const filteredRecords = useMemo(() => {
     let data = recordData;
@@ -142,18 +143,25 @@ export default function PlaybackManage() {
   }, [selectedDevice, searchText]);
 
   const handlePlayback = useCallback(async (record: RecordItem) => {
+    if (playbackLockRef.current) return;
+    playbackLockRef.current = true;
     try {
-      if (isPlaying) {
+      if (playingDeviceId === record.deviceId) {
         await playbackStop({ device: record.deviceId });
-        setIsPlaying(false);
+        setPlayingDeviceId(null);
       } else {
+        if (playingDeviceId) {
+          await playbackStop({ device: playingDeviceId });
+        }
         await playbackStart({ device: record.deviceId, start: record.startTime, end: record.endTime });
-        setIsPlaying(true);
+        setPlayingDeviceId(record.deviceId);
       }
     } catch {
       // API error handled silently
+    } finally {
+      playbackLockRef.current = false;
     }
-  }, [isPlaying]);
+  }, [playingDeviceId]);
 
   const recordColumns: ColumnsType<RecordItem> = useMemo(() => [
     {
@@ -403,7 +411,7 @@ export default function PlaybackManage() {
                 </div>
 
                 {/* Recording indicator */}
-                {isPlaying && (
+                {playingDeviceId && (
                   <div style={{ position: 'absolute', top: 12, left: 12, zIndex: 3, display: 'flex', alignItems: 'center', gap: 6 }}>
                     <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#FF4D4F', animation: 'playbackBlink 1s infinite' }} />
                     <Text style={{ color: '#FF4D4F', fontSize: 11, fontWeight: 500 }}>回放中</Text>

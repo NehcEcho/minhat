@@ -121,6 +121,7 @@ const fenceData: FenceRecord[] = [
    ========================================================================= */
 
 export default function GeoFence() {
+  const [fenceList, setFenceList] = useState(fenceData);
   const [modalOpen, setModalOpen] = useState(false);
   const [editingFence, setEditingFence] = useState<FenceRecord | null>(null);
   const [searchText, setSearchText] = useState('');
@@ -128,11 +129,11 @@ export default function GeoFence() {
   const [form] = Form.useForm();
 
   const filteredFences = useMemo(() => {
-    if (!searchText) return fenceData;
-    return fenceData.filter((f) =>
+    if (!searchText) return fenceList;
+    return fenceList.filter((f) =>
       f.fenceName.includes(searchText) || f.area.includes(searchText) || f.eventType.includes(searchText)
     );
-  }, [searchText]);
+  }, [searchText, fenceList]);
 
   const handleAdd = useCallback(() => {
     setEditingFence(null);
@@ -158,12 +159,13 @@ export default function GeoFence() {
         try {
           await deleteFence(record.id);
           message.success('围栏已删除');
+          setFenceList((prev) => prev.filter((f) => f.id !== record.id));
         } catch {
           message.error('删除失败');
         }
       },
     });
-  }, []);
+  }, [form]);
 
   const handleSubmit = useCallback(async () => {
     try {

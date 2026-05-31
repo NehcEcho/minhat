@@ -22,6 +22,9 @@ function loadAMap(): Promise<typeof AMap> {
         'AMap.Polyline',
         'AMap.Circle',
       ],
+    }).catch((err) => {
+      amapPromise = null;
+      throw err;
     });
   }
   return amapPromise;

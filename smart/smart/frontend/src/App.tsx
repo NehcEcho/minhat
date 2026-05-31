@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import GlobalPosition from './pages/GlobalPosition';
 import RealTimeMonitor from './pages/RealTimeMonitor';
 import EEGMonitor from './pages/EEGMonitor';
+import EegEmotionTool from './pages/EegEmotionTool';
 import DataAnalysis from './pages/DataAnalysis';
 import InspectionTasks from './pages/InspectionTasks';
 import EmployeeManagement from './pages/EmployeeManagement';
@@ -15,6 +16,7 @@ import GeoFence from './pages/GeoFence';
 import PlaybackManage from './pages/PlaybackManage';
 import VideoManage from './pages/VideoManage';
 import DeviceManage from './pages/DeviceManage';
+import DeviceDetail from './pages/DeviceDetail';
 import WorkOrders from './pages/WorkOrders';
 import DataSync from './pages/DataSync';
 import DataAsset from './pages/DataAsset';
@@ -37,6 +39,7 @@ export default function App() {
           <Route path="global-position" element={<GlobalPosition />} />
           <Route path="realtime-monitor" element={<RealTimeMonitor />} />
           <Route path="eeg-monitor" element={<EEGMonitor />} />
+          <Route path="eeg-emotion-tool" element={<EegEmotionTool />} />
           <Route path="data-analysis" element={<DataAnalysis />} />
           <Route path="inspection-tasks" element={<InspectionTasks />} />
           <Route path="employee-management" element={<EmployeeManagement />} />
@@ -46,6 +49,7 @@ export default function App() {
           <Route path="playback-manage" element={<PlaybackManage />} />
           <Route path="video-manage" element={<VideoManage />} />
           <Route path="device-manage" element={<DeviceManage />} />
+          <Route path="device-manage/:id" element={<DeviceDetail />} />
           <Route path="work-orders" element={<WorkOrders />} />
           <Route path="data-sync" element={<DataSync />} />
           <Route path="data-asset" element={<DataAsset />} />

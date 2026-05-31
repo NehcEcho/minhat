@@ -282,13 +282,17 @@ export default function AlarmDisposal() {
   const [autoRefresh, setAutoRefresh] = useState(false);
   const [refreshCountdown, setRefreshCountdown] = useState(30);
   const [mapZoom, setMapZoom] = useState(1);
+  const [refreshKey, setRefreshKey] = useState(0);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     if (autoRefresh) {
       intervalRef.current = setInterval(() => {
         setRefreshCountdown((prev) => {
-          if (prev <= 1) return 30;
+          if (prev <= 1) {
+            setRefreshKey((k) => k + 1);
+            return 30;
+          }
           return prev - 1;
         });
       }, 1000);
@@ -308,7 +312,7 @@ export default function AlarmDisposal() {
     const statuses = tabStatusMap[activeTab] || [];
     if (statuses.length === 0) return allAlarms;
     return allAlarms.filter((a) => statuses.includes(a.status));
-  }, [activeTab]);
+  }, [activeTab, refreshKey]);
 
   const handleDispose = useCallback(() => {
     setDisposeLoading(true);

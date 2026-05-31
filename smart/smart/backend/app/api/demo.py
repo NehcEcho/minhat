@@ -1,35 +1,40 @@
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
+import asyncio
 import json
 
 router = APIRouter()
 
-clients: list[WebSocket] = []
+_clients: set[WebSocket] = set()
+_clients_lock = asyncio.Lock()
 
 
 @router.websocket("/ws/demo")
 async def demo_ws(websocket: WebSocket):
     await websocket.accept()
-    clients.append(websocket)
+    async with _clients_lock:
+        _clients.add(websocket)
     try:
         while True:
             await websocket.receive_text()
     except (WebSocketDisconnect, Exception):
         pass
     finally:
-        if websocket in clients:
-            clients.remove(websocket)
+        async with _clients_lock:
+            _clients.discard(websocket)
 
 
 async def broadcast(event: dict):
+    async with _clients_lock:
+        snapshot = list(_clients)
     dead: list[WebSocket] = []
-    for ws in clients:
+    for ws in snapshot:
         try:
             await ws.send_json(event)
         except Exception:
             dead.append(ws)
     for ws in dead:
-        if ws in clients:
-            clients.remove(ws)
+        async with _clients_lock:
+            _clients.discard(ws)
 
 
 @router.post("/api/demo/trigger-sos")
@@ -41,4 +46,6 @@ async def trigger_sos(body: dict):
         "message": f"SOS 紧急告警！设备 {device_id} 触发紧急求助！",
     }
     await broadcast(event)
-    return {"code": 0, "msg": "SOS triggered", "clients": len(clients)}
+    async with _clients_lock:
+        client_count = len(_clients)
+    return {"code": 0, "msg": "SOS triggered", "clients": client_count}

@@ -291,6 +291,7 @@ class AlarmSnapshot(Base):
     fence_id = Column(Integer)
     handled = Column(Integer, default=0)
     raw_json = Column(JSON)
+    source_updated_at = Column(String(50))
     synced_at = Column(DateTime, default=datetime.utcnow)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)

@@ -246,8 +246,8 @@ export default function EEGMonitor() {
   const [pageSize, setPageSize] = useState(7);
   const [exportModalVisible, setExportModalVisible] = useState(false);
   const [eegTick, setEegTick] = useState(0);
-  const [simAttention, setSimAttention] = useState(32);
-  const [simFatigue, setSimFatigue] = useState(72);
+  const [simAttention, setSimAttention] = useState(allPersonnelData[4].attention);
+  const [simFatigue, setSimFatigue] = useState(allPersonnelData[4].fatigue);
   const [trendData, setTrendData] = useState({
     attention: [82, 80, 78, 76, 79, 81],
     fatigue: [52, 55, 60, 58, 56, 54],
@@ -257,6 +257,11 @@ export default function EEGMonitor() {
   const refreshRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const countdownRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const exportInProgress = useRef(false);
+
+  useEffect(() => {
+    setSimAttention(selectedPerson.attention);
+    setSimFatigue(selectedPerson.fatigue);
+  }, [selectedPerson]);
 
   useEffect(() => {
     if (!autoRefresh) {

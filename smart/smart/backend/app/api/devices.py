@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from fastapi import APIRouter, Body, Depends, HTTPException, Query
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 
 from ..auth import get_bearer_token
 from ..compat import model_to_dict, normalize_device_payload, normalize_status, pick
@@ -126,7 +126,7 @@ def get_user_devices(
     groups = db.query(DeviceGroup).all()
     result_groups = []
     for group in groups:
-        devices = db.query(Device).filter(Device.group_id == group.id).all()
+        devices = db.query(Device).filter(Device.group_id == group.id).options(joinedload(Device.product), joinedload(Device.group)).all()
         normalized = [normalize_device_payload(_local_device(device), local_extra=_find_local_extra(db, _local_device(device))) for device in devices]
         result_groups.append({
             "id": group.id,
@@ -186,7 +186,7 @@ def get_device_list(
             }
     except UpstreamApiError:
         pass
-    query = db.query(Device)
+    query = db.query(Device).options(joinedload(Device.product), joinedload(Device.group))
     if device_id:
         query = query.filter(Device.device_id.like(f"%{device_id}%"))
     if device_name:

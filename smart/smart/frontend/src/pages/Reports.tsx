@@ -53,10 +53,15 @@ export default function Reports() {
   const imgRef = useRef<HTMLImageElement>(null);
   const imgLoadRef = useRef(false);
 
+  const authHeaders = (): Record<string, string> => {
+    const token = localStorage.getItem('token');
+    return token ? { Authorization: `Bearer ${token}` } : {};
+  };
+
   const loadReports = async () => {
     setLoading(true);
     try {
-      const r = await fetch('/api/reports').then(res => res.json());
+      const r = await fetch('/api/reports', { headers: authHeaders() }).then(res => res.json());
       setReports(r.data || []);
     } catch { message.error('加载失败'); }
     finally { setLoading(false); }
@@ -64,7 +69,7 @@ export default function Reports() {
 
   const loadDetail = async (id: number) => {
     try {
-      const r = await fetch(`/api/reports/${id}`).then(res => res.json());
+      const r = await fetch(`/api/reports/${id}`, { headers: authHeaders() }).then(res => res.json());
       setDetail(r.data);
     } catch { setDetail(null); }
   };
@@ -107,7 +112,7 @@ export default function Reports() {
     setAnnotateImg(null);
     setAnnotations([]);
     try {
-      const r = await fetch(`/api/reports/${id}`).then(res => res.json());
+      const r = await fetch(`/api/reports/${id}`, { headers: authHeaders() }).then(res => res.json());
       const d = r.data;
       form.setFieldsValue({ title: d.title, description: d.description, location: d.location, worker_name: d.worker_name, status: d.status });
       setDetail(d);
@@ -118,7 +123,7 @@ export default function Reports() {
 
   const deleteReport = async (id: number) => {
     try {
-      await fetch(`/api/reports/${id}`, { method: 'DELETE' });
+      await fetch(`/api/reports/${id}`, { method: 'DELETE', headers: authHeaders() });
       message.success('已删除');
       loadReports();
     } catch { message.error('删除失败'); }
@@ -137,9 +142,9 @@ export default function Reports() {
       let reportId = editingId;
 
       if (reportId) {
-        await fetch(`/api/reports/${reportId}`, { method: 'PUT', body: formData });
+        await fetch(`/api/reports/${reportId}`, { method: 'PUT', body: formData, headers: authHeaders() });
       } else {
-        const r = await fetch('/api/reports', { method: 'POST', body: formData }).then(res => res.json());
+        const r = await fetch('/api/reports', { method: 'POST', body: formData, headers: authHeaders() }).then(res => res.json());
         reportId = r.data.id;
         formData.append('report_id', String(reportId));
       }
@@ -149,7 +154,7 @@ export default function Reports() {
         if (f.originFileObj) {
           const fd = new FormData();
           fd.append('file', f.originFileObj);
-          await fetch(`/api/reports/${reportId}/images`, { method: 'POST', body: fd });
+          await fetch(`/api/reports/${reportId}/images`, { method: 'POST', body: fd, headers: authHeaders() });
         }
       }
 
@@ -177,7 +182,7 @@ export default function Reports() {
     try {
       await fetch(`/api/reports/images/${annotateImg.id}/annotations`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', ...authHeaders() },
         body: JSON.stringify({ annotations }),
       });
       message.success('标注已保存');
@@ -188,7 +193,7 @@ export default function Reports() {
 
   const deleteImage = async (imgId: number) => {
     try {
-      await fetch(`/api/reports/images/${imgId}`, { method: 'DELETE' });
+      await fetch(`/api/reports/images/${imgId}`, { method: 'DELETE', headers: authHeaders() });
       message.success('已删除');
       if (editingId) openEdit(editingId);
     } catch { message.error('删除失败'); }

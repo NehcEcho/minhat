@@ -77,8 +77,8 @@ def get_inspection_list(
     page_index: int = Query(1),
     page: int | None = Query(None),
     page_size: int = Query(20),
-    status: str = Query(None),
-    area: str = Query(None),
+    status: str | None = Query(None),
+    area: str | None = Query(None),
     token: str = Depends(get_bearer_token),
     db: Session = Depends(get_db)
 ):

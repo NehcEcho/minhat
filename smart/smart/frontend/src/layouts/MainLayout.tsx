@@ -35,10 +35,11 @@ import {
   CloudSyncOutlined,
   GoldOutlined,
   ThunderboltOutlined,
-  FileTextOutlined,
   FieldTimeOutlined,
   SafetyOutlined,
   CheckSquareOutlined,
+  ExperimentOutlined,
+  FileTextOutlined,
 } from '@ant-design/icons';
 import { useAuthStore } from '../store';
 
@@ -72,6 +73,7 @@ const pathToTopNav: Record<string, string> = {
   '/track-replay': 'dispatch',
   '/geo-fence': 'dispatch',
   '/eeg-monitor': 'dispatch',
+  '/eeg-emotion-tool': 'dispatch',
   '/realtime-monitor': 'dispatch',
   '/playback-manage': 'dispatch',
   '/video-manage': 'dispatch',
@@ -94,6 +96,7 @@ const pathToTopNav: Record<string, string> = {
 const pathToSelectedKeys: Record<string, string[]> = {
   '/dashboard': ['/dashboard'],
   '/eeg-monitor': ['safety-helmet'],
+  '/eeg-emotion-tool': ['safety-emotion'],
   '/employee-management': ['sub-system'],
   '/global-position': ['safety-position'],
   '/track-replay': ['safety-track'],
@@ -121,6 +124,7 @@ const pathToOpenKeys: Record<string, string[]> = {
   '/track-replay': ['safety'],
   '/geo-fence': ['safety'],
   '/eeg-monitor': ['safety'],
+  '/eeg-emotion-tool': ['safety'],
   '/alarm-disposal': ['safety'],
   '/realtime-monitor': ['video'],
   '/playback-manage': ['video'],
@@ -144,6 +148,7 @@ type BreadcrumbMap = Record<string, { parent: string; parentIcon?: React.ReactNo
 const breadcrumbMap: BreadcrumbMap = {
   '/dashboard': { parent: '首页', parentIcon: <HomeOutlined />, current: '首页概览' },
   '/eeg-monitor': { parent: '安全监管', current: '智能矿帽' },
+  '/eeg-emotion-tool': { parent: '安全监管', current: '情绪识别' },
   '/global-position': { parent: '安全监管', current: '实时定位' },
   '/track-replay': { parent: '安全监管', current: '轨迹回放' },
   '/geo-fence': { parent: '安全监管', current: '电子围栏' },
@@ -169,6 +174,7 @@ const breadcrumbMap: BreadcrumbMap = {
 const menuKeyToPath: Record<string, string> = {
   '/dashboard': '/dashboard',
   'safety-helmet': '/eeg-monitor',
+  'safety-emotion': '/eeg-emotion-tool',
   'safety-personnel': '/employee-management',
   'safety-position': '/global-position',
   'safety-track': '/track-replay',
@@ -193,6 +199,13 @@ const menuKeyToPath: Record<string, string> = {
   'reports': '/reports',
 };
 
+function resolvePath(pathname: string): string {
+  if (pathToSelectedKeys[pathname]) return pathname;
+  const base = pathname.replace(/\/\d+$/, '');
+  if (pathToSelectedKeys[base]) return base;
+  return pathname;
+}
+
 export default function MainLayout() {
   const [collapsed, setCollapsed] = useState(false);
   const navigate = useNavigate();
@@ -203,7 +216,7 @@ export default function MainLayout() {
   const sidebarNavRef = useRef(false);
 
   const [selectedKeys, setSelectedKeys] = useState<string[]>(
-    () => pathToSelectedKeys[location.pathname] || ['/dashboard']
+    () => pathToSelectedKeys[resolvePath(location.pathname)] || ['/dashboard']
   );
 
   // Force Menu remount (to apply defaultOpenKeys) only on non-sidebar navigation
@@ -219,9 +232,17 @@ export default function MainLayout() {
   const sosAudioCtxRef = useRef<AudioContext | null>(null);
   const sosAlarmTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
+  let _sosAudioCtx: AudioContext | null = null;
+  function getSosAudioContext() {
+    if (!_sosAudioCtx || _sosAudioCtx.state === 'closed') {
+      _sosAudioCtx = new AudioContext();
+    }
+    return _sosAudioCtx;
+  }
+
   const playSosAlarm = () => {
     try {
-      const ctx = sosAudioCtxRef.current || new AudioContext();
+      const ctx = sosAudioCtxRef.current || getSosAudioContext();
       sosAudioCtxRef.current = ctx;
 
       // Slow rising siren: gradual frequency sweep for a calmer alert
@@ -248,6 +269,7 @@ export default function MainLayout() {
     if (sosAudioCtxRef.current) {
       sosAudioCtxRef.current.close();
       sosAudioCtxRef.current = null;
+      _sosAudioCtx = null;
     }
   };
 
@@ -265,14 +287,18 @@ export default function MainLayout() {
     };
   }, [sosOpen]);
 
+  const MAX_WS_RETRIES = 10;
+  let wsRetryCount = 0;
+
   useEffect(() => {
-    const wsUrl = `ws://${window.location.hostname}:9000/ws/demo`;
+    const wsUrl = `ws://${window.location.host}/ws/demo`;
     let ws: WebSocket;
     let retryTimer: ReturnType<typeof setTimeout>;
 
     const connect = () => {
+      if (wsRetryCount >= MAX_WS_RETRIES) return;
       ws = new WebSocket(wsUrl);
-      ws.onopen = () => {};
+      ws.onopen = () => { wsRetryCount = 0; };
       ws.onmessage = (e) => {
         try {
           const data = JSON.parse(e.data);
@@ -284,7 +310,7 @@ export default function MainLayout() {
           }
         } catch {}
       };
-      ws.onclose = () => { retryTimer = setTimeout(connect, 2000); };
+      ws.onclose = () => { wsRetryCount++; if (wsRetryCount < MAX_WS_RETRIES) { retryTimer = setTimeout(connect, Math.min(1000 * Math.pow(2, wsRetryCount), 30000)); } };
       ws.onerror = () => { ws.close(); };
     };
     connect();
@@ -299,10 +325,10 @@ export default function MainLayout() {
     if (clickedKey && menuKeyToPath[clickedKey] === location.pathname) {
       setSelectedKeys([clickedKey]);
     } else {
-      const newSelected = pathToSelectedKeys[location.pathname] || ['/dashboard'];
+      const resolved = resolvePath(location.pathname);
+      const newSelected = pathToSelectedKeys[resolved] || ['/dashboard'];
       setSelectedKeys(newSelected);
     }
-    // Remount Menu on non-sidebar navigation so defaultOpenKeys takes effect
     if (!sidebarNavRef.current) {
       setMenuMountKey(k => k + 1);
     }
@@ -310,12 +336,12 @@ export default function MainLayout() {
   }, [location.pathname]);
 
   const activeTopNav = useMemo(
-    () => pathToTopNav[location.pathname] || 'home',
+    () => pathToTopNav[resolvePath(location.pathname)] || 'home',
     [location.pathname],
   );
 
   const breadcrumb = useMemo(
-    () => breadcrumbMap[location.pathname] || { parent: '首页', parentIcon: <HomeOutlined />, current: '首页概览' },
+    () => breadcrumbMap[resolvePath(location.pathname)] || { parent: '首页', parentIcon: <HomeOutlined />, current: '首页概览' },
     [location.pathname],
   );
 
@@ -336,6 +362,7 @@ export default function MainLayout() {
     getItem('首页概览', '/dashboard', <DashboardOutlined />),
     getItem('安全监管', 'safety', <SafetyOutlined />, [
       getItem('智能矿帽', 'safety-helmet', <SafetyCertificateOutlined />),
+      getItem('情绪识别', 'safety-emotion', <ExperimentOutlined />),
       getItem('人员管理', 'safety-personnel', <IdcardOutlined />),
       getItem('实时定位', 'safety-position', <AimOutlined />),
       getItem('轨迹回放', 'safety-track', <HistoryOutlined />),
@@ -616,7 +643,7 @@ export default function MainLayout() {
           theme="light"
           key={menuMountKey}
           selectedKeys={selectedKeys}
-          defaultOpenKeys={pathToOpenKeys[location.pathname]}
+          defaultOpenKeys={pathToOpenKeys[resolvePath(location.pathname)]}
           items={sidebarItems}
           onClick={handleMenuClick}
           style={{ borderInlineEnd: 'none' }}

@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
   Row, Col, Card, Table, Tag, Button, Space, Typography, Form, Input, InputNumber,
-  message, Statistic, Empty, Tabs, Modal, Popconfirm, Select, Descriptions, Image, TimePicker,
+  message, Statistic, Empty, Tabs, Modal, Popconfirm, Select, Descriptions, Image, TimePicker, Tooltip,
 } from 'antd';
 import dayjs from 'dayjs';
 import Hls from 'hls.js';
@@ -10,6 +11,7 @@ import {
   SearchOutlined, PlusOutlined, DeleteOutlined, EditOutlined,
   VideoCameraOutlined, HistoryOutlined, EnvironmentOutlined,
   StopOutlined, PhoneOutlined, SoundOutlined, LinkOutlined, CameraOutlined,
+  EyeOutlined, RightOutlined,
 } from '@ant-design/icons';
 import {
   getDeviceList, getDevice, updateDevice, getDeviceFiles, deleteFile,
@@ -35,11 +37,15 @@ const CSS = `
 `;
 
 export default function SystemIntegration() {
-  const [activeTab, setActiveTab] = useState('devices');
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const initialDeviceId = searchParams.get('deviceId') || '';
+  const [activeTab, setActiveTab] = useState(initialDeviceId ? 'devices' : 'devices');
   const [devices, setDevices] = useState<any[]>([]);
   const [devicesTotal, setDevicesTotal] = useState(0);
   const [devicesLoading, setDevicesLoading] = useState(false);
   const [devKeyword, setDevKeyword] = useState('');
+  const [realDeviceIds, setRealDeviceIds] = useState<Set<string>>(new Set());
   const [deviceFiles, setDeviceFiles] = useState<any[]>([]);
   const [filesModal, setFilesModal] = useState(false);
   const [filesDevId, setFilesDevId] = useState('');
@@ -162,7 +168,8 @@ export default function SystemIntegration() {
     if (!talkUrl) return message.warning('请先获取中继URL');
     setTalkConnecting(true);
     try {
-      const ws = new WebSocket(`ws://${window.location.hostname}:9000/ws/talk-relay?serial=${talkUrl.serial}&code=${talkUrl.code}&token=${localStorage.getItem('token') || ''}&format=${talkUrl.format || 'pcm'}`);
+      const tokenParam = localStorage.getItem('token') ? `&token=${encodeURIComponent(localStorage.getItem('token')!)}` : '';
+      const ws = new WebSocket(`ws://${window.location.host}/ws/talk-relay?serial=${encodeURIComponent(talkUrl.serial)}&code=${encodeURIComponent(talkUrl.code)}${tokenParam}&format=${encodeURIComponent(talkUrl.format || 'pcm')}`);
       ws.binaryType = 'arraybuffer';
       ws.onopen = () => { setTalkConnected(true); setTalkConnecting(false); message.success('已连接'); };
       ws.onclose = () => { setTalkConnected(false); setTalkConnecting(false); cleanupAudio(); };
@@ -189,16 +196,21 @@ export default function SystemIntegration() {
     if (audioCtxRef.current) { audioCtxRef.current.close(); audioCtxRef.current = null; }
   };
 
+  const procRef = useRef<ScriptProcessorNode | null>(null);
+  const srcRef = useRef<MediaStreamAudioSourceNode | null>(null);
+
   const handleStartSpeaking = async () => {
     try {
+      if (audioCtxRef.current) { audioCtxRef.current.close(); audioCtxRef.current = null; }
       const stream = await navigator.mediaDevices.getUserMedia({ audio: { sampleRate: 8000, channelCount: 1, echoCancellation: true, noiseSuppression: true } });
       streamRef.current = stream;
       const ctx = new AudioContext({ sampleRate: 8000 });
       audioCtxRef.current = ctx;
       const source = ctx.createMediaStreamSource(stream);
+      srcRef.current = source;
       const processor = ctx.createScriptProcessor(1024, 1, 1);
+      procRef.current = processor;
       source.connect(processor);
-      processor.connect(ctx.destination);
       processor.onaudioprocess = (e) => {
         if (!wsRef.current || wsRef.current.readyState !== WebSocket.OPEN) return;
         const input = e.inputBuffer.getChannelData(0);
@@ -211,6 +223,8 @@ export default function SystemIntegration() {
   };
 
   const handleStopSpeaking = () => {
+    if (procRef.current) { try { procRef.current.disconnect(); } catch {} procRef.current = null; }
+    if (srcRef.current) { try { srcRef.current.disconnect(); } catch {} srcRef.current = null; }
     if (streamRef.current) { streamRef.current.getTracks().forEach(t => t.stop()); streamRef.current = null; }
     if (audioCtxRef.current) { audioCtxRef.current.close(); audioCtxRef.current = null; }
     setTalkSpeaking(false);
@@ -230,9 +244,31 @@ export default function SystemIntegration() {
     setTextInput('');
   };
 
-  useEffect(() => { loadDevices(); loadAlarms(); loadFences(); return () => { if (wsRef.current) wsRef.current.close(); cleanupAudio(); }; }, []);
+  useEffect(() => { loadDevices(); loadAlarms(); loadFences(); loadRealDevices(); return () => { if (wsRef.current) wsRef.current.close(); cleanupAudio(); }; }, []);
 
   const devOptions = devices.map(d => ({ value: d.deviceId, label: `${d.deviceId} (${d.deviceName})` }));
+
+  const loadRealDevices = useCallback(async () => {
+    try {
+      const r = await getUserDevices();
+      const data = r.data?.data || r.data || {};
+      const groups = data.groups || [];
+      const ids = new Set<string>();
+      for (const g of groups) {
+        for (const d of (g.devices || [])) {
+          const did = d.deviceId || d.device_id;
+          if (did) ids.add(String(did));
+        }
+      }
+      setRealDeviceIds(ids);
+    } catch { setRealDeviceIds(new Set()); }
+  }, []);
+
+  const isRealDevice = useCallback((deviceId: string) => realDeviceIds.has(deviceId), [realDeviceIds]);
+
+  const handleNavDevice = (deviceId: string) => {
+    navigate(`/device-manage/${deviceId}`);
+  };
 
   const devColumns = [
     { title: '设备ID', dataIndex: 'deviceId', width: 180, render: (v: string) => <Text copyable style={{ fontSize: 12 }}>{v}</Text> },
@@ -240,7 +276,19 @@ export default function SystemIntegration() {
     { title: '状态', dataIndex: 'status', width: 80, render: (v: string) => v === 'Online' ? <Tag color="green">在线</Tag> : <Tag color="red">离线</Tag> },
     { title: '经度', dataIndex: 'longitude', width: 90 },
     { title: '纬度', dataIndex: 'latitude', width: 90 },
-    { title: '操作', width: 140, render: (_: any, r: any) => <Space size={0}><Button size="small" onClick={() => showDeviceDetail(r.deviceId)}>详情</Button><Button size="small" icon={<CameraOutlined />} onClick={() => showDeviceFiles(r.deviceId)}>照片</Button></Space> },
+    { title: '来源', width: 80, render: (_: any, r: any) => isRealDevice(r.deviceId) ? <Tag color="blue">实时</Tag> : <Tag color="default">缓存</Tag> },
+    { title: '操作', width: 200, render: (_: any, r: any) => (
+      <Space size={0}>
+        {isRealDevice(r.deviceId) ? (
+          <Tooltip title="查看详情页面">
+            <Button size="small" type="primary" icon={<EyeOutlined />} onClick={() => handleNavDevice(r.deviceId)}>详情</Button>
+          </Tooltip>
+        ) : (
+          <Button size="small" onClick={() => showDeviceDetail(r.deviceId)}>详情</Button>
+        )}
+        <Button size="small" icon={<CameraOutlined />} onClick={() => showDeviceFiles(r.deviceId)}>照片</Button>
+      </Space>
+    )},
   ];
   const alarmColumns = [
     { title: 'ID', dataIndex: 'id', width: 60 },
@@ -274,7 +322,7 @@ export default function SystemIntegration() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           <Card className="svc-card" title="设备列表" extra={<Button size="small" icon={<ReloadOutlined />} onClick={loadDevices}>刷新</Button>}>
             <div className="svc-toolbar"><Input.Search placeholder="搜索设备" value={devKeyword} onChange={e => setDevKeyword(e.target.value)} onSearch={loadDevices} style={{ width: 240 }} allowClear /></div>
-            <Table columns={devColumns} dataSource={devices} rowKey="deviceId" loading={devicesLoading} size="small" pagination={{ pageSize: 20, total: devicesTotal }} locale={{ emptyText: <Empty description="暂无设备" /> }} scroll={{ x: 660 }} />
+            <Table columns={devColumns} dataSource={devices} rowKey="deviceId" loading={devicesLoading} size="small" pagination={{ pageSize: 20, total: devicesTotal }} locale={{ emptyText: <Empty description="暂无设备" /> }} scroll={{ x: 660 }} rowClassName={(r) => r.deviceId === initialDeviceId ? 'ant-table-row-selected' : ''} />
           </Card>
           <Modal title={`设备照片 [${filesDevId}]`} open={filesModal} onCancel={() => setFilesModal(false)} footer={null} width={800}>
             {filesLoading ? <div style={{ textAlign: 'center', padding: 40 }}>加载中...</div> : deviceFiles.length === 0 ? <Empty description="暂无照片" /> : (

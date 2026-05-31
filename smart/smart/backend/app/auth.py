@@ -5,17 +5,17 @@ from fastapi import Depends, Header, HTTPException
 from .compat import normalize_user_payload
 from .upstream import UpstreamApiError, request_upstream
 
+_local_tokens: dict[str, str] = {}
+
 
 def _local_user_payload(token: str) -> dict:
-    username = "upstream-user"
-    if token.strip():
-        username = "upstream-user"
+    username = _local_tokens.get(token, "local-user")
     return normalize_user_payload(
         {
             "id": 1,
             "username": username,
-            "nickname": "上游用户",
-            "name": "上游用户",
+            "nickname": username,
+            "name": username,
             "role": "user",
             "role_key": "user",
             "company_id": 1,

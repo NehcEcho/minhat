@@ -86,7 +86,7 @@ def recordfile_filter(body: dict = Body(...), token: str = Depends(get_bearer_to
             {
                 "id": i,
                 "fileID": f"rec_{i:04d}",
-                "puID": body.get("filter", {}).get("puID", "PU_123456"),
+                "puID": (body.get("filter") if isinstance(body.get("filter"), dict) else {}).get("puID", "PU_123456") if isinstance(body.get("filter"), dict) else "PU_123456",
                 "channelIndex": 1,
                 "filePath": f"/record/2025-05-{20-i:02d}/{i:02d}.mp4",
                 "fileType": "video",

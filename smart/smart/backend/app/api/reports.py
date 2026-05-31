@@ -1,8 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, Form
 from fastapi.responses import FileResponse
 from sqlalchemy.orm import Session
-from datetime import datetime
+from datetime import datetime, timezone
 import os, uuid, shutil
+
+from sqlalchemy import func as sa_func
 
 from ..database import SessionLocal
 from ..models.models import WorkReport, ReportImage
@@ -111,7 +113,7 @@ def update_report(
         r.worker_name = worker_name
     if status is not None:
         r.status = status
-    r.updated_at = datetime.utcnow()
+    r.updated_at = datetime.now(timezone.utc)
     db.commit()
     return {"code": 0, "msg": "updated"}
 
@@ -150,7 +152,8 @@ def upload_image(
     with open(file_path, "wb") as f:
         shutil.copyfileobj(file.file, f)
 
-    max_order = db.query(ReportImage).filter(ReportImage.report_id == report_id).count()
+    max_order_result = db.query(sa_func.max(ReportImage.sort_order)).filter(ReportImage.report_id == report_id).scalar()
+    max_order = (max_order_result or -1) + 1
     img = ReportImage(
         report_id=report_id,
         filename=unique_name,

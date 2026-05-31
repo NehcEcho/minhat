@@ -1,9 +1,12 @@
+from datetime import datetime, timezone
+
 from fastapi import APIRouter, Depends
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
+from sqlalchemy import func
+
+from ..auth import get_bearer_token
 from ..database import get_db
 from ..models.models import Employee, Alarm, Device
-from sqlalchemy import func
-from ..auth import get_bearer_token
 
 router = APIRouter()
 
@@ -14,12 +17,14 @@ def get_dashboard_stats(token: str = Depends(get_bearer_token), db: Session = De
     total_personnel = db.query(Employee).count()
     online_personnel = db.query(Employee).filter(Employee.status == "in_service").count()
     total_devices = db.query(Device).count()
-    online_devices = db.query(Device).filter(Device.status == "Online").count()
+    online_devices = db.query(Device).filter(func.lower(Device.status) == "online").count()
     device_online_rate = round(online_devices / total_devices * 100, 1) if total_devices else 0
     helmet_online_rate = device_online_rate
-    today_alarms = db.query(Alarm).count()
-    pending_alarms = db.query(Alarm).filter(Alarm.status == "pending").count()
 
+    now = datetime.now(timezone.utc)
+    today_start = now.replace(hour=0, minute=0, second=0, microsecond=0)
+    today_alarms = db.query(Alarm).filter(Alarm.triggered_at >= today_start).count()
+    pending_alarms = db.query(Alarm).filter(Alarm.status == "pending").count()
     alarm_disposed = db.query(Alarm).filter(Alarm.status == "disposed").count()
     alarm_processing = db.query(Alarm).filter(Alarm.status == "processing").count()
 
@@ -30,7 +35,7 @@ def get_dashboard_stats(token: str = Depends(get_bearer_token), db: Session = De
         {"area": d[0] or "未分配", "count": d[1]} for d in dept_dist
     ]
 
-    devices = db.query(Device).all()
+    devices = db.query(Device).options(joinedload(Device.product)).limit(10).all()
     device_list = [
         {
             "id": d.id,
@@ -40,7 +45,7 @@ def get_dashboard_stats(token: str = Depends(get_bearer_token), db: Session = De
             "battery": d.battery or 0,
             "network_signal": d.network_signal or 0,
         }
-        for d in devices[:10]
+        for d in devices
     ]
 
     return {

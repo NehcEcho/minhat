@@ -57,7 +57,7 @@ def _paginate_payload(items: list[dict], page_index: int, page_size: int, total:
 
 @router.get("/v1/eeg/data")
 def get_eeg_data_list(
-    employee_id: int = Query(None),
+    employee_id: int | None = Query(None),
     page_index: int = Query(1),
     page: int | None = Query(None),
     page_size: int = Query(20),

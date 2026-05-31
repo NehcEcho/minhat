@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import {
   Row, Col, Card, Table, Tag, Input, Segmented, Statistic, Badge, Tooltip, Progress, Space, Typography,
 } from 'antd';
@@ -7,6 +7,7 @@ import {
   DatabaseOutlined, WifiOutlined, DisconnectOutlined, AlertOutlined,
   SearchOutlined, SignalFilled, ThunderboltOutlined, AimOutlined,
 } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
 import { getDeviceList } from '../api';
 
 const { Text, Title } = Typography;
@@ -33,6 +34,7 @@ const DeviceManageCSS = `
 interface DeviceRow {
   key: number;
   id: number;
+  deviceId: string;
   device_name: string;
   product_name: string;
   status: string;
@@ -40,25 +42,24 @@ interface DeviceRow {
   signal: number;
   area: string;
   online_time: string;
+  isReal: boolean;
 }
 
 const mockDevices: DeviceRow[] = [
-  { key: 1, id: 1, device_name: '智能矿帽-MKH-00123', product_name: 'MKH-1000', status: '在线', battery: 78, signal: 92, area: '采掘工作面A', online_time: '7h32m' },
-  { key: 2, id: 2, device_name: '智能矿帽-MKH-00234', product_name: 'MKH-1000', status: '在线', battery: 62, signal: 85, area: '主运输巷道', online_time: '12h15m' },
-  { key: 3, id: 3, device_name: '智能矿帽-MKH-00345', product_name: 'MKH-1000', status: '在线', battery: 91, signal: 95, area: '回风巷道', online_time: '20h08m' },
-  { key: 4, id: 4, device_name: '智能矿帽-MKH-00456', product_name: 'MKH-1000', status: '离线', battery: 5, signal: 0, area: '采掘工作面B', online_time: '0h0m' },
-  { key: 5, id: 5, device_name: '定位基站-LB-200', product_name: 'LB-200', status: '在线', battery: 100, signal: 88, area: '主运输巷道', online_time: '10d2h' },
-  { key: 6, id: 6, device_name: '定位基站-LB-201', product_name: 'LB-200', status: '在线', battery: 100, signal: 90, area: '回风巷道', online_time: '12d8h' },
-  { key: 7, id: 7, device_name: '摄像头-CAM-01', product_name: 'IPC-HF862', status: '在线', battery: 100, signal: 78, area: '采掘工作面A', online_time: '15d6h' },
-  { key: 8, id: 8, device_name: '摄像头-CAM-02', product_name: 'IPC-HF862', status: '在线', battery: 100, signal: 62, area: '主运输巷道', online_time: '10d5h' },
-  { key: 9, id: 9, device_name: '摄像头-CAM-03', product_name: 'IPC-HF862', status: '离线', battery: 100, signal: 0, area: '主斜井', online_time: '0h0m' },
-  { key: 10, id: 10, device_name: '气体传感器-GS-400', product_name: 'GS-400', status: '在线', battery: 100, signal: 82, area: '回风巷道', online_time: '22d10h' },
-  { key: 11, id: 11, device_name: '气体传感器-GS-401', product_name: 'GS-400', status: '在线', battery: 100, signal: 74, area: '采掘工作面B', online_time: '18d6h' },
-  { key: 12, id: 12, device_name: '广播终端-PA-300', product_name: 'PA-300', status: '在线', battery: 100, signal: 72, area: '主斜井', online_time: '23d18h' },
-  { key: 13, id: 13, device_name: '广播终端-PA-301', product_name: 'PA-300', status: '在线', battery: 100, signal: 80, area: '采掘工作面A', online_time: '21d3h' },
-  { key: 14, id: 14, device_name: '环境监测仪-EM-100', product_name: 'EM-100', status: '离线', battery: 100, signal: 0, area: '回风巷道', online_time: '1d2h' },
-  { key: 15, id: 15, device_name: '智能矿帽-MKH-00567', product_name: 'MKH-1000', status: '报警', battery: 45, signal: 60, area: '机电硐室K7', online_time: '3h05m' },
-  { key: 16, id: 16, device_name: '粉尘传感器-DS-500', product_name: 'DS-500', status: '在线', battery: 100, signal: 67, area: '主运输巷道', online_time: '16d4h' },
+  { key: -1, id: -1, deviceId: '', device_name: '智能矿帽-MKH-00234', product_name: 'MKH-1000', status: '在线', battery: 62, signal: 85, area: '主运输巷道', online_time: '12h15m', isReal: false },
+  { key: -2, id: -2, deviceId: '', device_name: '智能矿帽-MKH-00345', product_name: 'MKH-1000', status: '在线', battery: 91, signal: 95, area: '回风巷道', online_time: '20h08m', isReal: false },
+  { key: -3, id: -3, deviceId: '', device_name: '智能矿帽-MKH-00456', product_name: 'MKH-1000', status: '离线', battery: 5, signal: 0, area: '采掘工作面B', online_time: '-', isReal: false },
+  { key: -4, id: -4, deviceId: '', device_name: '定位基站-LB-200', product_name: 'LB-200', status: '在线', battery: 100, signal: 88, area: '主运输巷道', online_time: '10d2h', isReal: false },
+  { key: -5, id: -5, deviceId: '', device_name: '定位基站-LB-201', product_name: 'LB-200', status: '在线', battery: 100, signal: 90, area: '回风巷道', online_time: '12d8h', isReal: false },
+  { key: -6, id: -6, deviceId: '', device_name: '摄像头-CAM-01', product_name: 'IPC-HF862', status: '在线', battery: 100, signal: 78, area: '采掘工作面A', online_time: '15d6h', isReal: false },
+  { key: -7, id: -7, deviceId: '', device_name: '摄像头-CAM-02', product_name: 'IPC-HF862', status: '离线', battery: 100, signal: 0, area: '主斜井', online_time: '-', isReal: false },
+  { key: -8, id: -8, deviceId: '', device_name: '气体传感器-GS-400', product_name: 'GS-400', status: '在线', battery: 100, signal: 82, area: '回风巷道', online_time: '22d10h', isReal: false },
+  { key: -9, id: -9, deviceId: '', device_name: '气体传感器-GS-401', product_name: 'GS-400', status: '在线', battery: 100, signal: 74, area: '采掘工作面B', online_time: '18d6h', isReal: false },
+  { key: -10, id: -10, deviceId: '', device_name: '广播终端-PA-300', product_name: 'PA-300', status: '在线', battery: 100, signal: 72, area: '主斜井', online_time: '23d18h', isReal: false },
+  { key: -11, id: -11, deviceId: '', device_name: '广播终端-PA-301', product_name: 'PA-300', status: '离线', battery: 100, signal: 0, area: '采掘工作面A', online_time: '-', isReal: false },
+  { key: -12, id: -12, deviceId: '', device_name: '环境监测仪-EM-100', product_name: 'EM-100', status: '离线', battery: 100, signal: 0, area: '回风巷道', online_time: '-', isReal: false },
+  { key: -13, id: -13, deviceId: '', device_name: '智能矿帽-MKH-00567', product_name: 'MKH-1000', status: '报警', battery: 45, signal: 60, area: '机电硐室K7', online_time: '3h05m', isReal: false },
+  { key: -14, id: -14, deviceId: '', device_name: '粉尘传感器-DS-500', product_name: 'DS-500', status: '在线', battery: 100, signal: 67, area: '主运输巷道', online_time: '16d4h', isReal: false },
 ];
 
 function SignalBars({ signal }: { signal: number }) {
@@ -92,22 +93,44 @@ function BatteryBar({ battery }: { battery: number }) {
 }
 
 export default function DeviceManage() {
-  const [devices, setDevices] = useState<DeviceRow[]>(mockDevices);
+  const navigate = useNavigate();
+  const [devices, setDevices] = useState<DeviceRow[]>([]);
   const [loading, setLoading] = useState(false);
   const [statusFilter, setStatusFilter] = useState<string>('全部');
   const [searchText, setSearchText] = useState('');
+  const [totalDevices, setTotalDevices] = useState(0);
+
+  const loadDevices = useCallback(async () => {
+    setLoading(true);
+    try {
+      const res = await getDeviceList({ is_page: true, page_index: 1, page_size: 200 });
+      const data = res.data?.data || {};
+      const items: any[] = data.items || [];
+      const mapped: DeviceRow[] = items.map((d: any, i: number) => ({
+        key: d.id || i + 1,
+        id: d.id,
+        deviceId: d.deviceId || d.device_id || String(d.id),
+        device_name: d.deviceName || d.device_name || `设备-${d.id}`,
+        product_name: d.productName || d.product_name || '-',
+        status: d.status === 'Online' ? '在线' : d.status === 'Offline' ? '离线' : d.status || '离线',
+        battery: d.battery ?? 0,
+        signal: d.networkSignal ?? d.network_signal ?? 0,
+        area: d.area || d.companyName || '-',
+        online_time: d.onlineTime || '-',
+        isReal: true,
+      }));
+      setDevices([...mapped, ...mockDevices]);
+      setTotalDevices((data.total || mapped.length) + mockDevices.length);
+    } catch {
+      setDevices([]);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   useEffect(() => {
-    setLoading(true);
-    getDeviceList()
-      .then((res) => {
-        if (res.data && Array.isArray(res.data)) {
-          setDevices(res.data);
-        }
-      })
-      .catch(() => { setDevices(mockDevices); })
-      .finally(() => setLoading(false));
-  }, []);
+    loadDevices();
+  }, [loadDevices]);
 
   const filteredDevices = useMemo(() => {
     return devices.filter((d) => {
@@ -129,13 +152,21 @@ export default function DeviceManage() {
     { label: '告警设备', value: alarm, suffix: '台', icon: <AlertOutlined />, bg: '#FFF7E6', color: '#FAAD14' },
   ];
 
+  const handleDeviceClick = (deviceId: string) => {
+    navigate(`/system-integration?deviceId=${encodeURIComponent(deviceId)}`);
+  };
+
   const columns: ColumnsType<DeviceRow> = [
     {
-      title: '设备名称', dataIndex: 'device_name', key: 'device_name', width: 170, ellipsis: true,
+      title: '设备名称', dataIndex: 'device_name', key: 'device_name', width: 190, ellipsis: true,
       render: (name: string, rec: DeviceRow) => (
         <Space>
           <Badge status={rec.status === '在线' ? 'success' : rec.status === '报警' ? 'warning' : 'error'} />
-          <a style={{ fontSize: 13 }}>{name}</a>
+          {rec.isReal ? (
+            <a style={{ fontSize: 13, fontWeight: 500 }} onClick={() => handleDeviceClick(rec.deviceId)}>{name}</a>
+          ) : (
+            <span style={{ fontSize: 13 }}>{name}</span>
+          )}
         </Space>
       ),
     },
@@ -171,11 +202,15 @@ export default function DeviceManage() {
     { title: '所属区域', dataIndex: 'area', key: 'area', width: 120, ellipsis: true },
     { title: '在线时长', dataIndex: 'online_time', key: 'online_time', width: 90 },
     {
-      title: '操作', dataIndex: 'id', key: 'action', width: 80, fixed: 'right',
-      render: () => (
+title: '操作', dataIndex: 'deviceId', key: 'action', width: 100, fixed: 'right',
+      render: (_: string, rec: DeviceRow) => (
         <Space size={0} split={<span style={{ color: '#E5E6EB', margin: '0 6px' }}>|</span>}>
-          <a style={{ fontSize: 12 }}>详情</a>
-          <a style={{ fontSize: 12 }}>配置</a>
+          {rec.isReal ? (
+            <a style={{ fontSize: 12 }} onClick={() => handleDeviceClick(rec.deviceId)}>智能服务</a>
+          ) : (
+            <span style={{ fontSize: 12, color: '#C0C4CC' }}>智能服务</span>
+          )}
+          <span style={{ fontSize: 12, color: '#C0C4CC' }}>配置</span>
         </Space>
       ),
     },
@@ -244,7 +279,11 @@ export default function DeviceManage() {
             loading={loading}
             size="small"
             rowKey="id"
-            scroll={{ x: 850 }}
+            scroll={{ x: 900 }}
+            onRow={(rec) => ({
+              style: rec.isReal ? { cursor: 'pointer' } : {},
+              onClick: () => { if (rec.isReal) handleDeviceClick(rec.deviceId); },
+            })}
             pagination={{
               size: 'small',
               pageSize: 10,

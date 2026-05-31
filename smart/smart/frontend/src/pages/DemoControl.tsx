@@ -81,7 +81,11 @@ export default function DemoControl() {
   }));
 
   const handleSOS = async () => {
-    const devId = selectedDevice || 'D-1001';
+    if (!selectedDevice) {
+      message.warning('请先选择设备');
+      return;
+    }
+    const devId = selectedDevice;
     try {
       await apiTriggerSOS(devId);
       message.success(`SOS 已触发 → 设备 ${devId}`);

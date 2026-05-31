@@ -189,6 +189,10 @@ export default function GlobalPosition() {
   const [mapZoom, setMapZoom] = useState(100);
   const [timezone, setTimezone] = useState('UTC+08:00');
   const [currentTime, setCurrentTime] = useState('');
+  const [dashStats, setDashStats] = useState<any>(null);
+  const [apiAlarms, setApiAlarms] = useState<any[]>([]);
+  const [apiEmployees, setApiEmployees] = useState<any[]>([]);
+  const [apiDevices, setApiDevices] = useState<any[]>([]);
   const refreshInterval = useRef<ReturnType<typeof setInterval> | null>(null);
   const timeInterval = useRef<ReturnType<typeof setInterval> | null>(null);
   const [autoRefresh, setAutoRefresh] = useState(false);
@@ -210,7 +214,12 @@ export default function GlobalPosition() {
       getAlarmList({ page: 1, page_size: 10 }),
       getEmployeeList({ page: 1, page_size: 10 }),
       getDeviceList({ page: 1, page_size: 10 }),
-    ]).finally(() => setLoading(false));
+    ]).then(([statsRes, alarmsRes, employeesRes, devicesRes]) => {
+      if (statsRes.status === 'fulfilled') setDashStats(statsRes.value.data?.data || statsRes.value.data || null);
+      if (alarmsRes.status === 'fulfilled') setApiAlarms(alarmsRes.value.data?.data?.items || alarmsRes.value.data?.data || []);
+      if (employeesRes.status === 'fulfilled') setApiEmployees(employeesRes.value.data?.data?.items || employeesRes.value.data?.data || []);
+      if (devicesRes.status === 'fulfilled') setApiDevices(devicesRes.value.data?.data?.items || devicesRes.value.data?.data || []);
+    }).finally(() => setLoading(false));
   }, []);
 
   const handleRefresh = useCallback(() => {
@@ -220,7 +229,12 @@ export default function GlobalPosition() {
       getAlarmList({ page: 1, page_size: 10 }),
       getEmployeeList({ page: 1, page_size: 10 }),
       getDeviceList({ page: 1, page_size: 10 }),
-    ]).finally(() => setRefreshing(false));
+    ]).then(([statsRes, alarmsRes, employeesRes, devicesRes]) => {
+      if (statsRes.status === 'fulfilled') setDashStats(statsRes.value.data?.data || statsRes.value.data || null);
+      if (alarmsRes.status === 'fulfilled') setApiAlarms(alarmsRes.value.data?.data?.items || alarmsRes.value.data?.data || []);
+      if (employeesRes.status === 'fulfilled') setApiEmployees(employeesRes.value.data?.data?.items || employeesRes.value.data?.data || []);
+      if (devicesRes.status === 'fulfilled') setApiDevices(devicesRes.value.data?.data?.items || devicesRes.value.data?.data || []);
+    }).finally(() => setRefreshing(false));
   }, []);
 
   useEffect(() => {

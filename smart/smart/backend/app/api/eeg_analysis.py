@@ -37,7 +37,10 @@ def create_task(
     employee_id = body.get("employeeId", "")
     device_id = body.get("deviceId", "")
     data_file_path = body.get("dataFilePath", "")
-    sampling_rate = float(body.get("samplingRate", 256))
+    try:
+        sampling_rate = float(body.get("samplingRate", 256))
+    except (ValueError, TypeError):
+        sampling_rate = 256.0
 
     record = eeg_analysis.create_task(
         db, employee_id=employee_id, device_id=device_id,

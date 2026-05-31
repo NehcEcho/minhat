@@ -313,5 +313,5 @@ def get_fence_list(
             merged.append(item)
             seen_ids.add(item.get("id"))
 
-    total = max(upstream_total, len(merged))
+    total = len(merged)
     return {"code": 0, "msg": "ok", "data": _paginate_payload(merged, page_index, page_size, total)}

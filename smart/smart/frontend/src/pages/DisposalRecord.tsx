@@ -71,18 +71,28 @@ export default function DisposalRecord() {
       }
       const res = await getAlarmList(params);
       const items = ((res.data as { data?: { items?: unknown[] } })?.data?.items || []) as Record<string, unknown>[];
-      const mapped: DisposalRecord[] = items.map((item: Record<string, unknown>, idx: number) => ({
-        key: String(idx + 1),
-        id: (item.id as string) || `AL-${String(idx).padStart(4, '0')}`,
-        level: (item.level as string) || '中',
-        type: (item.type as string) || '未知',
-        location: (item.area as string) || '未知区域',
-        status: (item.status as string) || '待处置',
-        handler: (item.handler as string) || '--',
-        triggeredTime: (item.time as string) || '--',
-        disposedTime: (item.disposalTime as string) || '--',
-        responseMinutes: Math.floor(Math.random() * 30) + 1,
-      }));
+      const mapped: DisposalRecord[] = items.map((item: Record<string, unknown>, idx: number) => {
+        const triggered = item.time as string || item.triggeredAt as string || item.alarmTime as string || null;
+        const disposed = item.disposalTime as string || item.handleAt as string || item.disposedAt as string || null;
+        let responseMinutes = 0;
+        if (triggered && disposed) {
+          const t = new Date(triggered).getTime();
+          const d = new Date(disposed).getTime();
+          if (!isNaN(t) && !isNaN(d) && d > t) responseMinutes = Math.round((d - t) / 60000);
+        }
+        return {
+          key: String(idx + 1),
+          id: (item.id as string) || `AL-${String(idx).padStart(4, '0')}`,
+          level: (item.level as string) || '中',
+          type: (item.type as string) || (item.alarmType as string) || (item.eventCode as string) || '未知',
+          location: (item.area as string) || (item.location as string) || '未知区域',
+          status: (item.status as string) || '待处置',
+          handler: (item.handler as string) || (item.handleBy as string) || (item.operator as string) || '--',
+          triggeredTime: triggered || '--',
+          disposedTime: disposed || '--',
+          responseMinutes,
+        };
+      });
       setRecords(mapped);
     } catch {
       setRecords([]);

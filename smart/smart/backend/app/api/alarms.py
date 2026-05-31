@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timezone
 
 from fastapi import APIRouter, Body, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
@@ -86,7 +86,7 @@ def get_alarm_list(
             "level": level or alarm_level,
             "start_time": start_time,
             "end_time": end_time,
-            "handled": handled,
+            "handled": str(handled).lower() if handled is not None else None,
         }
         response = request_upstream("GET", "/v1/alarms", token=token, params=params)
         if response.ok and isinstance(response.json_data, dict):
@@ -203,7 +203,7 @@ def dispose_alarm(
         raise HTTPException(status_code=404, detail="Alarm not found")
     alarm.status = "disposed"
     alarm.operator = body.get("operator") or user.get("username") or "operator"
-    alarm.disposed_at = datetime.utcnow()
+    alarm.disposed_at = datetime.now(timezone.utc)
     if body.get("description"):
         alarm.description = body["description"]
     db.commit()

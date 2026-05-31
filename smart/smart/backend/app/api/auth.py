@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Body, Depends, HTTPException
-from ..auth import get_basic_authorization, get_bearer_token, get_current_user
+from ..auth import _local_tokens, get_basic_authorization, get_bearer_token, get_current_user
 from ..compat import normalize_user_payload
 from ..upstream import UpstreamApiError, request_upstream
 import base64
@@ -32,6 +32,7 @@ def login(authorization: str = Depends(get_basic_authorization)):
     if not username or not password:
         raise HTTPException(status_code=401, detail="用户名或密码不能为空")
     token = f"local_{uuid.uuid4().hex}"
+    _local_tokens[token] = username
     return {
         "code": 0,
         "msg": "ok (local fallback)",
@@ -62,7 +63,7 @@ def change_password(
     except UpstreamApiError as exc:
         raise HTTPException(status_code=502, detail=str(exc)) from exc
     if not response.ok:
-        detail = response.json_data.get("msg") if isinstance(response.json_data, dict) else response.text
+        detail = response.json_data.get("msg") if isinstance(response.json_data, dict) else "修改密码失败"
         raise HTTPException(status_code=response.status_code, detail=detail or "修改密码失败")
     if isinstance(response.json_data, dict):
         return response.json_data

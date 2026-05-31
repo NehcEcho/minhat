@@ -18,7 +18,7 @@ def get_locations(
     db: Session = Depends(get_db)
 ):
     """获取历史轨迹定位数据"""
-    from datetime import datetime
+    from datetime import datetime, timezone
     try:
         response = request_upstream(
             "GET",
@@ -37,14 +37,20 @@ def get_locations(
         pass
     query = db.query(TrackPoint).filter(TrackPoint.device_id == device_id)
     if start_time:
-        st = datetime.fromtimestamp(start_time)
+        st = datetime.fromtimestamp(start_time, tz=timezone.utc)
         query = query.filter(TrackPoint.located_at >= st)
     if end_time:
-        et = datetime.fromtimestamp(end_time)
+        et = datetime.fromtimestamp(end_time, tz=timezone.utc)
         query = query.filter(TrackPoint.located_at <= et)
     if levels:
-        level_list = [int(l) for l in levels.split(",")]
-        query = query.filter(TrackPoint.accuracy.in_(level_list))
+        level_list = []
+        for l in levels.split(","):
+            try:
+                level_list.append(int(l.strip()))
+            except ValueError:
+                pass
+        if level_list:
+            query = query.filter(TrackPoint.accuracy.in_(level_list))
     items = query.order_by(TrackPoint.located_at.asc()).limit(2000).all()
     return {
         "code": 0, "msg": "ok",

@@ -249,6 +249,28 @@ function InspPin({ x, y, color, label, delay = 0 }: { x: number; y: number; colo
    COMPONENT
    ========================================================================= */
 
+const routeKeyMap: Record<string, string> = {
+  '主运输巷巡检路线': 'main',
+  '回风巷巡检路线': 'returnAir',
+  '中央变电所巡检路线': 'substation',
+  '水泵房巡检路线': 'pump',
+  '提升机房巡检路线': 'hoist',
+  '采区综合巡检路线': 'mining',
+  '通风系统巡检路线': 'ventilation',
+  '排水系统巡检路线': 'drainage',
+  '供电系统巡检路线': 'power',
+  '运输系统巡检路线': 'transport',
+  '压缩空气站巡检路线': 'compAir',
+  '避难硐室巡检路线': 'refuge',
+  '消防设施巡检路线': 'fire',
+  '通信线路巡检路线': 'comm',
+  '地面设施巡检路线': 'surface',
+  '监测监控系统路线': 'monitor',
+  '应急物资巡检路线': 'emergency',
+};
+
+const routeKeyForName = (name: string) => routeKeyMap[name] || name;
+
 export default function InspectionTasks() {
   const [filtersExpanded, setFiltersExpanded] = useState(true);
   const [tableFilter, setTableFilter] = useState('全部');
@@ -696,12 +718,12 @@ export default function InspectionTasks() {
                 {routeProgress.map((route) => (
                   <div
                     key={route.name}
-                    onClick={() => setSelectedRoute(route.name === '主运输巷巡检路线' ? 'main' : route.name === '回风巷巡检路线' ? 'returnAir' : null)}
+                    onClick={() => setSelectedRoute(routeKeyForName(route.name))}
                     style={{
                       cursor: 'pointer',
                       padding: '4px 6px',
                       borderRadius: 4,
-                      background: selectedRoute === (route.name === '主运输巷巡检路线' ? 'main' : route.name === '回风巷巡检路线' ? 'returnAir' : '')
+                      background: selectedRoute === routeKeyForName(route.name)
                         ? 'rgba(0,82,217,0.04)' : 'transparent',
                       transition: 'background 0.15s',
                     }}
