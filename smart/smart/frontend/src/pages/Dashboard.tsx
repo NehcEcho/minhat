@@ -416,7 +416,7 @@ export default function Dashboard() {
         {/* ================================================================
             ROW 1 — KPI CARDS (6 cards)
             ================================================================ */}
-        <Row gutter={[12, 8]} className="dsh-kpi-row">
+        <Row gutter={[12, 12]} className="dsh-kpi-row">
           {statCards.map((card) => (
             <Col span={4} key={card.key}>
               <Card loading={loading} className="dsh-kpi-card" styles={{ body: { padding: '10px 14px 6px' } }}>
@@ -449,13 +449,13 @@ export default function Dashboard() {
         {/* ================================================================
             ROW 2 — MINE MAP (left) + CHARTS (right)
             ================================================================ */}
-        <Row gutter={[12, 0]}>
+        <Row gutter={[12, 12]}>
           {/* ---------- Mine Overview Map ---------- */}
           <Col span={15}>
             <Card
               title={<span className="dsh-map-title">矿场总览地图</span>}
               className="dsh-map-card"
-              bodyStyle={{ padding: 0 }}
+              styles={{ body: { padding: 0 } }}
             >
               <div className="dsh-map-wrapper">
                 <MineMapSvg />
@@ -482,7 +482,7 @@ export default function Dashboard() {
             <Row gutter={[0, 12]}>
               {/* Alarm Donut + Personnel Bar */}
               <Col span={24}>
-                <Card className="dsh-charts-card" bodyStyle={{ padding: '2px 0' }}>
+                <Card className="dsh-charts-card" styles={{ body: { padding: '2px 0' } }}>
                   <Row gutter={0}>
                     <Col span={12} className="dsh-charts-split">
                       <div className="dsh-charts-title">
@@ -515,7 +515,7 @@ export default function Dashboard() {
                     </Space>
                   }
                   className="dsh-alarm-card"
-                  bodyStyle={{ padding: 0 }}
+                  styles={{ body: { padding: 0 } }}
                 >
                   <Table
                     columns={alarmColumns}
@@ -527,67 +527,69 @@ export default function Dashboard() {
                   />
                 </Card>
               </Col>
-
-              {/* Track Replay Widget */}
-              <Col span={24}>
-                <Card
-                  title={<span className="dsh-track-title">轨迹回放</span>}
-                  className="dsh-track-card"
-                  extra={
-                    <Space size={4}>
-                      <Button type="text" size="small" icon={<PauseCircleOutlined />} style={{ fontSize: 12 }} />
-                      <Button type="text" size="small" icon={<ExpandOutlined />} style={{ fontSize: 12 }} />
-                    </Space>
-                  }
-                  bodyStyle={{ padding: '10px 12px' }}
-                >
-                  <div className="dsh-track-map">
-                    <div className="dsh-track-grid" />
-                    <svg viewBox="0 0 220 90" className="dsh-track-svg">
-                      <defs>
-                        <linearGradient id="trackGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stopColor="#52C41A" />
-                          <stop offset="100%" stopColor="#0052D9" />
-                        </linearGradient>
-                      </defs>
-                      <path d="M 14 56 Q 50 30, 85 28 T 160 28 T 206 32" stroke="url(#trackGrad)" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-                      <circle cx="14" cy="56" r="4" fill="#52C41A" stroke="#fff" strokeWidth="1.5">
-                        <animate attributeName="opacity" values="1;0.4;1" dur="1.2s" repeatCount="indefinite" />
-                      </circle>
-                      <circle cx="206" cy="32" r="4" fill="#0052D9" stroke="#fff" strokeWidth="1.5" />
-                    </svg>
-                    <Tooltip title="回放轨迹">
-                      <Button
-                        type="primary"
-                        size="small"
-                        shape="circle"
-                        icon={<CaretRightOutlined />}
-                        className="dsh-track-play-btn"
-                      />
-                    </Tooltip>
-                  </div>
-                  <div className="dsh-track-info">
-                    <span><Typography.Text type="secondary">人员:</Typography.Text> 张三</span>
-                    <span><Typography.Text type="secondary">工号:</Typography.Text> A10234</span>
-                    <span><Typography.Text type="secondary">里程:</Typography.Text> 2.43 km</span>
-                  </div>
-                  <div className="dsh-track-time">2025-05-20 08:00:00 ~ 10:30:00</div>
-                </Card>
-              </Col>
             </Row>
+          </Col>
+        </Row>
+
+        {/* Track Replay Row */}
+        <Row gutter={[12, 12]} className="dsh-section-gap">
+          <Col span={24}>
+            <Card
+              title={<span className="dsh-track-title">轨迹回放</span>}
+              className="dsh-track-card"
+              extra={
+                <Space size={4}>
+                  <Button type="text" size="small" icon={<PauseCircleOutlined />} style={{ fontSize: 12 }} />
+                  <Button type="text" size="small" icon={<ExpandOutlined />} style={{ fontSize: 12 }} />
+                </Space>
+              }
+              styles={{ body: { padding: '10px 12px' } }}
+            >
+              <div className="dsh-track-map">
+                <div className="dsh-track-grid" />
+                <svg viewBox="0 0 220 90" className="dsh-track-svg">
+                  <defs>
+                    <linearGradient id="trackGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#52C41A" />
+                      <stop offset="100%" stopColor="#0052D9" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M 14 56 Q 50 30, 85 28 T 160 28 T 206 32" stroke="url(#trackGrad)" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                  <circle cx="14" cy="56" r="4" fill="#52C41A" stroke="#fff" strokeWidth="1.5">
+                    <animate attributeName="opacity" values="1;0.4;1" dur="1.2s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="206" cy="32" r="4" fill="#0052D9" stroke="#fff" strokeWidth="1.5" />
+                </svg>
+                <Tooltip title="回放轨迹">
+                  <Button
+                    type="primary"
+                    size="small"
+                    shape="circle"
+                    icon={<CaretRightOutlined />}
+                    className="dsh-track-play-btn"
+                  />
+                </Tooltip>
+              </div>
+              <div className="dsh-track-info">
+                <span><Typography.Text type="secondary">人员:</Typography.Text> 张三</span>
+                <span><Typography.Text type="secondary">工号:</Typography.Text> A10234</span>
+                <span><Typography.Text type="secondary">里程:</Typography.Text> 2.43 km</span>
+              </div>
+              <div className="dsh-track-time">2025-05-20 08:00:00 ~ 10:30:00</div>
+            </Card>
           </Col>
         </Row>
 
         {/* ================================================================
             ROW 3 — DEVICE TABLE (left) + SYNC STATUS (right)
             ================================================================ */}
-        <Row gutter={[12, 0]} className="dsh-section-gap">
+        <Row gutter={[12, 12]} className="dsh-section-gap">
           {/* ---------- Device Operating Status Table ---------- */}
           <Col span={18}>
             <Card
               title={<span className="dsh-device-title">设备运行状态</span>}
               className="dsh-device-card"
-              bodyStyle={{ padding: 0 }}
+              styles={{ body: { padding: 0 } }}
             >
               <Tabs
                 activeKey={deviceTab}
@@ -617,7 +619,7 @@ export default function Dashboard() {
             <Card
               title={<span className="dsh-sync-title">同步状态</span>}
               className="dsh-sync-card"
-              bodyStyle={{ padding: '8px 14px' }}
+              styles={{ body: { padding: '8px 14px' } }}
             >
               <div className="dsh-sync-list">
                 {syncItems.map((item, idx) => (

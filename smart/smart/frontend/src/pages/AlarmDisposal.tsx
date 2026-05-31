@@ -2,7 +2,7 @@ import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import ReactECharts from 'echarts-for-react';
 import {
   Row, Col, Card, Table, Button, Tag, Space, Avatar,
-  Segmented, Statistic, Switch,
+  Segmented, Statistic, Switch, Tabs,
 } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import {
@@ -16,8 +16,10 @@ import {
   EnvironmentOutlined, StopOutlined, WarningOutlined, TeamOutlined,
   FilterOutlined, SyncOutlined, FullscreenOutlined,
   ExpandOutlined, CompressOutlined, AimOutlined as TargetOutlined,
+  AuditOutlined,
 } from '@ant-design/icons';
 import AlarmMapSvg from '../components/AlarmMapSvg';
+import { getAlarmList } from '../api';
 
 // ==================== Types ====================
 
@@ -308,6 +310,65 @@ export default function AlarmDisposal() {
     [selectedRow],
   );
 
+  const [recordsTab, setRecordsTab] = useState<'list' | 'records'>('list');
+  const [records, setRecords] = useState<any[]>([]);
+  const [recordsLoading, setRecordsLoading] = useState(false);
+  const [recordsFilter, setRecordsFilter] = useState('全部');
+
+  const fetchRecords = useCallback(async (status: string) => {
+    setRecordsLoading(true);
+    try {
+      const params: Record<string, unknown> = { page: 1, page_size: 50 };
+      if (status !== '全部') params.status = status;
+      const res = await getAlarmList(params);
+      const items = ((res.data as any)?.data?.items || []) as Record<string, unknown>[];
+      setRecords(items.map((item: Record<string, unknown>, idx: number) => {
+        const triggered = item.time as string || item.triggeredAt as string || item.alarmTime as string || null;
+        const disposed = item.disposalTime as string || item.handleAt as string || item.disposedAt as string || null;
+        let responseMinutes = 0;
+        if (triggered && disposed) {
+          const t = new Date(triggered).getTime();
+          const d = new Date(disposed).getTime();
+          if (!isNaN(t) && !isNaN(d) && d > t) responseMinutes = Math.round((d - t) / 60000);
+        }
+        return {
+          key: String(idx + 1),
+          id: (item.id as string) || `AL-${String(idx).padStart(4, '0')}`,
+          level: (item.level as string) || '中',
+          type: (item.type as string) || (item.alarmType as string) || (item.eventCode as string) || '未知',
+          location: (item.area as string) || (item.location as string) || '未知区域',
+          status: (item.status as string) || '待处置',
+          handler: (item.handler as string) || (item.handleBy as string) || (item.operator as string) || '--',
+          triggeredTime: triggered || '--',
+          disposedTime: disposed || '--',
+          responseMinutes,
+        };
+      }));
+    } catch { setRecords([]); }
+    finally { setRecordsLoading(false); }
+  }, []);
+
+  useEffect(() => { if (recordsTab === 'records') fetchRecords(recordsFilter); }, [recordsTab, recordsFilter, fetchRecords]);
+
+  const recordColumns = useMemo(() => [
+    { title: '告警编号', dataIndex: 'id', key: 'id', width: 140, ellipsis: true, render: (v: string) => <span style={{ fontFamily: 'monospace', fontSize: 12 }}>{v}</span> },
+    { title: '等级', dataIndex: 'level', key: 'level', width: 70, render: (v: string) => { const cm: Record<string, string> = { '高': 'red', '中': 'orange', '低': 'blue' }; return <Tag color={cm[v] || 'default'}>{v}</Tag>; } },
+    { title: '类型', dataIndex: 'type', key: 'type', width: 100, ellipsis: true },
+    { title: '位置', dataIndex: 'location', key: 'location', width: 140, ellipsis: true },
+    { title: '状态', dataIndex: 'status', key: 'status', width: 90, render: (v: string) => { const cm: Record<string, string> = { '待处置': 'red', '处置中': 'processing', '已处置': 'green', '超时未处置': 'error', '超期': 'error' }; return <Tag color={cm[v] || 'default'}>{v}</Tag>; } },
+    { title: '处理人', dataIndex: 'handler', key: 'handler', width: 80 },
+    { title: '触发时间', dataIndex: 'triggeredTime', key: 'triggeredTime', width: 125 },
+    { title: '处置时间', dataIndex: 'disposedTime', key: 'disposedTime', width: 125 },
+    { title: '响应耗时', dataIndex: 'responseMinutes', key: 'responseMinutes', width: 90, render: (v: number) => { const c = v > 15 ? 'red' : v > 10 ? 'orange' : 'green'; return <Tag color={c}>{v} 分钟</Tag>; } },
+  ], []);
+
+  const statusFilterOptions = [
+    { label: '全部', value: '全部' },
+    { label: '已处置', value: '已处置' },
+    { label: '处置中', value: '处置中' },
+    { label: '超时', value: '超时' },
+  ];
+
   const filteredAlarms = useMemo(() => {
     const statuses = tabStatusMap[activeTab] || [];
     if (statuses.length === 0) return allAlarms;
@@ -365,8 +426,14 @@ export default function AlarmDisposal() {
 
   const sparklineColors = ['#0052D9', '#FF4D4F', '#1677FF', '#52C41A', '#FAAD14', '#52C41A'];
 
+  const tabItems = [
+      { key: 'list' as const, label: '告警处置', children: null as React.ReactNode },
+      { key: 'records' as const, label: '处置记录', children: null as React.ReactNode },
+    ];
+
   return (
     <div>
+      <Tabs activeKey={recordsTab} onChange={(k) => setRecordsTab(k as 'list' | 'records')} items={tabItems} style={{ marginBottom: 12 }} />
       {/* ===== Embedded Styles ===== */}
       <style>{`
         .adm-stat-icon-box {
@@ -431,7 +498,7 @@ export default function AlarmDisposal() {
         .adm-zoom-btn:hover { background: #E6F0FF; color: #1677FF; border-color: #1677FF; }
         .adm-map-label {
           position: absolute; bottom: 8px; left: 8px; z-index: 5;
-          background: #fff; padding: '3px 10px'; border-radius: 4px;
+          background: #fff; padding: 3px 10px; border-radius: 4px;
           font-size: 11px; font-family: monospace; font-weight: 600;
           color: #FF4D4F; border: 1px solid #FFCCC7;
           box-shadow: 0 1px 4px rgba(0,0,0,0.06);
@@ -512,7 +579,7 @@ export default function AlarmDisposal() {
       </Card>
 
       {/* ===== Row 3: Middle Section — Map | Details | Workflow ===== */}
-      <Row gutter={12} style={{ marginBottom: 12 }}>
+      <Row gutter={[12, 12]} style={{ marginBottom: 12 }}>
         {/* ---- Left: Alarm Distribution Map ---- */}
         <Col span={7}>
           <Card
@@ -645,14 +712,15 @@ export default function AlarmDisposal() {
             size="small"
             title={<span style={{ fontSize: 13, fontWeight: 600 }}>联动处置流程</span>}
             styles={{ body: { padding: '10px 14px' } }}
+            style={{ height: '100%' }}
           >
             <WorkflowTimeline steps={workflowSteps} />
           </Card>
         </Col>
       </Row>
 
-      {/* ===== Row 4: Bottom Section — Alarm List | Shift Info ===== */}
-      <Row gutter={12}>
+      {/* ===== Row 4: Bottom Section — Alarm List | Workflow | Shift Info ===== */}
+      <Row gutter={[12, 12]}>
         {/* ---- Left: Alarm List Table ---- */}
         <Col span={17}>
           <Card
@@ -729,6 +797,36 @@ export default function AlarmDisposal() {
           </Card>
         </Col>
       </Row>
+      {recordsTab === 'records' && (
+        <Row gutter={[12, 12]}>
+          <Col span={24}>
+            <div style={{ marginBottom: 12 }}>
+              <Segmented
+                size="large"
+                value={recordsFilter}
+                onChange={(v) => setRecordsFilter(v as string)}
+                options={statusFilterOptions}
+              />
+            </div>
+            <Card
+              size="small"
+              title={<Space><span style={{ fontSize: 14, fontWeight: 600 }}>处置记录</span><Tag color="blue">处置记录</Tag></Space>}
+              extra={<Space><Button size="small" icon={<SyncOutlined />} loading={recordsLoading} onClick={() => fetchRecords(recordsFilter)}>刷新</Button></Space>}
+              styles={{ body: { padding: 0 } }}
+            >
+              <Table
+                columns={recordColumns}
+                dataSource={records}
+                size="small"
+                loading={recordsLoading}
+                scroll={{ x: 1100 }}
+                rowKey="key"
+                pagination={{ size: 'small', pageSize: 10, showTotal: (t: number) => `共 ${t} 条处置记录`, showSizeChanger: true, pageSizeOptions: ['10', '20', '50'] }}
+              />
+            </Card>
+          </Col>
+        </Row>
+      )}
     </div>
   );
 }

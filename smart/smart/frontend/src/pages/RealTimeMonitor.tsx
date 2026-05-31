@@ -979,57 +979,59 @@ export default function RealTimeMonitor() {
                 </div>
               </Card>
             </Col>
-
-            {/* Equipment Alarms */}
-            <Col span={24}>
-              <Card
-                title={
-                  <Space size={8}>
-                    <span style={{ fontSize: 13, fontWeight: 600 }}>设备告警</span>
-                    <span className="stat-badge red">4条</span>
-                  </Space>
-                }
-                extra={<a style={{ fontSize: 12 }}>更多 &gt;</a>}
-                size="small"
-                bodyStyle={{ padding: '4px 12px' }}
-              >
-                {deviceAlarms.map((alarm) => (
-                  <div
-                    key={alarm.id}
-                    style={{
-                      display: 'flex', alignItems: 'center', padding: '7px 0',
-                      borderBottom: alarm.id < deviceAlarms.length ? '1px solid #F5F5F5' : 'none',
-                      gap: 10, opacity: alarm.acknowledged ? 0.5 : 1,
-                    }}
-                  >
-                    <span style={{
-                      color: alarm.level === '高' ? '#ef4444' : alarm.level === '中' ? '#f97316' : '#3b82f6',
-                      fontSize: 14, fontWeight: 700, flexShrink: 0, lineHeight: 1,
-                    }}>▲</span>
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                        <Text style={{ fontSize: 12, fontWeight: 600 }}>{alarm.type}</Text>
-                        <Tag
-                          color={alarm.level === '高' ? 'error' : alarm.level === '中' ? 'warning' : 'processing'}
-                          style={{ fontSize: 9, lineHeight: '16px', padding: '0 4px', margin: 0 }}
-                        >
-                          {alarm.level}
-                        </Tag>
-                      </div>
-                      <Text style={{ fontSize: 10, color: '#9ca3af' }}>
-                        {alarm.device} · {alarm.location} · {alarm.time}
-                      </Text>
-                    </div>
-                    {!alarm.acknowledged && (
-                      <Button type="link" size="small" style={{ fontSize: 11, padding: 0, height: 20 }}>
-                        确认
-                      </Button>
-                    )}
-                  </div>
-                ))}
-              </Card>
-            </Col>
           </Row>
+        </Col>
+      </Row>
+
+      {/* Equipment Alarms Row */}
+      <Row gutter={[12, 12]} style={{ marginTop: 12 }}>
+        <Col span={24}>
+          <Card
+            title={
+              <Space size={8}>
+                <span style={{ fontSize: 13, fontWeight: 600 }}>设备告警</span>
+                <span className="stat-badge red">4条</span>
+              </Space>
+            }
+            extra={<a style={{ fontSize: 12 }}>更多 &gt;</a>}
+            size="small"
+            bodyStyle={{ padding: '4px 12px' }}
+          >
+            {deviceAlarms.map((alarm) => (
+              <div
+                key={alarm.id}
+                style={{
+                  display: 'flex', alignItems: 'center', padding: '7px 0',
+                  borderBottom: alarm.id < deviceAlarms.length ? '1px solid #F5F5F5' : 'none',
+                  gap: 10, opacity: alarm.acknowledged ? 0.5 : 1,
+                }}
+              >
+                <span style={{
+                  color: alarm.level === '高' ? '#ef4444' : alarm.level === '中' ? '#f97316' : '#3b82f6',
+                  fontSize: 14, fontWeight: 700, flexShrink: 0, lineHeight: 1,
+                }}>▲</span>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <Text style={{ fontSize: 12, fontWeight: 600 }}>{alarm.type}</Text>
+                    <Tag
+                      color={alarm.level === '高' ? 'error' : alarm.level === '中' ? 'warning' : 'processing'}
+                      style={{ fontSize: 9, lineHeight: '16px', padding: '0 4px', margin: 0 }}
+                    >
+                      {alarm.level}
+                    </Tag>
+                  </div>
+                  <Text style={{ fontSize: 10, color: '#9ca3af' }}>
+                    {alarm.device} · {alarm.location} · {alarm.time}
+                  </Text>
+                </div>
+                {!alarm.acknowledged && (
+                  <Button type="link" size="small" style={{ fontSize: 11, padding: 0, height: 20 }}>
+                    确认
+                  </Button>
+                )}
+              </div>
+            ))}
+          </Card>
         </Col>
       </Row>
 

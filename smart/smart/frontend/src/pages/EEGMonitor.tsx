@@ -1095,33 +1095,20 @@ export default function EEGMonitor() {
           <Card
             title={<Text strong style={{ fontSize: 14 }}>脑电指标趋势 (近6小时)</Text>}
             styles={{ body: { padding: '6px 4px' } }}
-            style={{ marginBottom: 12 }}
-            extra={
-              <Tooltip title="自动更新中">
-                <Badge status="processing" />
-              </Tooltip>
-            }
           >
-            <ReactECharts option={trendOption} style={{ height: 210 }} />
+            <ReactECharts option={trendOption} style={{ height: 180 }} />
           </Card>
           <Card
             title={<Text strong style={{ fontSize: 14 }}>风险分布</Text>}
             styles={{ body: { padding: '6px 4px' } }}
-            style={{ marginBottom: 12 }}
           >
-            <ReactECharts option={riskDonutOption} style={{ height: 210 }} />
-          </Card>
-          <Card
-            title={<Text strong style={{ fontSize: 14 }}>8通道脑电波形</Text>}
-            styles={{ body: { padding: '4px 2px' } }}
-          >
-            <ReactECharts option={channelEEGOption} style={{ height: 200 }} />
+            <ReactECharts option={riskDonutOption} style={{ height: 180 }} />
           </Card>
         </Col>
       </Row>
 
       <Row gutter={[12, 12]}>
-        <Col span={7}>
+        <Col span={6}>
           <Card
             title={<Text strong style={{ fontSize: 14 }}>脑电指标说明</Text>}
             styles={{ body: { padding: '14px 16px' } }}
@@ -1150,7 +1137,7 @@ export default function EEGMonitor() {
           </Card>
         </Col>
 
-        <Col span={10}>
+        <Col span={6}>
           <Card
             title={<Text strong style={{ fontSize: 14 }}>风险判断依据</Text>}
             styles={{ body: { padding: 0 } }}
@@ -1164,7 +1151,7 @@ export default function EEGMonitor() {
           </Card>
         </Col>
 
-        <Col span={7}>
+        <Col span={6}>
           <Card
             title={
               <Space>

@@ -848,7 +848,7 @@ export default function InspectionTasks() {
             </Card>
           </Col>
 
-          {/* RIGHT: 3 charts vertically stacked */}
+          {/* RIGHT: 2 charts vertically stacked */}
           <Col span={6}>
             <Row gutter={[0, 10]}>
               <Col span={24}>
@@ -888,17 +888,21 @@ export default function InspectionTasks() {
                   <ReactECharts option={anomalyDonutOption} style={{ height: 165 }} />
                 </Card>
               </Col>
-              <Col span={24}>
-                <Card
-                  className="insp-chart-card"
-                  title={<Text strong style={{ fontSize: 13 }}>巡检合规率</Text>}
-                  extra={<Tag color="green" style={{ fontSize: 10, margin: 0 }}>达标</Tag>}
-                  bodyStyle={{ padding: '4px 4px' }}
-                >
-                  <ReactECharts option={complianceGaugeOption} style={{ height: 170 }} />
-                </Card>
-              </Col>
             </Row>
+          </Col>
+        </Row>
+
+        {/* Compliance Gauge Row */}
+        <Row gutter={[10, 10]} style={{ marginBottom: 10 }}>
+          <Col span={24}>
+            <Card
+              className="insp-chart-card"
+              title={<Text strong style={{ fontSize: 13 }}>巡检合规率</Text>}
+              extra={<Tag color="green" style={{ fontSize: 10, margin: 0 }}>达标</Tag>}
+              bodyStyle={{ padding: '4px 4px' }}
+            >
+              <ReactECharts option={complianceGaugeOption} style={{ height: 170 }} />
+            </Card>
           </Col>
         </Row>
 

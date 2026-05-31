@@ -481,7 +481,7 @@ export default function GlobalPosition() {
         {statCards.map((card) => (
           <Col span={4} key={card.key}>
             <Card
-              bodyStyle={{ padding: '10px 14px' }}
+              styles={{ body: { padding: '10px 14px 6px' } }}
               style={{
                 border: card.key === 'globalTodayAlarms' ? '1px solid #FDECEE' : undefined,
                 boxShadow: card.key === 'globalTodayAlarms' ? '0 1px 4px rgba(213,73,65,0.08)' : '0 1px 4px rgba(0,0,0,0.04)',
@@ -573,11 +573,11 @@ export default function GlobalPosition() {
       </div>
 
       {/* Middle Section: World Map + Regional Data + Alarm Overview */}
-      <Row gutter={[12, 12]} style={{ marginTop: 4 }}>
+      <Row gutter={[12, 12]} style={{ marginTop: 12 }}>
         {/* World Map - Left */}
         <Col span={14}>
           <Card
-            bodyStyle={{ padding: 0 }}
+            styles={{ body: { padding: 0 } }}
             style={{ height: '100%' }}
           >
             {/* Map controls bar */}
@@ -710,7 +710,7 @@ export default function GlobalPosition() {
                   </Space>
                 }
                 extra={<a style={{ fontSize: 12 }}>更多 &gt;</a>}
-                bodyStyle={{ padding: 0 }}
+                styles={{ body: { padding: 0 } }}
               >
                 <Table
                   columns={regionColumns}
@@ -742,7 +742,7 @@ export default function GlobalPosition() {
                   </Space>
                 }
                 extra={<a style={{ fontSize: 12 }}>更多 &gt;</a>}
-                bodyStyle={{ padding: '4px 0' }}
+                styles={{ body: { padding: '4px 0' } }}
               >
                 <ReactECharts option={alarmDonutOption} style={{ height: 220 }} />
               </Card>
@@ -768,7 +768,7 @@ export default function GlobalPosition() {
               </Space>
             }
             extra={<a style={{ fontSize: 12 }}>更多 &gt;</a>}
-            bodyStyle={{ padding: 0 }}
+            styles={{ body: { padding: 0 } }}
           >
             <Table
               columns={alarmTableColumns}
@@ -807,7 +807,7 @@ export default function GlobalPosition() {
               </div>
             }
             extra={<a style={{ fontSize: 12 }}>更多 &gt;</a>}
-            bodyStyle={{ padding: 0 }}
+            styles={{ body: { padding: 0 } }}
           >
             <Table
               columns={assetTypeColumns(assetSubTab)}
@@ -823,7 +823,7 @@ export default function GlobalPosition() {
           <Card
             title={<span style={{ fontSize: 13, fontWeight: 600 }}>全球定位精度分布</span>}
             extra={<a style={{ fontSize: 12 }}>更多 &gt;</a>}
-            bodyStyle={{ padding: '4px 8px' }}
+            styles={{ body: { padding: '4px 8px' } }}
           >
             <ReactECharts option={accuracyBarOption} style={{ height: 230 }} />
           </Card>

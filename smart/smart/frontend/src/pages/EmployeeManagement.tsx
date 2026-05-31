@@ -421,10 +421,15 @@ export default function EmployeeManagement() {
           <Card
             title={<Text strong style={{ fontSize: 13 }}>状态分布</Text>}
             bodyStyle={{ padding: '4px 4px' }}
-            style={{ marginBottom: 12 }}
           >
             <ReactECharts option={statusDonutOption} style={{ height: 170 }} />
           </Card>
+        </Col>
+      </Row>
+
+      {/* Quick Actions Row */}
+      <Row gutter={[12, 12]} style={{ marginBottom: 12 }}>
+        <Col span={24}>
           <Card title={<Text strong style={{ fontSize: 13 }}>快捷操作</Text>} bodyStyle={{ padding: '12px 16px' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: 8 }}>
               {quickActions.map((action, i) => (

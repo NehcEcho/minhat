@@ -7,7 +7,6 @@ import GlobalPosition from './pages/GlobalPosition';
 import RealTimeMonitor from './pages/RealTimeMonitor';
 import EEGMonitor from './pages/EEGMonitor';
 import EegEmotionTool from './pages/EegEmotionTool';
-import DataAnalysis from './pages/DataAnalysis';
 import InspectionTasks from './pages/InspectionTasks';
 import EmployeeManagement from './pages/EmployeeManagement';
 import AlarmDisposal from './pages/AlarmDisposal';
@@ -18,11 +17,9 @@ import VideoManage from './pages/VideoManage';
 import DeviceManage from './pages/DeviceManage';
 import DeviceDetail from './pages/DeviceDetail';
 import WorkOrders from './pages/WorkOrders';
-import DataSync from './pages/DataSync';
-import DataAsset from './pages/DataAsset';
+import DataCenter from './pages/DataCenter';
 import EventLinkage from './pages/EventLinkage';
 import EmergencyPlan from './pages/EmergencyPlan';
-import DisposalRecord from './pages/DisposalRecord';
 import ShiftManage from './pages/ShiftManage';
 import SystemIntegration from './pages/SystemIntegration';
 import DemoControl from './pages/DemoControl';
@@ -40,7 +37,7 @@ export default function App() {
           <Route path="realtime-monitor" element={<RealTimeMonitor />} />
           <Route path="eeg-monitor" element={<EEGMonitor />} />
           <Route path="eeg-emotion-tool" element={<EegEmotionTool />} />
-          <Route path="data-analysis" element={<DataAnalysis />} />
+          <Route path="data-center" element={<DataCenter />} />
           <Route path="inspection-tasks" element={<InspectionTasks />} />
           <Route path="employee-management" element={<EmployeeManagement />} />
           <Route path="alarm-disposal" element={<AlarmDisposal />} />
@@ -51,11 +48,8 @@ export default function App() {
           <Route path="device-manage" element={<DeviceManage />} />
           <Route path="device-manage/:id" element={<DeviceDetail />} />
           <Route path="work-orders" element={<WorkOrders />} />
-          <Route path="data-sync" element={<DataSync />} />
-          <Route path="data-asset" element={<DataAsset />} />
           <Route path="event-linkage" element={<EventLinkage />} />
           <Route path="emergency-plan" element={<EmergencyPlan />} />
-          <Route path="disposal-record" element={<DisposalRecord />} />
           <Route path="shift-manage" element={<ShiftManage />} />
           <Route path="system-integration" element={<SystemIntegration />} />
           <Route path="reports" element={<Reports />} />

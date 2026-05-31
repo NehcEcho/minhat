@@ -223,7 +223,7 @@ title: '操作', dataIndex: 'deviceId', key: 'action', width: 100, fixed: 'right
         <Row gutter={[12, 12]}>
           {kpiCards.map((card) => (
             <Col span={6} key={card.label}>
-              <Card className="dm-kpi-card" bodyStyle={{ padding: '10px 14px 6px' }}>
+              <Card className="dm-kpi-card" styles={{ body: { padding: '10px 14px 6px' } }}>
                 <div className="dm-kpi-inner">
                   <div className="dm-kpi-icon" style={{ background: card.bg, color: card.color }}>
                     {card.icon}
