@@ -2,7 +2,7 @@ import { useState, useMemo, useCallback } from 'react';
 import ReactECharts from 'echarts-for-react';
 import {
   Row, Col, Card, Table, Button, Tag, Space, Typography, Select, DatePicker, Statistic,
-  Slider,
+  Slider, message,
 } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import {
@@ -298,8 +298,8 @@ export default function TrackReplay() {
                   options={deviceOptions}
                   placeholder="选择设备"
                 />
-                <Button size="small" icon={<FilterOutlined />}>筛选</Button>
-                <Button size="small" icon={<DownloadOutlined />}>导出</Button>
+                <Button size="small" icon={<FilterOutlined />} onClick={() => message.info('打开轨迹筛选面板')}>筛选</Button>
+                <Button size="small" icon={<DownloadOutlined />} onClick={() => message.success('轨迹数据已导出')}>导出</Button>
               </Space>
             </Col>
           </Row>
@@ -418,7 +418,7 @@ export default function TrackReplay() {
               <Text style={{ fontSize: 12, color: '#86909C', fontFamily: 'monospace' }}>08:00:12 / 16:30:00</Text>
             </Col>
             <Col>
-              <Button size="small" icon={<ReloadOutlined />}>重置</Button>
+              <Button size="small" icon={<ReloadOutlined />} onClick={() => message.info('轨迹回放已重置')}>重置</Button>
             </Col>
           </Row>
         </Card>
@@ -432,7 +432,7 @@ export default function TrackReplay() {
               <Tag style={{ margin: 0 }}>共 10 条</Tag>
             </Space>
           }
-          extra={<Space size={8}><Button size="small" icon={<DownloadOutlined />}>导出轨迹</Button><Button size="small" icon={<SearchOutlined />}>查找</Button></Space>}
+          extra={<Space size={8}><Button size="small" icon={<DownloadOutlined />} onClick={() => message.success('轨迹文件已导出')}>导出轨迹</Button><Button size="small" icon={<SearchOutlined />} onClick={() => message.info('打开轨迹搜索')}>查找</Button></Space>}
         >
           <Table<TrackRecord>
             columns={trackColumns}

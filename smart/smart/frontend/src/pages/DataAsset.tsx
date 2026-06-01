@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import {
-  Row, Col, Card, Table, Tag, Statistic, Segmented, Progress, Space, Tooltip, Typography,
+  Row, Col, Card, Table, Tag, Statistic, Segmented, Progress, Space, Tooltip, Typography, message,
 } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import ReactECharts from 'echarts-for-react';
@@ -157,7 +157,7 @@ export default function DataAsset() {
         <Space size={4}>
           {rec.type === '文件' ? <FileOutlined style={{ color: '#7B61FF' }} /> : <TableOutlined style={{ color: '#0052D9' }} />}
           <Tooltip title={rec.description}>
-            <a style={{ fontSize: 13 }}>{name}</a>
+            <a style={{ fontSize: 13 }} onClick={() => message.info('查看资产详情: ' + name)}>{name}</a>
           </Tooltip>
         </Space>
       ),
@@ -196,7 +196,7 @@ export default function DataAsset() {
       title: '操作', dataIndex: 'key', key: 'action', width: 100, fixed: 'right',
       render: () => (
         <Space size={0} split={<span style={{ color: '#E5E6EB', margin: '0 6px' }}>|</span>}>
-          <a style={{ fontSize: 12 }}>详情</a>
+          <a style={{ fontSize: 12 }} onClick={() => message.info('加载资产详情...')}>详情</a>
           <a style={{ fontSize: 12 }}>血缘</a>
         </Space>
       ),

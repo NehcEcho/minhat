@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback } from 'react';
-import { Row, Col, Card, Table, Tag, Input, Tree, Tabs, Typography, Space, Button, Select, Progress, Tooltip, Segmented } from 'antd';
+import { Row, Col, Card, Table, Tag, Input, Tree, Tabs, Typography, Space, Button, Select, Progress, Tooltip, Segmented, message } from 'antd';
 import type { DataNode } from 'antd/es/tree';
 import {
   VideoCameraOutlined, WifiOutlined, CloudUploadOutlined,
@@ -176,9 +176,9 @@ const videoColumns = [
     title: '操作', dataIndex: 'action', key: 'action', width: 160,
     render: () => (
       <Space size="small">
-        <a style={{ fontSize: 12 }}>预览</a>
-        <a style={{ fontSize: 12 }}>回放</a>
-        <a style={{ fontSize: 12 }}>配置</a>
+        <a style={{ fontSize: 12 }} onClick={() => message.info('正在加载视频预览...')}>预览</a>
+        <a style={{ fontSize: 12 }} onClick={() => message.info('正在加载录像回放...')}>回放</a>
+        <a style={{ fontSize: 12 }} onClick={() => message.info('打开设备配置')}>配置</a>
       </Space>
     ),
   },
@@ -520,8 +520,8 @@ export default function RealTimeMonitor() {
               { label: '宽屏', value: 'wide' },
             ]}
           />
-          <Button size="small" icon={<SettingOutlined />}>自定义布局</Button>
-          <Button type="primary" size="small" icon={<FullscreenOutlined />}>大屏模式</Button>
+          <Button size="small" icon={<SettingOutlined />} onClick={() => message.info('打开布局自定义面板')}>自定义布局</Button>
+          <Button type="primary" size="small" icon={<FullscreenOutlined />} onClick={() => message.info('切换到大屏模式')}>大屏模式</Button>
         </Space>
       </div>
 
@@ -993,7 +993,7 @@ export default function RealTimeMonitor() {
                 <span className="stat-badge red">4条</span>
               </Space>
             }
-            extra={<a style={{ fontSize: 12 }}>更多 &gt;</a>}
+            extra={<a style={{ fontSize: 12 }} onClick={() => message.info('加载全部设备告警...')}>更多 &gt;</a>}
             size="small"
             bodyStyle={{ padding: '4px 12px' }}
           >
@@ -1025,7 +1025,7 @@ export default function RealTimeMonitor() {
                   </Text>
                 </div>
                 {!alarm.acknowledged && (
-                  <Button type="link" size="small" style={{ fontSize: 11, padding: 0, height: 20 }}>
+                  <Button type="link" size="small" style={{ fontSize: 11, padding: 0, height: 20 }} onClick={() => message.success('告警已确认')}>
                     确认
                   </Button>
                 )}

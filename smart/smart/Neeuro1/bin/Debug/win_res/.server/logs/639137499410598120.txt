@@ -1,0 +1,4 @@
+[2026/5/7 3:25:41] SenzeBandWindowsInterface()
+[2026/5/7 3:25:41] SenzeBandWindowsInterface.initializeSBWI()
+[2026/5/7 3:25:41] ScanBLEDevice initialize
+[2026/5/7 3:25:41] Scan device initialized!

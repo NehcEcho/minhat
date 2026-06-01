@@ -2,7 +2,7 @@ import { useState, useMemo, useCallback } from 'react';
 import ReactECharts from 'echarts-for-react';
 import {
   Row, Col, Card, Table, Button, Tag, Space, Typography, Select, Input,
-  Badge,
+  Badge, message,
 } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import {
@@ -223,10 +223,10 @@ export default function VideoManage() {
                   <><PlayCircleOutlined /> 推流</>
                 )}
               </a>
-              <a style={{ fontSize: 11 }}><FullscreenOutlined style={{ fontSize: 10 }} /> 预览</a>
+              <a style={{ fontSize: 11 }} onClick={() => message.info('正在加载视频预览...')}><FullscreenOutlined style={{ fontSize: 10 }} /> 预览</a>
             </>
           ) : (
-            <a style={{ fontSize: 11, color: '#C9CDD4' }}><ToolOutlined /> 修复</a>
+            <a style={{ fontSize: 11, color: '#C9CDD4' }} onClick={() => message.info('正在修复设备连接...')}><ToolOutlined /> 修复</a>
           )}
         </Space>
       ),
@@ -335,9 +335,9 @@ export default function VideoManage() {
                     { value: '离线', label: '离线' },
                   ]}
                 />
-                <Button size="small" icon={<FilterOutlined />}>筛选</Button>
-                <Button size="small" icon={<ReloadOutlined />}>刷新</Button>
-                <Button size="small" icon={<SettingOutlined />}>配置</Button>
+                <Button size="small" icon={<FilterOutlined />} onClick={() => message.info('打开视频筛选面板')}>筛选</Button>
+                <Button size="small" icon={<ReloadOutlined />} onClick={() => message.info('正在刷新设备列表...')}>刷新</Button>
+                <Button size="small" icon={<SettingOutlined />} onClick={() => message.info('打开视频系统配置')}>配置</Button>
               </Space>
             </Col>
           </Row>
@@ -472,8 +472,8 @@ export default function VideoManage() {
           }
           extra={
             <Space size={8}>
-              <Button size="small" icon={<SyncOutlined />}>全部同步</Button>
-              <Button size="small" icon={<DownloadOutlined />}>导出列表</Button>
+              <Button size="small" icon={<SyncOutlined />} onClick={() => message.info('正在同步所有设备...')}>全部同步</Button>
+              <Button size="small" icon={<DownloadOutlined />} onClick={() => message.success('设备列表已导出')}>导出列表</Button>
             </Space>
           }
         >

@@ -2,7 +2,7 @@ import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import ReactECharts from 'echarts-for-react';
 import {
   Row, Col, Card, Table, Button, Tag, Space, Avatar,
-  Segmented, Statistic, Switch, Tabs,
+  Segmented, Statistic, Switch, Tabs, message,
 } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import {
@@ -417,7 +417,7 @@ export default function AlarmDisposal() {
       render: (actions: string[]) => (
         <Space size={0} split={<span style={{ color: '#E5E6EB', margin: '0 4px' }}>|</span>}>
           {actions.map((a) => (
-            <a key={a} style={{ fontSize: 12, whiteSpace: 'nowrap', color: '#1677FF' }}>{a}</a>
+            <a key={a} style={{ fontSize: 12, whiteSpace: 'nowrap', color: '#1677FF' }} onClick={() => message.info('正在加载告警详情...')}>{a}</a>
           ))}
         </Space>
       ),
@@ -571,7 +571,7 @@ export default function AlarmDisposal() {
                 ({refreshCountdown}s)
               </span>
             </Space>
-            <Button size="small" icon={<FilterOutlined />} style={{ fontSize: 12 }}>
+            <Button size="small" icon={<FilterOutlined />} style={{ fontSize: 12 }} onClick={() => message.info('打开告警筛选面板')}>
               筛选
             </Button>
           </Space>
@@ -696,10 +696,10 @@ export default function AlarmDisposal() {
               >
                 立即处置
               </Button>
-              <Button size="large" icon={<SwapOutlined />} style={{ flex: 1, height: 48, fontSize: 13 }}>
+              <Button size="large" icon={<SwapOutlined />} style={{ flex: 1, height: 48, fontSize: 13 }} onClick={() => message.info('打开处置人员指派')}>
                 指派处置
               </Button>
-              <Button size="large" icon={<StopOutlined />} style={{ flex: 1, height: 48, fontSize: 13 }}>
+              <Button size="large" icon={<StopOutlined />} style={{ flex: 1, height: 48, fontSize: 13 }} onClick={() => message.warning('告警已忽略')}>
                 忽略告警
               </Button>
             </div>
@@ -731,7 +731,7 @@ export default function AlarmDisposal() {
                 <Tag style={{ marginLeft: 4 }}>全部告警</Tag>
               </Space>
             }
-            extra={<Button size="small" type="link" style={{ fontSize: 12 }}>更多筛选</Button>}
+            extra={<Button size="small" type="link" style={{ fontSize: 12 }} onClick={() => message.info('打开高级筛选')}>更多筛选</Button>}
             styles={{ body: { padding: 0 } }}
           >
             <Table<Alarm>

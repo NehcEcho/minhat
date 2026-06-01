@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import {
-  Row, Col, Card, Table, Tag, Statistic, Button, Space, Tooltip, Badge, Typography,
+  Row, Col, Card, Table, Tag, Statistic, Button, Space, Tooltip, Badge, Typography, message,
 } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import {
@@ -100,7 +100,7 @@ export default function DataSync() {
       render: (name: string) => (
         <Space size={4}>
           <CloudSyncOutlined style={{ color: '#0052D9', fontSize: 13 }} />
-          <a style={{ fontSize: 13 }}>{name}</a>
+           <a style={{ fontSize: 13 }} onClick={() => message.info('查看同步任务: ' + name)}>{name}</a>
         </Space>
       ),
     },
@@ -166,8 +166,8 @@ export default function DataSync() {
             {syncing[rec.task_name] ? <LoadingOutlined style={{ marginRight: 2 }} /> : <ReloadOutlined style={{ marginRight: 2 }} />}
             {syncing[rec.task_name] ? '同步中' : '立即同步'}
           </a>
-          <a style={{ fontSize: 12 }}>日志</a>
-          <a style={{ fontSize: 12 }}>配置</a>
+           <a style={{ fontSize: 12 }} onClick={() => message.info('正在加载同步日志...')}>日志</a>
+           <a style={{ fontSize: 12 }} onClick={() => message.info('打开任务配置')}>配置</a>
         </Space>
       ),
     },
@@ -220,7 +220,7 @@ export default function DataSync() {
               >
                 一键全量同步
               </Button>
-              <Button size="small" icon={<SettingOutlined />}>
+              <Button size="small" icon={<SettingOutlined />} onClick={() => message.info('打开同步配置')}>
                 同步配置
               </Button>
             </div>

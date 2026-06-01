@@ -1,7 +1,7 @@
 import { useState, useMemo, useCallback, useRef } from 'react';
 import ReactECharts from 'echarts-for-react';
 import {
-  Row, Col, Card, Table, Button, Tag, Space, Typography, Select, DatePicker, Input,
+  Row, Col, Card, Table, Button, Tag, Space, Typography, Select, DatePicker, Input, message,
 } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import {
@@ -219,7 +219,7 @@ export default function PlaybackManage() {
           <a style={{ fontSize: 11 }} onClick={() => handlePlayback(record)}>
             <PlayCircleOutlined /> 回放
           </a>
-          <a style={{ fontSize: 11 }}>
+          <a style={{ fontSize: 11 }} onClick={() => message.success('录像下载中...')}>
             <DownloadOutlined style={{ fontSize: 10 }} /> 下载
           </a>
         </Space>
@@ -335,8 +335,8 @@ export default function PlaybackManage() {
                   format="YYYY-MM-DD HH:mm"
                   style={{ width: 320 }}
                 />
-                <Button size="small" icon={<FilterOutlined />}>筛选</Button>
-                <Button size="small" icon={<ReloadOutlined />}>刷新</Button>
+                <Button size="small" icon={<FilterOutlined />} onClick={() => message.info('打开录像筛选面板')}>筛选</Button>
+                <Button size="small" icon={<ReloadOutlined />} onClick={() => message.info('正在刷新录像列表...')}>刷新</Button>
               </Space>
             </Col>
           </Row>
@@ -449,7 +449,7 @@ export default function PlaybackManage() {
                 style={{ width: 200 }}
                 onSearch={setSearchText}
               />
-              <Button size="small" icon={<DownloadOutlined />}>批量下载</Button>
+              <Button size="small" icon={<DownloadOutlined />} onClick={() => message.info('正在准备批量下载...')}>批量下载</Button>
             </Space>
           }
         >

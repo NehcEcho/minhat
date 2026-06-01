@@ -1,7 +1,7 @@
 import { useState, useMemo, useCallback, useEffect } from 'react';
 import ReactECharts from 'echarts-for-react';
 import {
-  Row, Col, Card, Table, Button, Tag, Space, Typography, Statistic,
+  Row, Col, Card, Table, Button, Tag, Space, Typography, Statistic, message,
 } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import {
@@ -196,9 +196,9 @@ export default function EventLinkage() {
       title: '操作', key: 'actions', width: 140,
       render: () => (
         <Space size={0} split={<span style={{ color: '#E5E6EB', margin: '0 6px' }}>|</span>}>
-          <a style={{ fontSize: 12, color: '#1677FF' }}>编辑</a>
-          <a style={{ fontSize: 12, color: '#FF4D4F' }}>停用</a>
-          <a style={{ fontSize: 12, color: '#1677FF' }}>日志</a>
+          <a style={{ fontSize: 12, color: '#1677FF' }} onClick={() => message.info('打开联动规则编辑器')}>编辑</a>
+          <a style={{ fontSize: 12, color: '#FF4D4F' }} onClick={() => message.warning('联动规则已停用')}>停用</a>
+          <a style={{ fontSize: 12, color: '#1677FF' }} onClick={() => message.info('加载规则执行日志...')}>日志</a>
         </Space>
       ),
     },
@@ -318,8 +318,8 @@ export default function EventLinkage() {
             }
             extra={
               <Space>
-                <Button size="small" type="primary" icon={<ThunderboltOutlined />}>新增规则</Button>
-                <Button size="small" icon={<SyncOutlined />}>刷新</Button>
+                <Button size="small" type="primary" icon={<ThunderboltOutlined />} onClick={() => message.info('打开新增规则表单')}>新增规则</Button>
+                <Button size="small" icon={<SyncOutlined />} onClick={() => message.info('正在刷新联动规则列表...')}>刷新</Button>
               </Space>
             }
             styles={{ body: { padding: 0 } }}

@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
-import { Row, Col, Card, Table, Tag, Button, Select, Space, Typography, Tooltip, Dropdown, Skeleton } from 'antd';
+import { Row, Col, Card, Table, Tag, Button, Select, Space, Typography, Tooltip, Dropdown, Skeleton, message } from 'antd';
 import {
   TeamOutlined, ToolOutlined, GlobalOutlined,
   CloudServerOutlined, AlertOutlined, AimOutlined,
@@ -385,7 +385,7 @@ export default function GlobalPosition() {
     { title: '时间', dataIndex: 'time', key: 'time', width: 150 },
     {
       title: '操作', dataIndex: 'action', key: 'action', width: 60,
-      render: () => <a style={{ fontSize: 12, color: '#0052D9' }}>查看</a>,
+      render: () => <a style={{ fontSize: 12, color: '#0052D9' }} onClick={() => message.info('正在加载告警详情...')}>查看</a>,
     },
   ];
 
@@ -665,6 +665,7 @@ export default function GlobalPosition() {
                 </Tooltip>
                 <Tooltip title="居中定位" placement="left">
                   <Button size="small" type="text" icon={<PushpinOutlined />}
+                    onClick={() => message.info('地图已居中定位')}
                     style={{ fontSize: 14, width: 28, height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#86909C' }}
                   />
                 </Tooltip>
@@ -709,7 +710,7 @@ export default function GlobalPosition() {
                     )}
                   </Space>
                 }
-                extra={<a style={{ fontSize: 12 }}>更多 &gt;</a>}
+                extra={<a style={{ fontSize: 12 }} onClick={() => message.info('加载详细区域分布数据...')}>更多 &gt;</a>}
                 styles={{ body: { padding: 0 } }}
               >
                 <Table
@@ -741,7 +742,7 @@ export default function GlobalPosition() {
                     }}>28 总数</span>
                   </Space>
                 }
-                extra={<a style={{ fontSize: 12 }}>更多 &gt;</a>}
+                extra={<a style={{ fontSize: 12 }} onClick={() => message.info('加载告警分析详情...')}>更多 &gt;</a>}
                 styles={{ body: { padding: '4px 0' } }}
               >
                 <ReactECharts option={alarmDonutOption} style={{ height: 220 }} />
@@ -767,7 +768,7 @@ export default function GlobalPosition() {
                 </span>
               </Space>
             }
-            extra={<a style={{ fontSize: 12 }}>更多 &gt;</a>}
+            extra={<a style={{ fontSize: 12 }} onClick={() => message.info('加载全部告警记录...')}>更多 &gt;</a>}
             styles={{ body: { padding: 0 } }}
           >
             <Table
@@ -806,7 +807,7 @@ export default function GlobalPosition() {
                 </Space>
               </div>
             }
-            extra={<a style={{ fontSize: 12 }}>更多 &gt;</a>}
+            extra={<a style={{ fontSize: 12 }} onClick={() => message.info('加载资产统计详情...')}>更多 &gt;</a>}
             styles={{ body: { padding: 0 } }}
           >
             <Table
@@ -822,7 +823,7 @@ export default function GlobalPosition() {
         <Col span={7}>
           <Card
             title={<span style={{ fontSize: 13, fontWeight: 600 }}>全球定位精度分布</span>}
-            extra={<a style={{ fontSize: 12 }}>更多 &gt;</a>}
+            extra={<a style={{ fontSize: 12 }} onClick={() => message.info('加载精度分析详情...')}>更多 &gt;</a>}
             styles={{ body: { padding: '4px 8px' } }}
           >
             <ReactECharts option={accuracyBarOption} style={{ height: 230 }} />

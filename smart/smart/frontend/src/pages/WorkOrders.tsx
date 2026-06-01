@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import {
-  Row, Col, Card, Table, Tag, Statistic, Segmented, Button, Space, Tooltip, Progress, Typography,
+  Row, Col, Card, Table, Tag, Statistic, Segmented, Button, Space, Tooltip, Progress, Typography, message,
 } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import {
@@ -80,7 +80,7 @@ export default function WorkOrders() {
     },
     {
       title: '标题', dataIndex: 'title', key: 'title', width: 210, ellipsis: true,
-      render: (title: string) => <a style={{ fontSize: 13 }}>{title}</a>,
+      render: (title: string) => <a style={{ fontSize: 13 }} onClick={() => message.info('正在加载工单详情...')}>{title}</a>,
     },
     {
       title: '关联设备', dataIndex: 'device', key: 'device', width: 150, ellipsis: true,
@@ -132,9 +132,9 @@ export default function WorkOrders() {
       title: '操作', dataIndex: 'id', key: 'action', width: 120, fixed: 'right',
       render: (_: string, rec: WorkOrder) => (
         <Space size={0} split={<span style={{ color: '#E5E6EB', margin: '0 6px' }}>|</span>}>
-          <a style={{ fontSize: 12 }}>详情</a>
-          {rec.status === '待处理' && <a style={{ fontSize: 12, color: '#1677FF' }}>接单</a>}
-          {rec.status === '处理中' && <a style={{ fontSize: 12, color: '#52C41A' }}>完成</a>}
+          <a style={{ fontSize: 12 }} onClick={() => message.info('正在加载工单详情...')}>详情</a>
+          {rec.status === '待处理' && <a style={{ fontSize: 12, color: '#1677FF' }} onClick={() => message.success('工单已接取')}>接单</a>}
+          {rec.status === '处理中' && <a style={{ fontSize: 12, color: '#52C41A' }} onClick={() => message.success('工单已完成')}>完成</a>}
         </Space>
       ),
     },
@@ -184,7 +184,7 @@ export default function WorkOrders() {
                   { label: '已完成', value: '已完成' },
                 ]}
               />
-              <Button type="primary" size="small" icon={<PlusOutlined />}>
+              <Button type="primary" size="small" icon={<PlusOutlined />} onClick={() => message.info('打开新建工单表单')}>
                 新建工单
               </Button>
             </div>

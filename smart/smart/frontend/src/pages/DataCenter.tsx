@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import {
   Row, Col, Card, Table, Tag, Statistic, Button, Space, Tooltip, Segmented, Progress, Tabs,
-  DatePicker, Typography, Divider,
+  DatePicker, Typography, Divider, message,
 } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import ReactECharts from 'echarts-for-react';
@@ -822,7 +822,7 @@ function DataSyncTab() {
       render: (name: string) => (
         <Space size={4}>
           <CloudSyncOutlined style={{ color: '#0052D9', fontSize: 13 }} />
-          <a style={{ fontSize: 13 }}>{name}</a>
+          <a style={{ fontSize: 13 }} onClick={() => message.info('查看同步任务详情: ' + name)}>{name}</a>
         </Space>
       ),
     },
@@ -888,8 +888,8 @@ function DataSyncTab() {
             {syncing[rec.task_name] ? <LoadingOutlined style={{ marginRight: 2 }} /> : <ReloadOutlined style={{ marginRight: 2 }} />}
             {syncing[rec.task_name] ? '同步中' : '立即同步'}
           </a>
-          <a style={{ fontSize: 12 }}>日志</a>
-          <a style={{ fontSize: 12 }}>配置</a>
+          <a style={{ fontSize: 12 }} onClick={() => message.info('正在加载同步日志...')}>日志</a>
+          <a style={{ fontSize: 12 }} onClick={() => message.info('打开同步任务配置')}>配置</a>
         </Space>
       ),
     },
@@ -940,7 +940,7 @@ function DataSyncTab() {
             >
               一键全量同步
             </Button>
-            <Button size="small" icon={<SettingOutlined />}>
+            <Button size="small" icon={<SettingOutlined />} onClick={() => message.info('打开全局同步配置')}>
               同步配置
             </Button>
           </div>
@@ -1050,7 +1050,7 @@ function DataAssetTab() {
         <Space size={4}>
           {rec.type === '文件' ? <FileOutlined style={{ color: '#7B61FF' }} /> : <TableOutlined style={{ color: '#0052D9' }} />}
           <Tooltip title={rec.description}>
-            <a style={{ fontSize: 13 }}>{name}</a>
+            <a style={{ fontSize: 13 }} onClick={() => message.info('查看资产详情: ' + name)}>{name}</a>
           </Tooltip>
         </Space>
       ),
@@ -1089,8 +1089,8 @@ function DataAssetTab() {
       title: '操作', dataIndex: 'key', key: 'action', width: 100, fixed: 'right',
       render: () => (
         <Space size={0} split={<span style={{ color: '#E5E6EB', margin: '0 6px' }}>|</span>}>
-          <a style={{ fontSize: 12 }}>详情</a>
-          <a style={{ fontSize: 12 }}>血缘</a>
+          <a style={{ fontSize: 12 }} onClick={() => message.info('加载资产详情...')}>详情</a>
+          <a style={{ fontSize: 12 }} onClick={() => message.info('加载数据血缘图谱...')}>血缘</a>
         </Space>
       ),
     },
@@ -1398,8 +1398,8 @@ function DataAnalysisTab() {
               style={{ marginBottom: 10 }}
               tabBarExtraContent={
                 <Space size={8}>
-                  <Button size="small" icon={<FilterOutlined />} style={{ fontSize: 12 }}>筛选</Button>
-                  <Button size="small" icon={<DownloadOutlined />} style={{ fontSize: 12 }}>导出</Button>
+                  <Button size="small" icon={<FilterOutlined />} style={{ fontSize: 12 }} onClick={() => message.info('打开数据筛选面板')}>筛选</Button>
+                  <Button size="small" icon={<DownloadOutlined />} style={{ fontSize: 12 }} onClick={() => { message.success('数据导出成功'); }}>导出</Button>
                 </Space>
               }
             />

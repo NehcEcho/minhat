@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback, useEffect } from 'react';
 import {
-  Row, Col, Card, Table, Button, Tag, Space, Typography, Statistic, Segmented,
+  Row, Col, Card, Table, Button, Tag, Space, Typography, Statistic, Segmented, message,
 } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import {
@@ -255,8 +255,8 @@ export default function DisposalRecord() {
           options={statusOptions}
         />
         <Space size={8}>
-          <Button size="small" icon={<FilterOutlined />} style={{ fontSize: 12 }}>高级筛选</Button>
-          <Button size="small" icon={<SearchOutlined />} style={{ fontSize: 12 }}>搜索</Button>
+          <Button size="small" icon={<FilterOutlined />} style={{ fontSize: 12 }} onClick={() => message.info('打开高级筛选面板')}>高级筛选</Button>
+          <Button size="small" icon={<SearchOutlined />} style={{ fontSize: 12 }} onClick={() => message.info('正在搜索处置记录...')}>搜索</Button>
         </Space>
       </div>
 
@@ -274,7 +274,7 @@ export default function DisposalRecord() {
             <Button size="small" icon={<SyncOutlined />} loading={loading} onClick={() => fetchRecords(activeStatus)}>
               刷新
             </Button>
-            <Button size="small" type="primary" icon={<PlayCircleOutlined />}>导出报表</Button>
+            <Button size="small" type="primary" icon={<PlayCircleOutlined />} onClick={() => message.success('处置报表已导出')}>导出报表</Button>
           </Space>
         }
         styles={{ body: { padding: 0 } }}

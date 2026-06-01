@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import {
-  Row, Col, Card, Table, Button, Tag, Space, Typography, Statistic,
+  Row, Col, Card, Table, Button, Tag, Space, Typography, Statistic, message,
 } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import {
@@ -159,9 +159,9 @@ export default function ShiftManage() {
       title: '操作', key: 'actions', width: 140,
       render: () => (
         <Space size={0} split={<span style={{ color: '#E5E6EB', margin: '0 6px' }}>|</span>}>
-          <a style={{ fontSize: 12, color: '#1677FF' }}>详情</a>
-          <a style={{ fontSize: 12, color: '#1677FF' }}>排班</a>
-          <a style={{ fontSize: 12, color: '#FF4D4F' }}>交接</a>
+          <a style={{ fontSize: 12, color: '#1677FF' }} onClick={() => message.info('加载值班详情...')}>详情</a>
+          <a style={{ fontSize: 12, color: '#1677FF' }} onClick={() => message.info('打开排班编辑器')}>排班</a>
+          <a style={{ fontSize: 12, color: '#FF4D4F' }} onClick={() => message.info('打开交接表单')}>交接</a>
         </Space>
       ),
     },
@@ -262,8 +262,8 @@ export default function ShiftManage() {
             }
             extra={
               <Space>
-                <Button size="small" type="primary" icon={<PlusOutlined />}>新增排班</Button>
-                <Button size="small" icon={<SwapOutlined />}>批量交接</Button>
+                <Button size="small" type="primary" icon={<PlusOutlined />} onClick={() => message.info('打开新增排班表单')}>新增排班</Button>
+                <Button size="small" icon={<SwapOutlined />} onClick={() => message.info('启动批量交接流程')}>批量交接</Button>
               </Space>
             }
             styles={{ body: { padding: 0 } }}
@@ -295,7 +295,7 @@ export default function ShiftManage() {
               </Space>
             }
             extra={
-              <Button size="small" icon={<SwapOutlined />} style={{ fontSize: 12 }}>调整排班</Button>
+              <Button size="small" icon={<SwapOutlined />} style={{ fontSize: 12 }} onClick={() => message.info('打开排班调整编辑器')}>调整排班</Button>
             }
             styles={{ body: { padding: '10px 12px' } }}
           >

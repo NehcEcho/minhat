@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EEG 情绪识别系统</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <!-- ─── 顶部 ─── -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">⌬</span>
+      <h1>EEG 情绪识别系统</h1>
+      <span class="brand-sub">Neeuro SenzeBand 2 / Multi-Task EEGNet</span>
+    </div>
+    <div class="status-cluster">
+      <span class="device-badge" id="device-badge">
+        <span class="dot"></span>
+        <span class="label" id="device-label">等待连接</span>
+      </span>
+      <span class="timer mono" id="timer">00:00:00</span>
+    </div>
+  </header>
+
+  <!-- ─── 主体三栏 ─── -->
+  <main class="grid">
+    <!-- ═══ 左栏 ═══ -->
+    <aside class="col-left">
+      <section class="card">
+        <h2>设备状态</h2>
+        <div class="osc-box" id="osc-box">
+          <div class="osc-row"><span>OSC 地址</span><span class="mono">127.0.0.1 : 4545</span></div>
+          <div class="osc-row"><span>采样速率</span><span class="mono" id="rate-val">— Hz</span></div>
+          <div class="osc-row"><span>累计样本</span><span class="mono" id="total-val">0</span></div>
+        </div>
+        <p class="hint">C# 端: <code>Authenticate</code> → 勾 <code>EEG</code> → <code>Start</code></p>
+      </section>
+
+      <section class="card">
+        <h2>信号质量</h2>
+        <div class="sq-list" id="sq-list">
+          {% for ch in channel_labels %}
+          <div class="sq-row" data-ch="{{ loop.index0 }}">
+            <span class="sq-name">{{ ch }}</span>
+            <div class="sq-bar"><div class="sq-fill"></div></div>
+            <span class="sq-val mono">—</span>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="hint warning" id="quality-tip">请确保电极片充分接触皮肤</div>
+      </section>
+
+      <!-- ─── 录制模式 + 标签配置 ─── -->
+      <section class="card">
+        <h2>录制设置</h2>
+
+        <!-- ── 标注模式切换 ── -->
+        <div class="label-mode-switch" id="label-mode-switch">
+          <button class="mode-btn active" id="btn-mode-manual" onclick="setLabelMode(false)">
+            ✏️ 手动标注
+          </button>
+          <button class="mode-btn" id="btn-mode-auto" onclick="setLabelMode(true)">
+            🤖 AI 自动标注
+          </button>
+        </div>
+
+        <!-- AI 模式提示 -->
+        <div class="auto-label-tip hidden" id="auto-label-tip">
+          <span class="auto-label-tip-icon">🤖</span>
+          <div>
+            <strong>AI 自动标注已开启</strong><br>
+            <span>录制过程中模型实时预测，按窗口自动分配标签，无需手动设置。</span>
+          </div>
+        </div>
+
+        <!-- 手动标签表单（AI 模式下变灰） -->
+        <div class="form" id="manual-label-form">
+          <div class="form-row">
+            <label>情绪状态</label>
+            <select id="lbl-emotion">
+              <option value="0">😞 消极</option>
+              <option value="1" selected>😐 平静</option>
+              <option value="2">😊 积极</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label>专注程度</label>
+            <select id="lbl-attention">
+              <option value="0" selected>💤 不专注</option>
+              <option value="1">🎯 专注</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label>疲劳程度</label>
+            <select id="lbl-fatigue">
+              <option value="0" selected>✅ 不疲劳</option>
+              <option value="1">😴 疲劳</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label>任务名称</label>
+            <input id="lbl-task" type="text" value="web_session" />
+          </div>
+        </div>
+
+        <div class="form">
+          <div class="form-row">
+            <label>自动停止</label>
+            <select id="auto-stop-sec">
+              <option value="0">手动停止</option>
+              <option value="10">10 秒</option>
+              <option value="20">20 秒</option>
+              <option value="30" selected>30 秒</option>
+              <option value="60">60 秒</option>
+              <option value="120">120 秒</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="hint" id="label-hint">标签在点击"开始记录"时锁定，自动保存到 dataset/ 目录。</div>
+      </section>
+    </aside>
+
+    <!-- ═══ 中栏 ═══ -->
+    <section class="col-center">
+      <nav class="tabs">
+        <button class="tab is-active" data-tab="wave">脑电波形</button>
+        <button class="tab" data-tab="band">频带功率</button>
+        <button class="tab" data-tab="mental">心理状态</button>
+        <button class="tab" data-tab="dataset">已采集数据</button>
+        <button class="tab" data-tab="info">设备信息</button>
+      </nav>
+
+      <!-- 脑电波形 -->
+      <div class="tab-panel" data-panel="wave">
+        <div class="panel-head">
+          <h3>实时脑电波形</h3>
+          <div class="scale-control">
+            <label for="scale-select">显示范围</label>
+            <select id="scale-select">
+              <option value="50">±50 μV</option>
+              <option value="100" selected>±100 μV</option>
+              <option value="200">±200 μV</option>
+              <option value="500">±500 μV</option>
+            </select>
+          </div>
+        </div>
+        <div class="waves" id="waves">
+          {% for ch in channel_labels %}
+          <div class="wave-row">
+            <span class="wave-label mono">{{ ch }}</span>
+            <canvas data-ch="{{ loop.index0 }}"></canvas>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- 频带功率 -->
+      <div class="tab-panel hidden" data-panel="band">
+        <div class="panel-head"><h3>频带功率 (近 2 秒, 4 通道平均)</h3></div>
+        <div class="band-wrapper"><canvas id="band-canvas"></canvas></div>
+        <div class="band-legend">
+          <span class="lg-item"><i style="background:#7E57C2"></i>δ (1-4 Hz)</span>
+          <span class="lg-item"><i style="background:#5C6BC0"></i>θ (4-8 Hz)</span>
+          <span class="lg-item"><i style="background:#26A69A"></i>α (8-13 Hz)</span>
+          <span class="lg-item"><i style="background:#EF6C00"></i>β (13-30 Hz)</span>
+          <span class="lg-item"><i style="background:#C62828"></i>γ (30-45 Hz)</span>
+        </div>
+      </div>
+
+      <!-- 心理状态 -->
+      <div class="tab-panel hidden" data-panel="mental">
+        <div class="panel-head"><h3>心理状态实时输出</h3></div>
+        <div class="mental-grid">
+          <div class="mental-card">
+            <div class="mc-head"><span class="mc-label">专注度</span><span class="mc-value mono" id="att-val">—</span></div>
+            <div class="mc-bar"><div class="mc-fill mc-fill-att" id="att-fill"></div></div>
+            <p class="mc-hint">心算/盯点等持续注意任务会让此值升高</p>
+          </div>
+          <div class="mental-card">
+            <div class="mc-head"><span class="mc-label">疲劳度</span><span class="mc-value mono" id="fat-val">—</span></div>
+            <div class="mc-bar"><div class="mc-fill mc-fill-fat" id="fat-fill"></div></div>
+            <p class="mc-hint">困倦/熬夜等状态下此值会升高</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 已采集数据 -->
+      <div class="tab-panel hidden" data-panel="dataset">
+        <div class="panel-head">
+          <h3>已采集数据文件</h3>
+          <button class="btn btn-xs btn-ghost" onclick="refreshDataset()">↺ 刷新</button>
+        </div>
+        <div id="dataset-empty" class="hint" style="margin:20px 0">暂无采集数据，点击"开始记录"采集后自动显示。</div>
+        <table class="dataset-table" id="dataset-table" style="display:none">
+          <thead>
+            <tr>
+              <th>文件名</th>
+              <th>情绪</th>
+              <th>专注</th>
+              <th>疲劳</th>
+              <th>窗口数</th>
+              <th>时长</th>
+              <th>标注</th>
+              <th>采集时间</th>
+            </tr>
+          </thead>
+          <tbody id="dataset-tbody"></tbody>
+        </table>
+        <div id="dataset-summary" class="dataset-summary" style="display:none"></div>
+      </div>
+
+      <!-- 设备信息 -->
+      <div class="tab-panel hidden" data-panel="info">
+        <div class="panel-head"><h3>设备信息</h3></div>
+        <dl class="info-list">
+          <div><dt>设备型号</dt><dd>Neeuro SenzeBand 2 (BLE)</dd></div>
+          <div><dt>采样率</dt><dd class="mono">{{ sample_rate }} Hz</dd></div>
+          <div><dt>通道数</dt><dd class="mono">4</dd></div>
+          <div><dt>OSC 地址</dt><dd class="mono">/eeg/filtered @ 127.0.0.1:4545</dd></div>
+          <div><dt>窗口长度</dt><dd class="mono">500 样本 (2.0 s)</dd></div>
+          <div><dt>窗口步长</dt><dd class="mono">250 样本 (1.0 s)</dd></div>
+          <div><dt>推理引擎</dt><dd>PyTorch · MultiTaskEEGNet</dd></div>
+          <div><dt>模型权重</dt><dd class="mono" id="model-path">—</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ═══ 右栏 ═══ -->
+    <aside class="col-right">
+      <!-- 情绪识别 -->
+      <section class="card emo-card">
+        <h2>情绪识别</h2>
+        <div class="emo-main">
+          <div class="emo-emoji" id="emo-emoji">⏳</div>
+          <div class="emo-label" id="emo-label">等待数据</div>
+          <div class="emo-conf">置信度 <span class="mono" id="emo-conf">—</span></div>
+        </div>
+        <div class="emo-bars">
+          <div class="emo-bar" data-key="positive">
+            <span class="emo-name">积极</span>
+            <div class="emo-track"><div class="emo-fill emo-pos"></div></div>
+            <span class="emo-pct mono">0%</span>
+          </div>
+          <div class="emo-bar" data-key="neutral">
+            <span class="emo-name">平静</span>
+            <div class="emo-track"><div class="emo-fill emo-neu"></div></div>
+            <span class="emo-pct mono">0%</span>
+          </div>
+          <div class="emo-bar" data-key="negative">
+            <span class="emo-name">消极</span>
+            <div class="emo-track"><div class="emo-fill emo-neg"></div></div>
+            <span class="emo-pct mono">0%</span>
+          </div>
+        </div>
+        <!-- AI 标注中：录制时显示当前积累预测数 -->
+        <div class="auto-pred-status hidden" id="auto-pred-status">
+          <span class="auto-pred-dot"></span>
+          <span id="auto-pred-text">AI 标注中… 已积累 0 条预测</span>
+        </div>
+      </section>
+
+      <!-- 模型 -->
+      <section class="card">
+        <h2>模型</h2>
+        <ul class="model-list">
+          <li class="model-opt is-active">
+            <input type="radio" name="model" id="m-eegnet" checked />
+            <label for="m-eegnet">
+              <span class="m-name">EEGNet (多任务)</span>
+              <span class="m-tag" id="model-tag">未加载</span>
+            </label>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 训练 -->
+      <section class="card">
+        <h2>模型训练</h2>
+        <div class="form">
+          <div class="form-row">
+            <label>Epochs</label>
+            <input id="train-epochs" type="number" value="80" min="10" max="500" />
+          </div>
+        </div>
+        <button id="btn-train" class="btn btn-outline" style="width:100%;margin-top:10px">
+          ▶ 开始训练
+        </button>
+        <pre id="train-log" class="train-log"></pre>
+
+        <div id="train-result" class="train-result hidden">
+          <div class="tr-title">✅ 训练完成</div>
+          <table class="tr-table">
+            <thead><tr><th>指标</th><th>准确率</th></tr></thead>
+            <tbody>
+              <tr><td>情绪识别</td><td class="mono" id="tr-emotion">—</td></tr>
+              <tr><td>专注度</td>  <td class="mono" id="tr-attention">—</td></tr>
+              <tr><td>疲劳度</td>  <td class="mono" id="tr-fatigue">—</td></tr>
+              <tr class="tr-avg"><td>平均</td><td class="mono" id="tr-avg">—</td></tr>
+            </tbody>
+          </table>
+          <div class="tr-loss">最终 loss: <span class="mono" id="tr-loss">—</span></div>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <!-- ─── 底部操作栏 ─── -->
+  <footer class="bottombar">
+    <!-- 录制进度面板 -->
+    <div id="rec-panel" class="rec-panel hidden">
+      <div class="rec-panel-inner">
+        <div class="rec-dot-anim"></div>
+        <div class="rec-info">
+          <span class="rec-info-label" id="rec-mode-label">正在录制</span>
+          <span class="rec-info-tags" id="rec-info-tags">—</span>
+        </div>
+        <div class="rec-time-group">
+          <div class="rec-time-item">
+            <span class="rec-time-val" id="rec-elapsed">0.0 s</span>
+            <span class="rec-time-lbl">已录制</span>
+          </div>
+          <div class="rec-time-sep">|</div>
+          <div class="rec-time-item">
+            <span class="rec-time-val" id="rec-windows">0</span>
+            <span class="rec-time-lbl">窗口数</span>
+          </div>
+          <div class="rec-time-sep" id="rec-countdown-sep" style="display:none">|</div>
+          <div class="rec-time-item" id="rec-countdown-wrap" style="display:none">
+            <span class="rec-time-val countdown" id="rec-countdown">—</span>
+            <span class="rec-time-lbl">剩余</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 保存完成提示 -->
+    <div id="save-done" class="save-done hidden">
+      <span class="save-done-icon">✅</span>
+      <div class="save-done-info">
+        <strong id="save-done-filename">—</strong>
+        <span id="save-done-detail">—</span>
+      </div>
+      <button class="save-done-close" onclick="hideSaveDone()">×</button>
+    </div>
+
+    <div class="actions">
+      <button id="btn-record" class="btn btn-rec">● 开始记录</button>
+      <button id="btn-pause"  class="btn btn-ghost" disabled>⏸ 暂停</button>
+      <button id="btn-save"   class="btn btn-save"  disabled>■ 停止并保存</button>
+    </div>
+    <div class="meta">
+      <span>采样率 <strong class="mono">250 Hz</strong></span>
+      <span class="sep">·</span>
+      <span>当前速率 <strong class="mono" id="meta-rate">0 Hz</strong></span>
+      <span class="sep">·</span>
+      <span>已录 <strong class="mono" id="meta-rec">0.0 s</strong></span>
+    </div>
+  </footer>
+
+  <!-- 临时弹窗 -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

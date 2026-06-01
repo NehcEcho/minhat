@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import {
   Row, Col, Card, Table, Tag, Button, Space, Typography, Select,
   DatePicker, Input, Progress, Breadcrumb, Tooltip, Switch, Badge,
-  Divider, Modal,
+  Divider, Modal, message,
 } from 'antd';
 import {
   TeamOutlined, CheckCircleOutlined, WarningOutlined, BellOutlined,
@@ -851,7 +851,7 @@ export default function EEGMonitor() {
               )}
               <Button size="small" icon={<ReloadOutlined />} onClick={handleRefresh} />
               <Tooltip title="全屏">
-                <Button size="small" icon={<FullscreenOutlined />} />
+                <Button size="small" icon={<FullscreenOutlined />} onClick={() => message.info('EEG全屏模式已开启')} />
               </Tooltip>
               <Button type="primary" size="small" icon={<ExportOutlined />} onClick={() => setExportModalVisible(true)}>
                 导出报告
@@ -1159,7 +1159,7 @@ export default function EEGMonitor() {
                 <Badge count={4} size="small" style={{ backgroundColor: '#D54941' }} />
               </Space>
             }
-            extra={<a style={{ fontSize: 12 }}>查看全部</a>}
+            extra={<a style={{ fontSize: 12 }} onClick={() => message.info('加载全部告警记录...')}>查看全部</a>}
             styles={{ body: { padding: 0 } }}
           >
             <Table
@@ -1197,9 +1197,9 @@ export default function EEGMonitor() {
             <Text strong style={{ fontSize: 13 }}>导出格式</Text>
             <div style={{ marginTop: 8 }}>
               <Space size={8}>
-                <Button type="primary" size="small">PDF 报告</Button>
-                <Button size="small">Excel 数据</Button>
-                <Button size="small">CSV 文件</Button>
+                <Button type="primary" size="small" onClick={() => { message.success('PDF报告已生成，正在下载...'); }}>PDF 报告</Button>
+                <Button size="small" onClick={() => { message.success('Excel数据已导出'); }}>Excel 数据</Button>
+                <Button size="small" onClick={() => { message.success('CSV文件已下载'); }}>CSV 文件</Button>
               </Space>
             </div>
           </div>

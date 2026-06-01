@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import {
   Row, Col, Card, Table, Tag, Button, Space, Typography,
-  Select, Input, Descriptions, Tabs, Avatar, Dropdown, Divider,
+  Select, Input, Descriptions, Tabs, Avatar, Dropdown, Divider, message,
 } from 'antd';
 import {
   UserOutlined, PlusOutlined, SearchOutlined, ReloadOutlined,
@@ -56,14 +56,14 @@ const employeeData = [
 const detailTabs = ['基本信息', '岗位', '学历', '证书', '培训', '考勤', '绩效', '日志'];
 
 const quickActions = [
-  { icon: <EyeOutlined />, label: '查看档案', color: '#0052D9', bg: '#E8F3FF' },
-  { icon: <EditOutlined />, label: '编辑信息', color: '#2BA471', bg: '#E8F8F2' },
-  { icon: <SwapOutlined />, label: '岗位变动', color: '#E37318', bg: '#FFF3E8' },
-  { icon: <SafetyOutlined />, label: '权限设置', color: '#7B61FF', bg: '#F2F3FF' },
-  { icon: <KeyOutlined />, label: '重置密码', color: '#14C9C9', bg: '#E8FFFB' },
-  { icon: <FallOutlined />, label: '离职办理', color: '#D54941', bg: '#FDECEE' },
-  { icon: <ExportOutlined />, label: '导出', color: '#86909C', bg: '#F2F3F5' },
-  { icon: <MoreOutlined />, label: '更多', color: '#86909C', bg: '#F2F3F5' },
+  { icon: <EyeOutlined />, label: '查看档案', color: '#0052D9', bg: '#E8F3FF', msg: '正在加载员工档案...' },
+  { icon: <EditOutlined />, label: '编辑信息', color: '#2BA471', bg: '#E8F8F2', msg: '打开员工信息编辑表单' },
+  { icon: <SwapOutlined />, label: '岗位变动', color: '#E37318', bg: '#FFF3E8', msg: '打开岗位变动申请' },
+  { icon: <SafetyOutlined />, label: '权限设置', color: '#7B61FF', bg: '#F2F3FF', msg: '打开权限配置面板' },
+  { icon: <KeyOutlined />, label: '重置密码', color: '#14C9C9', bg: '#E8FFFB', msg: '密码已重置为默认密码' },
+  { icon: <FallOutlined />, label: '离职办理', color: '#D54941', bg: '#FDECEE', msg: '打开离职办理流程' },
+  { icon: <ExportOutlined />, label: '导出', color: '#86909C', bg: '#F2F3F5', msg: '员工数据已导出' },
+  { icon: <MoreOutlined />, label: '更多', color: '#86909C', bg: '#F2F3F5', msg: '加载更多操作...' },
 ];
 
 const employeeDetailData: Record<string, unknown> = {
@@ -266,10 +266,10 @@ export default function EmployeeManagement() {
       title: '操作', dataIndex: 'actions', key: 'actions', width: 130, fixed: 'right' as const,
       render: () => (
         <Space size={6}>
-          <a style={{ fontSize: 11 }}>查看</a>
-          <a style={{ fontSize: 11 }}>编辑</a>
+          <a style={{ fontSize: 11 }} onClick={() => message.info('正在加载员工详情...')}>查看</a>
+          <a style={{ fontSize: 11 }} onClick={() => message.info('打开员工编辑表单')}>编辑</a>
           <Dropdown menu={{ items: actionItems }} trigger={['click']}>
-            <a style={{ fontSize: 11 }}>更多 <MoreOutlined style={{ fontSize: 10 }} /></a>
+            <a style={{ fontSize: 11 }} onClick={() => message.info('加载更多操作...')}>更多 <MoreOutlined style={{ fontSize: 10 }} /></a>
           </Dropdown>
         </Space>
       ),
@@ -285,8 +285,8 @@ export default function EmployeeManagement() {
         </Col>
         <Col>
           <Space size={8}>
-            <Button type="primary" icon={<PlusOutlined />}>新增员工</Button>
-            <Button icon={<SendOutlined style={{ transform: 'rotate(-90deg)' }} />}>导入</Button>
+            <Button type="primary" icon={<PlusOutlined />} onClick={() => message.info('打开新增员工表单')}>新增员工</Button>
+            <Button icon={<SendOutlined style={{ transform: 'rotate(-90deg)' }} />} onClick={() => message.info('打开文件导入向导')}>导入</Button>
           </Space>
         </Col>
       </Row>
@@ -370,7 +370,7 @@ export default function EmployeeManagement() {
           </Col>
           <Col>
             <Space size={8}>
-              <Button size="small" type="primary" icon={<SearchOutlined />}>搜索</Button>
+              <Button size="small" type="primary" icon={<SearchOutlined />} onClick={() => message.info('正在搜索...')}>搜索</Button>
               <Button size="small" icon={<ReloadOutlined />} onClick={handleReset}>重置</Button>
             </Space>
           </Col>
@@ -440,6 +440,7 @@ export default function EmployeeManagement() {
                     padding: '10px 6px', textAlign: 'center', cursor: 'pointer',
                     borderRadius: 8, transition: 'background 0.2s',
                   }}
+                  onClick={() => message.info(action.msg)}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = action.bg; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'transparent'; }}
                 >

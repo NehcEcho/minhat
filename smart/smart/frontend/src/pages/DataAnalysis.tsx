@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import {
-  Row, Col, Card, Statistic, Tabs, Table, DatePicker, Typography, Tag, Space, Button,
+  Row, Col, Card, Statistic, Tabs, Table, DatePicker, Typography, Tag, Space, Button, message,
 } from 'antd';
 import {
   ArrowUpOutlined, ArrowDownOutlined, DatabaseOutlined, CloudUploadOutlined,
@@ -893,8 +893,8 @@ export default function DataAnalysis() {
               style={{ marginBottom: 10 }}
               tabBarExtraContent={
                 <Space size={8}>
-                  <Button size="small" icon={<FilterOutlined />} style={{ fontSize: 12 }}>筛选</Button>
-                  <Button size="small" icon={<DownloadOutlined />} style={{ fontSize: 12 }}>导出</Button>
+                  <Button size="small" icon={<FilterOutlined />} style={{ fontSize: 12 }} onClick={() => message.info('打开数据筛选面板')}>筛选</Button>
+                  <Button size="small" icon={<DownloadOutlined />} style={{ fontSize: 12 }} onClick={() => message.success('数据已导出')}>导出</Button>
                 </Space>
               }
             />

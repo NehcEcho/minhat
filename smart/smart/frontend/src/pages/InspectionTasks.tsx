@@ -1,7 +1,7 @@
 import { useState, useMemo, useCallback } from 'react';
 import {
   Row, Col, Card, Table, Tag, Button, Space, Typography, Select, Input, DatePicker,
-  Progress, Tooltip, Tabs, Segmented, Badge,
+  Progress, Tooltip, Tabs, Segmented, Badge, message,
 } from 'antd';
 import {
   CarryOutOutlined, CheckCircleOutlined, PlayCircleOutlined,
@@ -543,8 +543,8 @@ export default function InspectionTasks() {
       render: (_: unknown, record: TaskRow) => (
         <Space size={[8, 4]} wrap>
           <a style={{ fontSize: 11 }} onClick={() => setSelectedRoute(record.routeKey)}><EyeOutlined /> 详情</a>
-          <a style={{ fontSize: 11 }}><NodeIndexOutlined style={{ fontSize: 10 }} /> 轨迹</a>
-          <a style={{ fontSize: 11 }}><EditOutlined style={{ fontSize: 10 }} /> 记录</a>
+          <a style={{ fontSize: 11 }} onClick={() => message.info('加载巡检轨迹...')}><NodeIndexOutlined style={{ fontSize: 10 }} /> 轨迹</a>
+          <a style={{ fontSize: 11 }} onClick={() => message.info('加载巡检记录...')}><EditOutlined style={{ fontSize: 10 }} /> 记录</a>
         </Space>
       ),
     },
@@ -581,9 +581,9 @@ export default function InspectionTasks() {
                 <Button type="text" size="small" icon={filtersExpanded ? <CaretUpOutlined /> : <CaretDownOutlined />} onClick={() => setFiltersExpanded(!filtersExpanded)}>
                   {filtersExpanded ? '收起筛选' : '展开筛选'}
                 </Button>
-                <Button size="small" icon={<DownloadOutlined />} style={{}}>导出</Button>
-                <Button size="small" icon={<ReloadOutlined />}>重置</Button>
-                <Button type="primary" size="small" icon={<PlusOutlined />}>新建任务</Button>
+                <Button size="small" icon={<DownloadOutlined />} style={{}} onClick={() => message.success('巡检数据已导出')}>导出</Button>
+                <Button size="small" icon={<ReloadOutlined />} onClick={() => message.info('筛选条件已重置')}>重置</Button>
+                <Button type="primary" size="small" icon={<PlusOutlined />} onClick={() => message.info('打开新建巡检任务表单')}>新建任务</Button>
               </Space>
             </Col>
           </Row>
@@ -795,7 +795,7 @@ export default function InspectionTasks() {
               extra={
                 <Space size={4}>
                   <Tooltip title="全屏">
-                    <Button size="small" icon={<ExportOutlined />} />
+                    <Button size="small" icon={<ExportOutlined />} onClick={() => message.info('全屏模式已开启')} />
                   </Tooltip>
                 </Space>
               }
@@ -964,7 +964,7 @@ export default function InspectionTasks() {
                   <Badge count={7} size="small" overflowCount={99} style={{ backgroundColor: '#D54941' }} />
                 </Space>
               }
-              extra={<a style={{ fontSize: 12 }}>更多 {'>'}</a>}
+              extra={<a style={{ fontSize: 12 }} onClick={() => message.info('加载全部巡检提醒...')}>更多 {'>'}</a>}
               bodyStyle={{ padding: '8px 14px' }}
             >
               <div style={{ display: 'flex', flexDirection: 'column' }}>

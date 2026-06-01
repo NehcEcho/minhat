@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Row, Col, Card, Table, Tag, Button, Space, Typography, Tabs, Badge, Progress, Divider, Tooltip } from 'antd';
+import { Row, Col, Card, Table, Tag, Button, Space, Typography, Tabs, Badge, Progress, Divider, Tooltip, message } from 'antd';
 import {
   TeamOutlined, SafetyCertificateOutlined, AlertOutlined,
   WifiOutlined, VideoCameraOutlined, CloudOutlined,
@@ -7,6 +7,7 @@ import {
 } from '@ant-design/icons';
 import ReactECharts from 'echarts-for-react';
 import { getDashboardStats } from '../api';
+import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store';
 import MineMapSvg from '../components/MineMapSvg';
 
@@ -323,37 +324,6 @@ function SignalBars({ signal }: { signal: number }) {
   );
 }
 
-const deviceColumns = [
-  { title: '设备名称', dataIndex: 'name', key: 'name', width: 145, ellipsis: true },
-  { title: '类型', dataIndex: 'typeCn', key: 'typeCn', width: 80 },
-  { title: '型号', dataIndex: 'model', key: 'model', width: 100 },
-  { title: '区域', dataIndex: 'area', key: 'area', width: 115, ellipsis: true },
-  {
-    title: '状态', dataIndex: 'status', key: 'status', width: 70,
-    render: (status: string) => (
-      <Badge status={status === '在线' ? 'success' : 'error'} text={<span style={{ fontSize: 12 }}>{status}</span>} />
-    ),
-  },
-  {
-    title: '信号', dataIndex: 'signal', key: 'signal', width: 65,
-    render: (signal: number) => <SignalBars signal={signal} />,
-  },
-  {
-    title: '电源', dataIndex: 'power', key: 'power', width: 85,
-    render: (val: string) => {
-      if (val === 'POE供电') return <Tag color="blue" style={{ margin: 0, fontSize: 11 }}>POE</Tag>;
-      if (val === 'AC供电') return <Tag color="purple" style={{ margin: 0, fontSize: 11 }}>AC</Tag>;
-      if (val.includes('低') || val === '电量低') return <Typography.Text style={{ fontSize: 11, color: '#F5222D' }}>{val}</Typography.Text>;
-      return <Typography.Text style={{ fontSize: 12 }}>{val}</Typography.Text>;
-    },
-  },
-  { title: '在线时长', dataIndex: 'onlineTime', key: 'onlineTime', width: 90 },
-  {
-    title: '操作', dataIndex: 'key', key: 'action', width: 55,
-    render: () => <a style={{ fontSize: 12 }}>详情</a>,
-  },
-];
-
 const deviceTabs = [
   { key: 'all', label: '全部' },
   { key: '智能矿帽', label: '智能矿帽' },
@@ -388,6 +358,38 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(false);
   const [deviceTab, setDeviceTab] = useState('all');
   const { username } = useAuthStore();
+  const navigate = useNavigate();
+
+  const deviceColumns = [
+    { title: '设备名称', dataIndex: 'name', key: 'name', width: 145, ellipsis: true },
+    { title: '类型', dataIndex: 'typeCn', key: 'typeCn', width: 80 },
+    { title: '型号', dataIndex: 'model', key: 'model', width: 100 },
+    { title: '区域', dataIndex: 'area', key: 'area', width: 115, ellipsis: true },
+    {
+      title: '状态', dataIndex: 'status', key: 'status', width: 70,
+      render: (status: string) => (
+        <Badge status={status === '在线' ? 'success' : 'error'} text={<span style={{ fontSize: 12 }}>{status}</span>} />
+      ),
+    },
+    {
+      title: '信号', dataIndex: 'signal', key: 'signal', width: 65,
+      render: (signal: number) => <SignalBars signal={signal} />,
+    },
+    {
+      title: '电源', dataIndex: 'power', key: 'power', width: 85,
+      render: (val: string) => {
+        if (val === 'POE供电') return <Tag color="blue" style={{ margin: 0, fontSize: 11 }}>POE</Tag>;
+        if (val === 'AC供电') return <Tag color="purple" style={{ margin: 0, fontSize: 11 }}>AC</Tag>;
+        if (val.includes('低') || val === '电量低') return <Typography.Text style={{ fontSize: 11, color: '#F5222D' }}>{val}</Typography.Text>;
+        return <Typography.Text style={{ fontSize: 12 }}>{val}</Typography.Text>;
+      },
+    },
+    { title: '在线时长', dataIndex: 'onlineTime', key: 'onlineTime', width: 90 },
+    {
+      title: '操作', dataIndex: 'key', key: 'action', width: 55,
+      render: (_: unknown, record: DeviceRow) => <a style={{ fontSize: 12 }} onClick={() => navigate('/device-manage/' + record.key)}>详情</a>,
+    },
+  ];
 
   useEffect(() => {
     setLoading(true);
@@ -510,8 +512,8 @@ export default function Dashboard() {
                   title={<span className="dsh-alarm-title">告警列表</span>}
                   extra={
                     <Space size={8}>
-                      <Button type="primary" size="small" style={{ fontSize: 11, height: 22, padding: '0 8px' }}>全部 (31)</Button>
-                      <a className="dsh-alarm-extra">更多</a>
+                      <Button type="primary" size="small" style={{ fontSize: 11, height: 22, padding: '0 8px' }} onClick={() => navigate('/alarm-disposal')}>全部 (31)</Button>
+                      <a className="dsh-alarm-extra" onClick={() => navigate('/alarm-disposal')}>更多</a>
                     </Space>
                   }
                   className="dsh-alarm-card"
@@ -539,8 +541,8 @@ export default function Dashboard() {
               className="dsh-track-card"
               extra={
                 <Space size={4}>
-                  <Button type="text" size="small" icon={<PauseCircleOutlined />} style={{ fontSize: 12 }} />
-                  <Button type="text" size="small" icon={<ExpandOutlined />} style={{ fontSize: 12 }} />
+                  <Button type="text" size="small" icon={<PauseCircleOutlined />} style={{ fontSize: 12 }} onClick={() => message.info('轨迹回放已暂停')} />
+                  <Button type="text" size="small" icon={<ExpandOutlined />} style={{ fontSize: 12 }} onClick={() => message.info('全屏模式已开启')} />
                 </Space>
               }
               styles={{ body: { padding: '10px 12px' } }}
@@ -567,6 +569,7 @@ export default function Dashboard() {
                     shape="circle"
                     icon={<CaretRightOutlined />}
                     className="dsh-track-play-btn"
+                    onClick={() => message.success('轨迹回放开始')}
                   />
                 </Tooltip>
               </div>

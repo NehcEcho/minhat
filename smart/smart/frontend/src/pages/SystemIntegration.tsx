@@ -313,7 +313,7 @@ export default function SystemIntegration() {
   const talkColumns = [
     { title: 'ID', dataIndex: 'id', width: 60 },
     { title: '名称', dataIndex: 'groupName', width: 180, render: (v: string, r: any) => v || r.group_name || '-' },
-    { title: '操作', width: 260, render: (_: any, r: any) => <Space size={0}><Button size="small" onClick={() => handleSendTalkCmd(r.id, '8010')}>广播</Button><Button size="small" onClick={() => handleSendTalkCmd(r.id, '8014')}>对讲</Button><Popconfirm title="确认删除?" onConfirm={() => handleDeleteTalkGroup(r.id)}><Button size="small" danger>删除</Button></Popconfirm></Space> },
+    { title: '操作', width: 260, render: (_: any, r: any) => <Space size={0}><Button size="small" onClick={() => handleSendTalkCmd(r.id, '8010')}>广播</Button><Button size="small" onClick={() => handleSendTalkCmd(r.id, '8014')}>对讲</Button><Popconfirm title="确认删除?" onConfirm={() => handleDeleteTalkGroup(r.id)}><Button size="small" danger onClick={() => message.warning('确认删除该设备？')}>删除</Button></Popconfirm></Space> },
   ];
 
   const tabItems = [

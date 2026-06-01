@@ -1,0 +1,3009 @@
+[2026/5/8 12:36:16] SenzeBandWindowsInterface()
+[2026/5/8 12:36:16] SenzeBandWindowsInterface.initializeSBWI()
+[2026/5/8 12:36:16] ScanBLEDevice initialize
+[2026/5/8 12:36:16] Scan device initialized!
+[2026/5/8 12:36:17] SBWI startScanning
+[2026/5/8 12:36:17] startScan start
+[2026/5/8 12:36:22] connecting 258244599024564
+[2026/5/8 12:36:22] bleWatcher.Status is Created
+[2026/5/8 12:36:22] connecting 2 258244599024564
+[2026/5/8 12:36:22] Get characteristic 6e400003-b5a3-f393-e0a9-e50e24dcca9e
+[2026/5/8 12:36:22] BluetoothLEDevice connect status Connected. Address: EADF41970BB4
+[2026/5/8 12:36:22] RX: 6e400003-b5a3-f393-e0a9-e50e24dcca9e/Success
+[2026/5/8 12:36:22] connection.bluetoothaddress=258244599024564
+[2026/5/8 12:36:27] Setting TX here connection.txCharacteristic=6e400002-b5a3-f393-e0a9-e50e24dcca9e
+[2026/5/8 12:36:27] TX SET
+[2026/5/8 12:36:27] mobo_uuid=97D660B2-B284-7841-81D2-7292945FC253
+[2026/5/8 12:36:27] macAddress=EADF41970BB4
+[2026/5/8 12:36:27] Connection success Windows.Devices.Enumeration.DeviceInformation
+[2026/5/8 12:36:27] sbInstance.buffer_size=645
+[2026/5/8 12:36:27] ACK string matched!!!
+[2026/5/8 12:36:28] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:28] batteryLevelValue 71
+[2026/5/8 12:36:28] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:28] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:28] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:28] Evoke: 0
+[2026/5/8 12:36:28] SPO2=0
+[2026/5/8 12:36:28] HeartRate=0
+[2026/5/8 12:36:28] HeartRateDetect=0
+[2026/5/8 12:36:28] AccXYZ= 3.856018>0.7310181>0.6055908>38.39722>351.3977>347.3383>0>0>0>
+[2026/5/8 12:36:28] get direction 38.397216796875 351.397705078125 347.338256835938 W
+[2026/5/8 12:36:28] HeaderFound!
+[2026/5/8 12:36:28] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] Full Package is received!
+[2026/5/8 12:36:28] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:28] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:28] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:28] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:28] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:28] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:28] Correct header in do_analyze
+[2026/5/8 12:36:28] analyzeEEGDataThread sbInstance.packetCounter=0
+[2026/5/8 12:36:28] analyzeEEGDataThread sbInstance.counter=150
+[2026/5/8 12:36:28] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:28] batteryLevelValue 71
+[2026/5/8 12:36:28] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:28] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:28] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:28] Evoke: 0
+[2026/5/8 12:36:28] SPO2=0
+[2026/5/8 12:36:28] HeartRate=0
+[2026/5/8 12:36:28] HeartRateDetect=0
+[2026/5/8 12:36:28] AccXYZ= 3.643921>0.8624268>0.3587036>22.37915>339.3237>338.1427>0>0>0>
+[2026/5/8 12:36:28] get direction 22.379150390625 339.32373046875 338.142700195313 W
+[2026/5/8 12:36:28] HeaderFound!
+[2026/5/8 12:36:28] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] Full Package is received!
+[2026/5/8 12:36:28] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:28] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:28] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:28] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:28] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:28] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:28] Correct header in do_analyze
+[2026/5/8 12:36:28] analyzeEEGDataThread sbInstance.packetCounter=1
+[2026/5/8 12:36:28] analyzeEEGDataThread sbInstance.counter=300
+[2026/5/8 12:36:28] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:28] batteryLevelValue 72
+[2026/5/8 12:36:28] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:28] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:28] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:28] Evoke: 0
+[2026/5/8 12:36:28] SPO2=0
+[2026/5/8 12:36:28] HeartRate=0
+[2026/5/8 12:36:28] HeartRateDetect=0
+[2026/5/8 12:36:28] AccXYZ= 3.806702>0.9812622>0.1405029>8.371582>348.717>332.7429>0>0>0>
+[2026/5/8 12:36:28] get direction 8.37158203125 348.717041015625 332.742919921875 NW
+[2026/5/8 12:36:28] HeaderFound!
+[2026/5/8 12:36:28] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] Full Package is received!
+[2026/5/8 12:36:28] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:28] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:28] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:28] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:28] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:28] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:28] Correct header in do_analyze
+[2026/5/8 12:36:28] analyzeEEGDataThread sbInstance.packetCounter=2
+[2026/5/8 12:36:28] analyzeEEGDataThread sbInstance.counter=450
+[2026/5/8 12:36:28] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:28] batteryLevelValue 71
+[2026/5/8 12:36:28] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:28] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:28] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:28] Evoke: 0
+[2026/5/8 12:36:28] SPO2=0
+[2026/5/8 12:36:28] HeartRate=0
+[2026/5/8 12:36:28] HeartRateDetect=0
+[2026/5/8 12:36:28] AccXYZ= 3.857788>0.9456787>0.1223145>7.783813>350.9912>329.1504>0>0>0>
+[2026/5/8 12:36:28] get direction 7.7838134765625 350.9912109375 329.150390625 NW
+[2026/5/8 12:36:28] HeaderFound!
+[2026/5/8 12:36:28] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] Full Package is received!
+[2026/5/8 12:36:28] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:28] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:28] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:28] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:28] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:28] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:28] Correct header in do_analyze
+[2026/5/8 12:36:28] analyzeEEGDataThread sbInstance.packetCounter=3
+[2026/5/8 12:36:28] analyzeEEGDataThread sbInstance.counter=600
+[2026/5/8 12:36:28] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:28] batteryLevelValue 71
+[2026/5/8 12:36:28] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:28] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:28] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:28] Evoke: 0
+[2026/5/8 12:36:28] SPO2=0
+[2026/5/8 12:36:28] HeartRate=0
+[2026/5/8 12:36:28] HeartRateDetect=0
+[2026/5/8 12:36:28] AccXYZ= 0.02392578>1.009399>0.03546143>1.757813>1.384277>328.2166>0>0>0>
+[2026/5/8 12:36:28] get direction 1.7578125 1.38427734375 328.216552734375 NW
+[2026/5/8 12:36:28] HeaderFound!
+[2026/5/8 12:36:28] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:28] Full Package is received!
+[2026/5/8 12:36:28] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:28] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:28] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:28] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:28] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:28] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:28] Correct header in do_analyze
+[2026/5/8 12:36:28] analyzeEEGDataThread sbInstance.packetCounter=4
+[2026/5/8 12:36:28] analyzeEEGDataThread sbInstance.counter=750
+[2026/5/8 12:36:32] EEG_GetFreqTypePower sbInstances.ContainsKey(deviceID)=True
+[2026/5/8 12:36:32] EEG_GetFreqTypePower sbInstance.signal_ready=False
+[2026/5/8 12:36:32] EEG_GetAmpOhmsFromEEG: 3602791 3603779 3606012 7600915
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 71
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.0123291>0.9942627>0.03430176>2.362061>0.2471924>327.9309>0>0>0>
+[2026/5/8 12:36:32] get direction 2.362060546875 0.2471923828125 327.930908203125 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] Full Package is received!
+[2026/5/8 12:36:32] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:32] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:32] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:32] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:32] Correct header in do_analyze
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.packetCounter=0
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.counter=150
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 72
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.01525879>0.9973145>0.03961182>2.559814>0.3625488>327.7332>0>0>0>
+[2026/5/8 12:36:32] get direction 2.559814453125 0.362548828125 327.733154296875 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] Full Package is received!
+[2026/5/8 12:36:32] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:32] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:32] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:32] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:32] Correct header in do_analyze
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.packetCounter=1
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.counter=300
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 71
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.01519775>0.9971313>0.03930664>2.537842>0.3460693>327.6563>0>0>0>
+[2026/5/8 12:36:32] get direction 2.537841796875 0.3460693359375 327.65625 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] Full Package is received!
+[2026/5/8 12:36:32] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:32] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:32] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:32] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:32] Correct header in do_analyze
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.packetCounter=2
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.counter=450
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 71
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.01507568>0.9962158>0.03900146>2.576294>0.3625488>327.4969>0>0>0>
+[2026/5/8 12:36:32] get direction 2.5762939453125 0.362548828125 327.496948242188 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] Full Package is received!
+[2026/5/8 12:36:32] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:32] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:32] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:32] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:32] Correct header in do_analyze
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.packetCounter=3
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.counter=600
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 72
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.01501465>0.9962769>0.04046631>2.636719>0.368042>327.475>0>0>0>
+[2026/5/8 12:36:32] get direction 2.63671875 0.3680419921875 327.474975585938 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] Full Package is received!
+[2026/5/8 12:36:32] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:32] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:32] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:32] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:32] Correct header in do_analyze
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.packetCounter=4
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.counter=750
+[2026/5/8 12:36:32] EEG_GetFreqTypePower sbInstances.ContainsKey(deviceID)=True
+[2026/5/8 12:36:32] EEG_GetFreqTypePower sbInstance.signal_ready=False
+[2026/5/8 12:36:32] EEG_GetAmpOhmsFromEEG: 155705.8 155787.7 156353.9 156385.6
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 72
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.01452637>0.996521>0.04052734>2.653198>0.3076172>327.4695>0>0>0>
+[2026/5/8 12:36:32] get direction 2.6531982421875 0.3076171875 327.469482421875 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] Full Package is received!
+[2026/5/8 12:36:32] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:32] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:32] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:32] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:32] Correct header in do_analyze
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.packetCounter=0
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.counter=150
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 72
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.01513672>0.9963989>0.0411377>2.675171>0.4064941>327.475>0>0>0>
+[2026/5/8 12:36:32] get direction 2.6751708984375 0.406494140625 327.474975585938 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] Full Package is received!
+[2026/5/8 12:36:32] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:32] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:32] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:32] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:32] Correct header in do_analyze
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.packetCounter=1
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.counter=300
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 71
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.01574707>0.9972534>0.04016113>2.636719>0.3735352>327.4695>0>0>0>
+[2026/5/8 12:36:32] get direction 2.63671875 0.37353515625 327.469482421875 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] Full Package is received!
+[2026/5/8 12:36:32] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:32] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:32] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:32] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:32] Correct header in do_analyze
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.packetCounter=2
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.counter=450
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 72
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.01556396>0.9961548>0.0413208>2.680664>0.3625488>327.486>0>0>0>
+[2026/5/8 12:36:32] get direction 2.6806640625 0.362548828125 327.485961914063 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] Full Package is received!
+[2026/5/8 12:36:32] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:32] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:32] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:32] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:32] Correct header in do_analyze
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.packetCounter=3
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.counter=600
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 71
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.01538086>0.9959717>0.04101563>2.675171>0.3735352>327.486>0>0>0>
+[2026/5/8 12:36:32] get direction 2.6751708984375 0.37353515625 327.485961914063 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] Full Package is received!
+[2026/5/8 12:36:32] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:32] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:32] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:32] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:32] Correct header in do_analyze
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.packetCounter=4
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.counter=750
+[2026/5/8 12:36:32] EEG_GetFreqTypePower sbInstances.ContainsKey(deviceID)=True
+[2026/5/8 12:36:32] EEG_GetFreqTypePower sbInstance.signal_ready=False
+[2026/5/8 12:36:32] EEG_GetAmpOhmsFromEEG: 0 0 0 0
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 72
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.01544189>0.9959717>0.04125977>2.669678>0.3735352>327.5189>0>0>0>
+[2026/5/8 12:36:32] get direction 2.669677734375 0.37353515625 327.518920898438 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] Full Package is received!
+[2026/5/8 12:36:32] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:32] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:32] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:32] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:32] Correct header in do_analyze
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.packetCounter=0
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.counter=150
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 71
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.01470947>0.9957275>0.04217529>2.741089>0.3460693>327.5739>0>0>0>
+[2026/5/8 12:36:32] get direction 2.7410888671875 0.3460693359375 327.573852539063 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] Full Package is received!
+[2026/5/8 12:36:32] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:32] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:32] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:32] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:32] Correct header in do_analyze
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.packetCounter=1
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.counter=300
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 72
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.01599121>0.99646>0.04223633>2.724609>0.4064941>327.4805>0>0>0>
+[2026/5/8 12:36:32] get direction 2.724609375 0.406494140625 327.48046875 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] Full Package is received!
+[2026/5/8 12:36:32] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:32] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:32] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:32] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:32] Correct header in do_analyze
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.packetCounter=2
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.counter=450
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 71
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.01568604>0.996521>0.0423584>2.741089>0.3790283>327.4805>0>0>0>
+[2026/5/8 12:36:32] get direction 2.7410888671875 0.3790283203125 327.48046875 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] Full Package is received!
+[2026/5/8 12:36:32] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:32] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:32] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:32] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:32] Correct header in do_analyze
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.packetCounter=3
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.counter=600
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 72
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.01531982>0.9967651>0.04223633>2.730103>0.3625488>327.5574>0>0>0>
+[2026/5/8 12:36:32] get direction 2.7301025390625 0.362548828125 327.557373046875 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] Full Package is received!
+[2026/5/8 12:36:32] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:32] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:32] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:32] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:32] Correct header in do_analyze
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.packetCounter=4
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.counter=750
+[2026/5/8 12:36:32] EEG_GetFreqTypePower sbInstances.ContainsKey(deviceID)=True
+[2026/5/8 12:36:32] EEG_GetFreqTypePower sbInstance.signal_ready=False
+[2026/5/8 12:36:32] EEG_GetAmpOhmsFromEEG: 0 0 0 0
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 72
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.0166626>0.9968262>0.04229736>2.746582>0.4449463>327.7496>0>0>0>
+[2026/5/8 12:36:32] get direction 2.74658203125 0.4449462890625 327.749633789063 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] Full Package is received!
+[2026/5/8 12:36:32] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:32] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:32] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:32] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:32] Correct header in do_analyze
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.packetCounter=0
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.counter=150
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 72
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.01641846>0.9963379>0.04223633>2.735596>0.43396>327.7551>0>0>0>
+[2026/5/8 12:36:32] get direction 2.735595703125 0.4339599609375 327.755126953125 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] Full Package is received!
+[2026/5/8 12:36:32] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:32] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:32] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:32] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:32] Correct header in do_analyze
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.packetCounter=1
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.counter=300
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 72
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.01733398>0.9968262>0.04309082>2.790527>0.4724121>327.5848>0>0>0>
+[2026/5/8 12:36:32] get direction 2.79052734375 0.472412109375 327.584838867188 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] Full Package is received!
+[2026/5/8 12:36:32] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:32] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:32] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:32] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:32] Correct header in do_analyze
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.packetCounter=2
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.counter=450
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 71
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.01605225>0.9963989>0.04168701>2.741089>0.4229736>327.5739>0>0>0>
+[2026/5/8 12:36:32] get direction 2.7410888671875 0.4229736328125 327.573852539063 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] Full Package is received!
+[2026/5/8 12:36:32] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:32] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:32] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:32] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:32] Correct header in do_analyze
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.packetCounter=3
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.counter=600
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 71
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.01635742>0.99646>0.04266357>2.752075>0.4229736>327.5739>0>0>0>
+[2026/5/8 12:36:32] get direction 2.7520751953125 0.4229736328125 327.573852539063 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] Full Package is received!
+[2026/5/8 12:36:32] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:32] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:32] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:32] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:32] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:32] Correct header in do_analyze
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.packetCounter=4
+[2026/5/8 12:36:32] analyzeEEGDataThread sbInstance.counter=750
+[2026/5/8 12:36:32] EEG_GetFreqTypePower sbInstances.ContainsKey(deviceID)=True
+[2026/5/8 12:36:32] EEG_GetFreqTypePower sbInstance.signal_ready=False
+[2026/5/8 12:36:32] EEG_GetAmpOhmsFromEEG: 0 0 0 0
+[2026/5/8 12:36:32] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:32] batteryLevelValue 72
+[2026/5/8 12:36:32] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:32] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:32] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:32] Evoke: 0
+[2026/5/8 12:36:32] SPO2=0
+[2026/5/8 12:36:32] HeartRate=0
+[2026/5/8 12:36:32] HeartRateDetect=0
+[2026/5/8 12:36:32] AccXYZ= 0.01776123>0.9971313>0.04266357>2.768555>0.43396>327.5739>0>0>0>
+[2026/5/8 12:36:32] get direction 2.7685546875 0.4339599609375 327.573852539063 NW
+[2026/5/8 12:36:32] HeaderFound!
+[2026/5/8 12:36:32] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:32] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] Full Package is received!
+[2026/5/8 12:36:33] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:33] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:33] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:33] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:33] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:33] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:33] Correct header in do_analyze
+[2026/5/8 12:36:33] analyzeEEGDataThread sbInstance.packetCounter=0
+[2026/5/8 12:36:33] analyzeEEGDataThread sbInstance.counter=150
+[2026/5/8 12:36:33] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:33] batteryLevelValue 72
+[2026/5/8 12:36:33] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:33] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:33] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:33] Evoke: 0
+[2026/5/8 12:36:33] SPO2=0
+[2026/5/8 12:36:33] HeartRate=0
+[2026/5/8 12:36:33] HeartRateDetect=0
+[2026/5/8 12:36:33] AccXYZ= 0.01654053>0.9971924>0.04394531>2.817993>0.4284668>327.4915>0>0>0>
+[2026/5/8 12:36:33] get direction 2.8179931640625 0.428466796875 327.491455078125 NW
+[2026/5/8 12:36:33] HeaderFound!
+[2026/5/8 12:36:33] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] Full Package is received!
+[2026/5/8 12:36:33] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:33] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:33] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:33] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:33] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:33] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:33] Correct header in do_analyze
+[2026/5/8 12:36:33] analyzeEEGDataThread sbInstance.packetCounter=1
+[2026/5/8 12:36:33] analyzeEEGDataThread sbInstance.counter=300
+[2026/5/8 12:36:33] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:33] batteryLevelValue 72
+[2026/5/8 12:36:33] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:33] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:33] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:33] Evoke: 0
+[2026/5/8 12:36:33] SPO2=0
+[2026/5/8 12:36:33] HeartRate=0
+[2026/5/8 12:36:33] HeartRateDetect=0
+[2026/5/8 12:36:33] AccXYZ= 0.01422119>0.9961548>0.04260254>2.757568>0.3625488>327.5629>0>0>0>
+[2026/5/8 12:36:33] get direction 2.757568359375 0.362548828125 327.562866210938 NW
+[2026/5/8 12:36:33] HeaderFound!
+[2026/5/8 12:36:33] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] Full Package is received!
+[2026/5/8 12:36:33] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:33] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:33] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:33] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:33] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:33] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:33] Correct header in do_analyze
+[2026/5/8 12:36:33] analyzeEEGDataThread sbInstance.packetCounter=2
+[2026/5/8 12:36:33] analyzeEEGDataThread sbInstance.counter=450
+[2026/5/8 12:36:33] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:33] batteryLevelValue 71
+[2026/5/8 12:36:33] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:33] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:33] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:33] Evoke: 0
+[2026/5/8 12:36:33] SPO2=0
+[2026/5/8 12:36:33] HeartRate=0
+[2026/5/8 12:36:33] HeartRateDetect=0
+[2026/5/8 12:36:33] AccXYZ= 0.01623535>0.9959717>0.04296875>2.785034>0.43396>327.5739>0>0>0>
+[2026/5/8 12:36:33] get direction 2.7850341796875 0.4339599609375 327.573852539063 NW
+[2026/5/8 12:36:33] HeaderFound!
+[2026/5/8 12:36:33] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] Full Package is received!
+[2026/5/8 12:36:33] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:33] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:33] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:33] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:33] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:33] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:33] Correct header in do_analyze
+[2026/5/8 12:36:33] analyzeEEGDataThread sbInstance.packetCounter=3
+[2026/5/8 12:36:33] analyzeEEGDataThread sbInstance.counter=600
+[2026/5/8 12:36:33] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:33] batteryLevelValue 71
+[2026/5/8 12:36:33] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:33] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:33] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:33] Evoke: 0
+[2026/5/8 12:36:33] SPO2=0
+[2026/5/8 12:36:33] HeartRate=0
+[2026/5/8 12:36:33] HeartRateDetect=0
+[2026/5/8 12:36:33] AccXYZ= 0.01593018>0.9963989>0.04321289>2.807007>0.4064941>327.5739>0>0>0>
+[2026/5/8 12:36:33] get direction 2.8070068359375 0.406494140625 327.573852539063 NW
+[2026/5/8 12:36:33] HeaderFound!
+[2026/5/8 12:36:33] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:33] Full Package is received!
+[2026/5/8 12:36:33] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:33] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:33] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:33] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:33] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:33] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:33] Correct header in do_analyze
+[2026/5/8 12:36:33] analyzeEEGDataThread sbInstance.packetCounter=4
+[2026/5/8 12:36:33] analyzeEEGDataThread sbInstance.counter=750
+[2026/5/8 12:36:33] EEG_GetFreqTypePower sbInstances.ContainsKey(deviceID)=True
+[2026/5/8 12:36:33] EEG_GetFreqTypePower sbInstance.signal_ready=False
+[2026/5/8 12:36:33] EEG_GetAmpOhmsFromEEG: 0 0 0 0
+[2026/5/8 12:36:34] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:34] batteryLevelValue 71
+[2026/5/8 12:36:34] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:34] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:34] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:34] Evoke: 0
+[2026/5/8 12:36:34] SPO2=0
+[2026/5/8 12:36:34] HeartRate=0
+[2026/5/8 12:36:34] HeartRateDetect=0
+[2026/5/8 12:36:34] AccXYZ= 0.01690674>0.9959717>0.04400635>2.845459>0.4449463>327.5244>0>0>0>
+[2026/5/8 12:36:34] get direction 2.845458984375 0.4449462890625 327.5244140625 NW
+[2026/5/8 12:36:34] HeaderFound!
+[2026/5/8 12:36:34] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] Full Package is received!
+[2026/5/8 12:36:34] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:34] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:34] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:34] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:34] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:34] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:34] Correct header in do_analyze
+[2026/5/8 12:36:34] analyzeEEGDataThread sbInstance.packetCounter=0
+[2026/5/8 12:36:34] analyzeEEGDataThread sbInstance.counter=150
+[2026/5/8 12:36:34] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:34] batteryLevelValue 71
+[2026/5/8 12:36:34] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:34] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:34] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:34] Evoke: 0
+[2026/5/8 12:36:34] SPO2=0
+[2026/5/8 12:36:34] HeartRate=0
+[2026/5/8 12:36:34] HeartRateDetect=0
+[2026/5/8 12:36:34] AccXYZ= 0.01654053>0.996582>0.04406738>2.839966>0.4449463>327.5134>0>0>0>
+[2026/5/8 12:36:34] get direction 2.8399658203125 0.4449462890625 327.513427734375 NW
+[2026/5/8 12:36:34] HeaderFound!
+[2026/5/8 12:36:34] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] Full Package is received!
+[2026/5/8 12:36:34] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:34] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:34] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:34] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:34] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:34] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:34] Correct header in do_analyze
+[2026/5/8 12:36:34] analyzeEEGDataThread sbInstance.packetCounter=1
+[2026/5/8 12:36:34] analyzeEEGDataThread sbInstance.counter=300
+[2026/5/8 12:36:34] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:34] batteryLevelValue 71
+[2026/5/8 12:36:34] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:34] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:34] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:34] Evoke: 0
+[2026/5/8 12:36:34] SPO2=0
+[2026/5/8 12:36:34] HeartRate=0
+[2026/5/8 12:36:34] HeartRateDetect=0
+[2026/5/8 12:36:34] AccXYZ= 0.01696777>0.99646>0.04364014>2.823486>0.4614258>327.5189>0>0>0>
+[2026/5/8 12:36:34] get direction 2.823486328125 0.46142578125 327.518920898438 NW
+[2026/5/8 12:36:34] HeaderFound!
+[2026/5/8 12:36:34] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] Full Package is received!
+[2026/5/8 12:36:34] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:34] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:34] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:34] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:34] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:34] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:34] Correct header in do_analyze
+[2026/5/8 12:36:34] analyzeEEGDataThread sbInstance.packetCounter=2
+[2026/5/8 12:36:34] analyzeEEGDataThread sbInstance.counter=450
+[2026/5/8 12:36:34] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:34] batteryLevelValue 72
+[2026/5/8 12:36:34] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:34] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:34] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:34] Evoke: 0
+[2026/5/8 12:36:34] SPO2=0
+[2026/5/8 12:36:34] HeartRate=0
+[2026/5/8 12:36:34] HeartRateDetect=0
+[2026/5/8 12:36:34] AccXYZ= 0.0177002>0.9967651>0.04431152>2.850952>0.5108643>327.5189>0>0>0>
+[2026/5/8 12:36:34] get direction 2.8509521484375 0.5108642578125 327.518920898438 NW
+[2026/5/8 12:36:34] HeaderFound!
+[2026/5/8 12:36:34] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] Full Package is received!
+[2026/5/8 12:36:34] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:34] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:34] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:34] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:34] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:34] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:34] Correct header in do_analyze
+[2026/5/8 12:36:34] analyzeEEGDataThread sbInstance.packetCounter=3
+[2026/5/8 12:36:34] analyzeEEGDataThread sbInstance.counter=600
+[2026/5/8 12:36:34] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:34] batteryLevelValue 71
+[2026/5/8 12:36:34] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:34] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:34] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:34] Evoke: 0
+[2026/5/8 12:36:34] SPO2=0
+[2026/5/8 12:36:34] HeartRate=0
+[2026/5/8 12:36:34] HeartRateDetect=0
+[2026/5/8 12:36:34] AccXYZ= 0.0166626>0.9959106>0.04321289>2.790527>0.4449463>327.6123>0>0>0>
+[2026/5/8 12:36:34] get direction 2.79052734375 0.4449462890625 327.6123046875 NW
+[2026/5/8 12:36:34] HeaderFound!
+[2026/5/8 12:36:34] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] Full Package is received!
+[2026/5/8 12:36:34] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:34] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:34] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:34] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:34] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:34] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:34] Correct header in do_analyze
+[2026/5/8 12:36:34] analyzeEEGDataThread sbInstance.packetCounter=4
+[2026/5/8 12:36:34] analyzeEEGDataThread sbInstance.counter=750
+[2026/5/8 12:36:34] EEG_GetFreqTypePower sbInstances.ContainsKey(deviceID)=True
+[2026/5/8 12:36:34] EEG_GetFreqTypePower sbInstance.signal_ready=False
+[2026/5/8 12:36:34] EEG_GetAmpOhmsFromEEG: 0 0 0 0
+[2026/5/8 12:36:34] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:34] batteryLevelValue 71
+[2026/5/8 12:36:34] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:34] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:34] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:34] Evoke: 0
+[2026/5/8 12:36:34] SPO2=0
+[2026/5/8 12:36:34] HeartRate=0
+[2026/5/8 12:36:34] HeartRateDetect=0
+[2026/5/8 12:36:34] AccXYZ= 0.01715088>0.9963379>0.04394531>2.823486>0.4779053>327.5574>0>0>0>
+[2026/5/8 12:36:34] get direction 2.823486328125 0.4779052734375 327.557373046875 NW
+[2026/5/8 12:36:34] HeaderFound!
+[2026/5/8 12:36:34] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:34] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] Full Package is received!
+[2026/5/8 12:36:35] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:35] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:35] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:35] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:35] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:35] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:35] Correct header in do_analyze
+[2026/5/8 12:36:35] analyzeEEGDataThread sbInstance.packetCounter=0
+[2026/5/8 12:36:35] analyzeEEGDataThread sbInstance.counter=150
+[2026/5/8 12:36:35] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:35] batteryLevelValue 72
+[2026/5/8 12:36:35] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:35] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:35] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:35] Evoke: 0
+[2026/5/8 12:36:35] SPO2=0
+[2026/5/8 12:36:35] HeartRate=0
+[2026/5/8 12:36:35] HeartRateDetect=0
+[2026/5/8 12:36:35] AccXYZ= 0.01690674>0.9960938>0.04406738>2.834473>0.4504395>327.5189>0>0>0>
+[2026/5/8 12:36:35] get direction 2.83447265625 0.450439453125 327.518920898438 NW
+[2026/5/8 12:36:35] HeaderFound!
+[2026/5/8 12:36:35] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] Full Package is received!
+[2026/5/8 12:36:35] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:35] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:35] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:35] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:35] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:35] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:35] Correct header in do_analyze
+[2026/5/8 12:36:35] analyzeEEGDataThread sbInstance.packetCounter=1
+[2026/5/8 12:36:35] analyzeEEGDataThread sbInstance.counter=300
+[2026/5/8 12:36:35] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:35] batteryLevelValue 72
+[2026/5/8 12:36:35] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:35] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:35] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:35] Evoke: 0
+[2026/5/8 12:36:35] SPO2=0
+[2026/5/8 12:36:35] HeartRate=0
+[2026/5/8 12:36:35] HeartRateDetect=0
+[2026/5/8 12:36:35] AccXYZ= 0.01696777>0.9963379>0.04388428>2.839966>0.4559326>327.5189>0>0>0>
+[2026/5/8 12:36:35] get direction 2.8399658203125 0.4559326171875 327.518920898438 NW
+[2026/5/8 12:36:35] HeaderFound!
+[2026/5/8 12:36:35] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] Full Package is received!
+[2026/5/8 12:36:35] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:35] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:35] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:35] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:35] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:35] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:35] Correct header in do_analyze
+[2026/5/8 12:36:35] analyzeEEGDataThread sbInstance.packetCounter=2
+[2026/5/8 12:36:35] analyzeEEGDataThread sbInstance.counter=450
+[2026/5/8 12:36:35] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:35] batteryLevelValue 71
+[2026/5/8 12:36:35] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:35] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:35] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:35] Evoke: 0
+[2026/5/8 12:36:35] SPO2=0
+[2026/5/8 12:36:35] HeartRate=0
+[2026/5/8 12:36:35] HeartRateDetect=0
+[2026/5/8 12:36:35] AccXYZ= 0.01702881>0.9970703>0.04431152>2.856445>0.4779053>327.5574>0>0>0>
+[2026/5/8 12:36:35] get direction 2.8564453125 0.4779052734375 327.557373046875 NW
+[2026/5/8 12:36:35] HeaderFound!
+[2026/5/8 12:36:35] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] Full Package is received!
+[2026/5/8 12:36:35] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:35] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:35] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:35] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:35] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:35] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:35] Correct header in do_analyze
+[2026/5/8 12:36:35] analyzeEEGDataThread sbInstance.packetCounter=3
+[2026/5/8 12:36:35] analyzeEEGDataThread sbInstance.counter=600
+[2026/5/8 12:36:35] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:35] batteryLevelValue 72
+[2026/5/8 12:36:35] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:35] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:35] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:35] Evoke: 0
+[2026/5/8 12:36:35] SPO2=0
+[2026/5/8 12:36:35] HeartRate=0
+[2026/5/8 12:36:35] HeartRateDetect=0
+[2026/5/8 12:36:35] AccXYZ= 0.01672363>0.99646>0.04382324>2.839966>0.4394531>327.5574>0>0>0>
+[2026/5/8 12:36:35] get direction 2.8399658203125 0.439453125 327.557373046875 NW
+[2026/5/8 12:36:35] HeaderFound!
+[2026/5/8 12:36:35] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:35] Full Package is received!
+[2026/5/8 12:36:35] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:35] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:35] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:35] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:35] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:35] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:35] Correct header in do_analyze
+[2026/5/8 12:36:35] analyzeEEGDataThread sbInstance.packetCounter=4
+[2026/5/8 12:36:35] analyzeEEGDataThread sbInstance.counter=750
+[2026/5/8 12:36:35] EEG_GetFreqTypePower sbInstances.ContainsKey(deviceID)=True
+[2026/5/8 12:36:35] EEG_GetFreqTypePower sbInstance.signal_ready=False
+[2026/5/8 12:36:35] EEG_GetAmpOhmsFromEEG: 0 0 0 0
+[2026/5/8 12:36:36] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:36] batteryLevelValue 72
+[2026/5/8 12:36:36] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:36] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:36] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:36] Evoke: 0
+[2026/5/8 12:36:36] SPO2=0
+[2026/5/8 12:36:36] HeartRate=0
+[2026/5/8 12:36:36] HeartRateDetect=0
+[2026/5/8 12:36:36] AccXYZ= 0.01696777>0.9962158>0.04412842>2.839966>0.4669189>327.5739>0>0>0>
+[2026/5/8 12:36:36] get direction 2.8399658203125 0.4669189453125 327.573852539063 NW
+[2026/5/8 12:36:36] HeaderFound!
+[2026/5/8 12:36:36] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] Full Package is received!
+[2026/5/8 12:36:36] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:36] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:36] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:36] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:36] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:36] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:36] Correct header in do_analyze
+[2026/5/8 12:36:36] analyzeEEGDataThread sbInstance.packetCounter=0
+[2026/5/8 12:36:36] analyzeEEGDataThread sbInstance.counter=150
+[2026/5/8 12:36:36] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:36] batteryLevelValue 71
+[2026/5/8 12:36:36] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:36] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:36] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:36] Evoke: 0
+[2026/5/8 12:36:36] SPO2=0
+[2026/5/8 12:36:36] HeartRate=0
+[2026/5/8 12:36:36] HeartRateDetect=0
+[2026/5/8 12:36:36] AccXYZ= 0.0166626>0.9960327>0.04370117>2.828979>0.4449463>327.5739>0>0>0>
+[2026/5/8 12:36:36] get direction 2.8289794921875 0.4449462890625 327.573852539063 NW
+[2026/5/8 12:36:36] HeaderFound!
+[2026/5/8 12:36:36] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] Full Package is received!
+[2026/5/8 12:36:36] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:36] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:36] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:36] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:36] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:36] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:36] Correct header in do_analyze
+[2026/5/8 12:36:36] analyzeEEGDataThread sbInstance.packetCounter=1
+[2026/5/8 12:36:36] analyzeEEGDataThread sbInstance.counter=300
+[2026/5/8 12:36:36] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:36] batteryLevelValue 72
+[2026/5/8 12:36:36] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:36] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:36] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:36] Evoke: 0
+[2026/5/8 12:36:36] SPO2=0
+[2026/5/8 12:36:36] HeartRate=0
+[2026/5/8 12:36:36] HeartRateDetect=0
+[2026/5/8 12:36:36] AccXYZ= 0.01696777>0.9958496>0.04364014>2.823486>0.4669189>327.5684>0>0>0>
+[2026/5/8 12:36:36] get direction 2.823486328125 0.4669189453125 327.568359375 NW
+[2026/5/8 12:36:36] HeaderFound!
+[2026/5/8 12:36:36] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] Full Package is received!
+[2026/5/8 12:36:36] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:36] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:36] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:36] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:36] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:36] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:36] Correct header in do_analyze
+[2026/5/8 12:36:36] analyzeEEGDataThread sbInstance.packetCounter=2
+[2026/5/8 12:36:36] analyzeEEGDataThread sbInstance.counter=450
+[2026/5/8 12:36:36] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:36] batteryLevelValue 71
+[2026/5/8 12:36:36] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:36] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:36] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:36] Evoke: 0
+[2026/5/8 12:36:36] SPO2=0
+[2026/5/8 12:36:36] HeartRate=0
+[2026/5/8 12:36:36] HeartRateDetect=0
+[2026/5/8 12:36:36] AccXYZ= 0.0166626>0.9959717>0.0446167>2.867432>0.4559326>327.5684>0>0>0>
+[2026/5/8 12:36:36] get direction 2.867431640625 0.4559326171875 327.568359375 NW
+[2026/5/8 12:36:36] HeaderFound!
+[2026/5/8 12:36:36] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] Full Package is received!
+[2026/5/8 12:36:36] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:36] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:36] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:36] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:36] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:36] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:36] Correct header in do_analyze
+[2026/5/8 12:36:36] analyzeEEGDataThread sbInstance.packetCounter=3
+[2026/5/8 12:36:36] analyzeEEGDataThread sbInstance.counter=600
+[2026/5/8 12:36:36] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:36] batteryLevelValue 71
+[2026/5/8 12:36:36] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:36] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:36] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:36] Evoke: 0
+[2026/5/8 12:36:36] SPO2=0
+[2026/5/8 12:36:36] HeartRate=0
+[2026/5/8 12:36:36] HeartRateDetect=0
+[2026/5/8 12:36:36] AccXYZ= 0.01611328>0.9957886>0.04376221>2.828979>0.4229736>327.5684>0>0>0>
+[2026/5/8 12:36:36] get direction 2.8289794921875 0.4229736328125 327.568359375 NW
+[2026/5/8 12:36:36] HeaderFound!
+[2026/5/8 12:36:36] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] Full Package is received!
+[2026/5/8 12:36:36] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:36] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:36] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:36] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:36] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:36] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:36] Correct header in do_analyze
+[2026/5/8 12:36:36] analyzeEEGDataThread sbInstance.packetCounter=4
+[2026/5/8 12:36:36] analyzeEEGDataThread sbInstance.counter=750
+[2026/5/8 12:36:36] EEG_GetFreqTypePower sbInstances.ContainsKey(deviceID)=True
+[2026/5/8 12:36:36] EEG_GetFreqTypePower sbInstance.signal_ready=False
+[2026/5/8 12:36:36] EEG_GetAmpOhmsFromEEG: 0 0 0 0
+[2026/5/8 12:36:36] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:36] batteryLevelValue 71
+[2026/5/8 12:36:36] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:36] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:36] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:36] Evoke: 0
+[2026/5/8 12:36:36] SPO2=0
+[2026/5/8 12:36:36] HeartRate=0
+[2026/5/8 12:36:36] HeartRateDetect=0
+[2026/5/8 12:36:36] AccXYZ= 0.01580811>0.9963379>0.04437256>2.856445>0.401001>327.5684>0>0>0>
+[2026/5/8 12:36:36] get direction 2.8564453125 0.4010009765625 327.568359375 NW
+[2026/5/8 12:36:36] HeaderFound!
+[2026/5/8 12:36:36] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:36] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] Full Package is received!
+[2026/5/8 12:36:37] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:37] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:37] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:37] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:37] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:37] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:37] Correct header in do_analyze
+[2026/5/8 12:36:37] analyzeEEGDataThread sbInstance.packetCounter=0
+[2026/5/8 12:36:37] analyzeEEGDataThread sbInstance.counter=150
+[2026/5/8 12:36:37] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:37] batteryLevelValue 72
+[2026/5/8 12:36:37] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:37] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:37] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:37] Evoke: 0
+[2026/5/8 12:36:37] SPO2=0
+[2026/5/8 12:36:37] HeartRate=0
+[2026/5/8 12:36:37] HeartRateDetect=0
+[2026/5/8 12:36:37] AccXYZ= 0.01702881>0.9963989>0.04382324>2.834473>0.4559326>327.5299>0>0>0>
+[2026/5/8 12:36:37] get direction 2.83447265625 0.4559326171875 327.529907226563 NW
+[2026/5/8 12:36:37] HeaderFound!
+[2026/5/8 12:36:37] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] Full Package is received!
+[2026/5/8 12:36:37] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:37] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:37] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:37] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:37] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:37] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:37] Correct header in do_analyze
+[2026/5/8 12:36:37] analyzeEEGDataThread sbInstance.packetCounter=1
+[2026/5/8 12:36:37] analyzeEEGDataThread sbInstance.counter=300
+[2026/5/8 12:36:37] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:37] batteryLevelValue 72
+[2026/5/8 12:36:37] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:37] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:37] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:37] Evoke: 0
+[2026/5/8 12:36:37] SPO2=0
+[2026/5/8 12:36:37] HeartRate=0
+[2026/5/8 12:36:37] HeartRateDetect=0
+[2026/5/8 12:36:37] AccXYZ= 0.01678467>0.9962769>0.04467773>2.867432>0.4614258>327.5903>0>0>0>
+[2026/5/8 12:36:37] get direction 2.867431640625 0.46142578125 327.59033203125 NW
+[2026/5/8 12:36:37] HeaderFound!
+[2026/5/8 12:36:37] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] Full Package is received!
+[2026/5/8 12:36:37] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:37] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:37] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:37] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:37] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:37] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:37] Correct header in do_analyze
+[2026/5/8 12:36:37] analyzeEEGDataThread sbInstance.packetCounter=2
+[2026/5/8 12:36:37] analyzeEEGDataThread sbInstance.counter=450
+[2026/5/8 12:36:37] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:37] batteryLevelValue 72
+[2026/5/8 12:36:37] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:37] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:37] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:37] Evoke: 0
+[2026/5/8 12:36:37] SPO2=0
+[2026/5/8 12:36:37] HeartRate=0
+[2026/5/8 12:36:37] HeartRateDetect=0
+[2026/5/8 12:36:37] AccXYZ= 0.01690674>0.9967041>0.0447998>2.883911>0.4724121>327.6563>0>0>0>
+[2026/5/8 12:36:37] get direction 2.8839111328125 0.472412109375 327.65625 NW
+[2026/5/8 12:36:37] HeaderFound!
+[2026/5/8 12:36:37] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] Full Package is received!
+[2026/5/8 12:36:37] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:37] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:37] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:37] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:37] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:37] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:37] Correct header in do_analyze
+[2026/5/8 12:36:37] analyzeEEGDataThread sbInstance.packetCounter=3
+[2026/5/8 12:36:37] analyzeEEGDataThread sbInstance.counter=600
+[2026/5/8 12:36:37] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:37] batteryLevelValue 71
+[2026/5/8 12:36:37] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:37] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:37] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:37] Evoke: 0
+[2026/5/8 12:36:37] SPO2=0
+[2026/5/8 12:36:37] HeartRate=0
+[2026/5/8 12:36:37] HeartRateDetect=0
+[2026/5/8 12:36:37] AccXYZ= 0.01818848>0.9958496>0.0446167>2.867432>0.5218506>327.6672>0>0>0>
+[2026/5/8 12:36:37] get direction 2.867431640625 0.5218505859375 327.667236328125 NW
+[2026/5/8 12:36:37] HeaderFound!
+[2026/5/8 12:36:37] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:37] Full Package is received!
+[2026/5/8 12:36:37] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:37] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:37] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:37] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:37] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:37] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:37] Correct header in do_analyze
+[2026/5/8 12:36:37] analyzeEEGDataThread sbInstance.packetCounter=4
+[2026/5/8 12:36:37] analyzeEEGDataThread sbInstance.counter=750
+[2026/5/8 12:36:37] EEG_GetFreqTypePower sbInstances.ContainsKey(deviceID)=True
+[2026/5/8 12:36:37] EEG_GetFreqTypePower sbInstance.signal_ready=False
+[2026/5/8 12:36:37] EEG_GetAmpOhmsFromEEG: 0 0 0 0
+[2026/5/8 12:36:38] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:38] batteryLevelValue 71
+[2026/5/8 12:36:38] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:38] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:38] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:38] Evoke: 0
+[2026/5/8 12:36:38] SPO2=0
+[2026/5/8 12:36:38] HeartRate=0
+[2026/5/8 12:36:38] HeartRateDetect=0
+[2026/5/8 12:36:38] AccXYZ= 0.01745605>0.9971313>0.04486084>2.878418>0.4779053>327.5848>0>0>0>
+[2026/5/8 12:36:38] get direction 2.87841796875 0.4779052734375 327.584838867188 NW
+[2026/5/8 12:36:38] HeaderFound!
+[2026/5/8 12:36:38] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] Full Package is received!
+[2026/5/8 12:36:38] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:38] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:38] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:38] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:38] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:38] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:38] Correct header in do_analyze
+[2026/5/8 12:36:38] analyzeEEGDataThread sbInstance.packetCounter=0
+[2026/5/8 12:36:38] analyzeEEGDataThread sbInstance.counter=150
+[2026/5/8 12:36:38] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:38] batteryLevelValue 72
+[2026/5/8 12:36:38] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:38] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:38] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:38] Evoke: 0
+[2026/5/8 12:36:38] SPO2=0
+[2026/5/8 12:36:38] HeartRate=0
+[2026/5/8 12:36:38] HeartRateDetect=0
+[2026/5/8 12:36:38] AccXYZ= 0.0166626>0.9960938>0.04412842>2.850952>0.4504395>327.5739>0>0>0>
+[2026/5/8 12:36:38] get direction 2.8509521484375 0.450439453125 327.573852539063 NW
+[2026/5/8 12:36:38] HeaderFound!
+[2026/5/8 12:36:38] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] Full Package is received!
+[2026/5/8 12:36:38] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:38] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:38] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:38] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:38] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:38] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:38] Correct header in do_analyze
+[2026/5/8 12:36:38] analyzeEEGDataThread sbInstance.packetCounter=1
+[2026/5/8 12:36:38] analyzeEEGDataThread sbInstance.counter=300
+[2026/5/8 12:36:38] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:38] batteryLevelValue 71
+[2026/5/8 12:36:38] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:38] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:38] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:38] Evoke: 0
+[2026/5/8 12:36:38] SPO2=0
+[2026/5/8 12:36:38] HeartRate=0
+[2026/5/8 12:36:38] HeartRateDetect=0
+[2026/5/8 12:36:38] AccXYZ= 0.01629639>0.9962769>0.04473877>2.889404>0.4229736>327.5739>0>0>0>
+[2026/5/8 12:36:38] get direction 2.889404296875 0.4229736328125 327.573852539063 NW
+[2026/5/8 12:36:38] HeaderFound!
+[2026/5/8 12:36:38] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] Full Package is received!
+[2026/5/8 12:36:38] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:38] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:38] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:38] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:38] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:38] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:38] Correct header in do_analyze
+[2026/5/8 12:36:38] analyzeEEGDataThread sbInstance.packetCounter=2
+[2026/5/8 12:36:38] analyzeEEGDataThread sbInstance.counter=450
+[2026/5/8 12:36:38] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:38] batteryLevelValue 72
+[2026/5/8 12:36:38] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:38] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:38] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:38] Evoke: 0
+[2026/5/8 12:36:38] SPO2=0
+[2026/5/8 12:36:38] HeartRate=0
+[2026/5/8 12:36:38] HeartRateDetect=0
+[2026/5/8 12:36:38] AccXYZ= 0.01611328>0.9957886>0.04486084>2.894897>0.4394531>327.5299>0>0>0>
+[2026/5/8 12:36:38] get direction 2.8948974609375 0.439453125 327.529907226563 NW
+[2026/5/8 12:36:38] HeaderFound!
+[2026/5/8 12:36:38] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] Full Package is received!
+[2026/5/8 12:36:38] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:38] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:38] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:38] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:38] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:38] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:38] Correct header in do_analyze
+[2026/5/8 12:36:38] analyzeEEGDataThread sbInstance.packetCounter=3
+[2026/5/8 12:36:38] analyzeEEGDataThread sbInstance.counter=600
+[2026/5/8 12:36:38] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:38] batteryLevelValue 72
+[2026/5/8 12:36:38] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:38] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:38] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:38] Evoke: 0
+[2026/5/8 12:36:38] SPO2=0
+[2026/5/8 12:36:38] HeartRate=0
+[2026/5/8 12:36:38] HeartRateDetect=0
+[2026/5/8 12:36:38] AccXYZ= 0.0178833>0.9958496>0.0446167>2.883911>0.4998779>327.5739>0>0>0>
+[2026/5/8 12:36:38] get direction 2.8839111328125 0.4998779296875 327.573852539063 NW
+[2026/5/8 12:36:38] HeaderFound!
+[2026/5/8 12:36:38] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] Full Package is received!
+[2026/5/8 12:36:38] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:38] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:38] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:38] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:38] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:38] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:38] Correct header in do_analyze
+[2026/5/8 12:36:38] analyzeEEGDataThread sbInstance.packetCounter=4
+[2026/5/8 12:36:38] analyzeEEGDataThread sbInstance.counter=750
+[2026/5/8 12:36:38] EEG_GetFreqTypePower sbInstances.ContainsKey(deviceID)=True
+[2026/5/8 12:36:38] EEG_GetFreqTypePower sbInstance.signal_ready=False
+[2026/5/8 12:36:38] EEG_GetAmpOhmsFromEEG: 0 0 0 0
+[2026/5/8 12:36:38] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:38] batteryLevelValue 72
+[2026/5/8 12:36:38] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:38] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:38] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:38] Evoke: 0
+[2026/5/8 12:36:38] SPO2=0
+[2026/5/8 12:36:38] HeartRate=0
+[2026/5/8 12:36:38] HeartRateDetect=0
+[2026/5/8 12:36:38] AccXYZ= 0.01690674>0.996521>0.04455566>2.872925>0.4724121>327.6617>0>0>0>
+[2026/5/8 12:36:38] get direction 2.8729248046875 0.472412109375 327.661743164063 NW
+[2026/5/8 12:36:38] HeaderFound!
+[2026/5/8 12:36:38] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:38] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] Full Package is received!
+[2026/5/8 12:36:39] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:39] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:39] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:39] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:39] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:39] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:39] Correct header in do_analyze
+[2026/5/8 12:36:39] analyzeEEGDataThread sbInstance.packetCounter=0
+[2026/5/8 12:36:39] analyzeEEGDataThread sbInstance.counter=150
+[2026/5/8 12:36:39] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:39] batteryLevelValue 72
+[2026/5/8 12:36:39] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:39] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:39] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:39] Evoke: 0
+[2026/5/8 12:36:39] SPO2=0
+[2026/5/8 12:36:39] HeartRate=0
+[2026/5/8 12:36:39] HeartRateDetect=0
+[2026/5/8 12:36:39] AccXYZ= 0.01733398>0.9966431>0.04418945>2.867432>0.4998779>327.7386>0>0>0>
+[2026/5/8 12:36:39] get direction 2.867431640625 0.4998779296875 327.738647460938 NW
+[2026/5/8 12:36:39] HeaderFound!
+[2026/5/8 12:36:39] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] Full Package is received!
+[2026/5/8 12:36:39] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:39] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:39] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:39] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:39] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:39] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:39] Correct header in do_analyze
+[2026/5/8 12:36:39] analyzeEEGDataThread sbInstance.packetCounter=1
+[2026/5/8 12:36:39] analyzeEEGDataThread sbInstance.counter=300
+[2026/5/8 12:36:39] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:39] batteryLevelValue 71
+[2026/5/8 12:36:39] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:39] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:39] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:39] Evoke: 0
+[2026/5/8 12:36:39] SPO2=0
+[2026/5/8 12:36:39] HeartRate=0
+[2026/5/8 12:36:39] HeartRateDetect=0
+[2026/5/8 12:36:39] AccXYZ= 0.01660156>0.9960938>0.04492188>2.900391>0.4669189>327.7606>0>0>0>
+[2026/5/8 12:36:39] get direction 2.900390625 0.4669189453125 327.760620117188 NW
+[2026/5/8 12:36:39] HeaderFound!
+[2026/5/8 12:36:39] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] Full Package is received!
+[2026/5/8 12:36:39] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:39] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:39] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:39] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:39] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:39] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:39] Correct header in do_analyze
+[2026/5/8 12:36:39] analyzeEEGDataThread sbInstance.packetCounter=2
+[2026/5/8 12:36:39] analyzeEEGDataThread sbInstance.counter=450
+[2026/5/8 12:36:39] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:39] batteryLevelValue 72
+[2026/5/8 12:36:39] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:39] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:39] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:39] Evoke: 0
+[2026/5/8 12:36:39] SPO2=0
+[2026/5/8 12:36:39] HeartRate=0
+[2026/5/8 12:36:39] HeartRateDetect=0
+[2026/5/8 12:36:39] AccXYZ= 0.0177002>0.9962769>0.04522705>2.905884>0.5163574>327.8046>0>0>0>
+[2026/5/8 12:36:39] get direction 2.9058837890625 0.516357421875 327.804565429688 NW
+[2026/5/8 12:36:39] HeaderFound!
+[2026/5/8 12:36:39] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] Full Package is received!
+[2026/5/8 12:36:39] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:39] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:39] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:39] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:39] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:39] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:39] Correct header in do_analyze
+[2026/5/8 12:36:39] analyzeEEGDataThread sbInstance.packetCounter=3
+[2026/5/8 12:36:39] analyzeEEGDataThread sbInstance.counter=600
+[2026/5/8 12:36:39] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:39] batteryLevelValue 71
+[2026/5/8 12:36:39] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:39] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:39] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:39] Evoke: 0
+[2026/5/8 12:36:39] SPO2=0
+[2026/5/8 12:36:39] HeartRate=0
+[2026/5/8 12:36:39] HeartRateDetect=0
+[2026/5/8 12:36:39] AccXYZ= 0.01678467>0.9963379>0.04431152>2.861938>0.4833984>327.7716>0>0>0>
+[2026/5/8 12:36:39] get direction 2.8619384765625 0.4833984375 327.771606445313 NW
+[2026/5/8 12:36:39] HeaderFound!
+[2026/5/8 12:36:39] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:39] Full Package is received!
+[2026/5/8 12:36:39] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:39] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:39] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:39] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:39] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:39] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:39] Correct header in do_analyze
+[2026/5/8 12:36:39] analyzeEEGDataThread sbInstance.packetCounter=4
+[2026/5/8 12:36:39] analyzeEEGDataThread sbInstance.counter=750
+[2026/5/8 12:36:39] EEG_GetFreqTypePower sbInstances.ContainsKey(deviceID)=True
+[2026/5/8 12:36:39] EEG_GetFreqTypePower sbInstance.signal_ready=False
+[2026/5/8 12:36:39] EEG_GetAmpOhmsFromEEG: 0 0 0 0
+[2026/5/8 12:36:40] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:40] batteryLevelValue 71
+[2026/5/8 12:36:40] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:40] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:40] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:40] Evoke: 0
+[2026/5/8 12:36:40] SPO2=0
+[2026/5/8 12:36:40] HeartRate=0
+[2026/5/8 12:36:40] HeartRateDetect=0
+[2026/5/8 12:36:40] AccXYZ= 0.01757813>0.9959106>0.04504395>2.905884>0.5053711>327.7551>0>0>0>
+[2026/5/8 12:36:40] get direction 2.9058837890625 0.50537109375 327.755126953125 NW
+[2026/5/8 12:36:40] HeaderFound!
+[2026/5/8 12:36:40] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] Full Package is received!
+[2026/5/8 12:36:40] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:40] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:40] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:40] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:40] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:40] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:40] Correct header in do_analyze
+[2026/5/8 12:36:40] analyzeEEGDataThread sbInstance.packetCounter=0
+[2026/5/8 12:36:40] analyzeEEGDataThread sbInstance.counter=150
+[2026/5/8 12:36:40] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:40] batteryLevelValue 72
+[2026/5/8 12:36:40] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:40] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:40] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:40] Evoke: 0
+[2026/5/8 12:36:40] SPO2=0
+[2026/5/8 12:36:40] HeartRate=0
+[2026/5/8 12:36:40] HeartRateDetect=0
+[2026/5/8 12:36:40] AccXYZ= 0.01696777>0.9960938>0.04449463>2.883911>0.4614258>327.7002>0>0>0>
+[2026/5/8 12:36:40] get direction 2.8839111328125 0.46142578125 327.7001953125 NW
+[2026/5/8 12:36:40] HeaderFound!
+[2026/5/8 12:36:40] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] Full Package is received!
+[2026/5/8 12:36:40] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:40] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:40] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:40] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:40] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:40] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:40] Correct header in do_analyze
+[2026/5/8 12:36:40] analyzeEEGDataThread sbInstance.packetCounter=1
+[2026/5/8 12:36:40] analyzeEEGDataThread sbInstance.counter=300
+[2026/5/8 12:36:40] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:40] batteryLevelValue 72
+[2026/5/8 12:36:40] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:40] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:40] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:40] Evoke: 0
+[2026/5/8 12:36:40] SPO2=0
+[2026/5/8 12:36:40] HeartRate=0
+[2026/5/8 12:36:40] HeartRateDetect=0
+[2026/5/8 12:36:40] AccXYZ= 0.01721191>0.9961548>0.04473877>2.889404>0.4888916>327.7002>0>0>0>
+[2026/5/8 12:36:40] get direction 2.889404296875 0.4888916015625 327.7001953125 NW
+[2026/5/8 12:36:40] HeaderFound!
+[2026/5/8 12:36:40] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] Full Package is received!
+[2026/5/8 12:36:40] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:40] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:40] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:40] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:40] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:40] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:40] Correct header in do_analyze
+[2026/5/8 12:36:40] analyzeEEGDataThread sbInstance.packetCounter=2
+[2026/5/8 12:36:40] analyzeEEGDataThread sbInstance.counter=450
+[2026/5/8 12:36:40] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:40] batteryLevelValue 72
+[2026/5/8 12:36:40] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:40] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:40] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:40] Evoke: 0
+[2026/5/8 12:36:40] SPO2=0
+[2026/5/8 12:36:40] HeartRate=0
+[2026/5/8 12:36:40] HeartRateDetect=0
+[2026/5/8 12:36:40] AccXYZ= 0.0166626>0.9959717>0.04589844>2.944336>0.4559326>327.7002>0>0>0>
+[2026/5/8 12:36:40] get direction 2.9443359375 0.4559326171875 327.7001953125 NW
+[2026/5/8 12:36:40] HeaderFound!
+[2026/5/8 12:36:40] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] Full Package is received!
+[2026/5/8 12:36:40] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:40] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:40] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:40] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:40] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:40] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:40] Correct header in do_analyze
+[2026/5/8 12:36:40] analyzeEEGDataThread sbInstance.packetCounter=3
+[2026/5/8 12:36:40] analyzeEEGDataThread sbInstance.counter=600
+[2026/5/8 12:36:40] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:40] batteryLevelValue 71
+[2026/5/8 12:36:40] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:40] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:40] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:40] Evoke: 0
+[2026/5/8 12:36:40] SPO2=0
+[2026/5/8 12:36:40] HeartRate=0
+[2026/5/8 12:36:40] HeartRateDetect=0
+[2026/5/8 12:36:40] AccXYZ= 0.01745605>0.9963989>0.04498291>2.894897>0.4998779>327.7002>0>0>0>
+[2026/5/8 12:36:40] get direction 2.8948974609375 0.4998779296875 327.7001953125 NW
+[2026/5/8 12:36:40] HeaderFound!
+[2026/5/8 12:36:40] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] Full Package is received!
+[2026/5/8 12:36:40] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:40] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:40] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:40] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:40] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:40] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:40] Correct header in do_analyze
+[2026/5/8 12:36:40] analyzeEEGDataThread sbInstance.packetCounter=4
+[2026/5/8 12:36:40] analyzeEEGDataThread sbInstance.counter=750
+[2026/5/8 12:36:40] EEG_GetFreqTypePower sbInstances.ContainsKey(deviceID)=True
+[2026/5/8 12:36:40] EEG_GetFreqTypePower sbInstance.signal_ready=False
+[2026/5/8 12:36:40] EEG_GetAmpOhmsFromEEG: 0 0 0 0
+[2026/5/8 12:36:40] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:40] batteryLevelValue 71
+[2026/5/8 12:36:40] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:40] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:40] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:40] Evoke: 0
+[2026/5/8 12:36:40] SPO2=0
+[2026/5/8 12:36:40] HeartRate=0
+[2026/5/8 12:36:40] HeartRateDetect=0
+[2026/5/8 12:36:40] AccXYZ= 0.01672363>0.9961548>0.04504395>2.905884>0.4669189>327.6892>0>0>0>
+[2026/5/8 12:36:40] get direction 2.9058837890625 0.4669189453125 327.689208984375 NW
+[2026/5/8 12:36:40] HeaderFound!
+[2026/5/8 12:36:40] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:40] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] Full Package is received!
+[2026/5/8 12:36:41] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:41] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:41] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:41] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:41] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:41] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:41] Correct header in do_analyze
+[2026/5/8 12:36:41] analyzeEEGDataThread sbInstance.packetCounter=0
+[2026/5/8 12:36:41] analyzeEEGDataThread sbInstance.counter=150
+[2026/5/8 12:36:41] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:41] batteryLevelValue 71
+[2026/5/8 12:36:41] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:41] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:41] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:41] Evoke: 0
+[2026/5/8 12:36:41] SPO2=0
+[2026/5/8 12:36:41] HeartRate=0
+[2026/5/8 12:36:41] HeartRateDetect=0
+[2026/5/8 12:36:41] AccXYZ= 0.01715088>0.99646>0.04541016>2.922363>0.4779053>327.7991>0>0>0>
+[2026/5/8 12:36:41] get direction 2.92236328125 0.4779052734375 327.799072265625 NW
+[2026/5/8 12:36:41] HeaderFound!
+[2026/5/8 12:36:41] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] Full Package is received!
+[2026/5/8 12:36:41] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:41] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:41] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:41] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:41] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:41] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:41] Correct header in do_analyze
+[2026/5/8 12:36:41] analyzeEEGDataThread sbInstance.packetCounter=1
+[2026/5/8 12:36:41] analyzeEEGDataThread sbInstance.counter=300
+[2026/5/8 12:36:41] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:41] batteryLevelValue 72
+[2026/5/8 12:36:41] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:41] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:41] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:41] Evoke: 0
+[2026/5/8 12:36:41] SPO2=0
+[2026/5/8 12:36:41] HeartRate=0
+[2026/5/8 12:36:41] HeartRateDetect=0
+[2026/5/8 12:36:41] AccXYZ= 0.01727295>0.9959717>0.04571533>2.927856>0.4998779>327.8046>0>0>0>
+[2026/5/8 12:36:41] get direction 2.9278564453125 0.4998779296875 327.804565429688 NW
+[2026/5/8 12:36:41] HeaderFound!
+[2026/5/8 12:36:41] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] Full Package is received!
+[2026/5/8 12:36:41] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:41] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:41] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:41] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:41] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:41] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:41] Correct header in do_analyze
+[2026/5/8 12:36:41] analyzeEEGDataThread sbInstance.packetCounter=2
+[2026/5/8 12:36:41] analyzeEEGDataThread sbInstance.counter=450
+[2026/5/8 12:36:41] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:41] batteryLevelValue 71
+[2026/5/8 12:36:41] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:41] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:41] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:41] Evoke: 0
+[2026/5/8 12:36:41] SPO2=0
+[2026/5/8 12:36:41] HeartRate=0
+[2026/5/8 12:36:41] HeartRateDetect=0
+[2026/5/8 12:36:41] AccXYZ= 0.01794434>0.9968262>0.0456543>2.93335>0.5218506>327.8101>0>0>0>
+[2026/5/8 12:36:41] get direction 2.933349609375 0.5218505859375 327.81005859375 NW
+[2026/5/8 12:36:41] HeaderFound!
+[2026/5/8 12:36:41] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] Full Package is received!
+[2026/5/8 12:36:41] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:41] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:41] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:41] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:41] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:41] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:41] Correct header in do_analyze
+[2026/5/8 12:36:41] analyzeEEGDataThread sbInstance.packetCounter=3
+[2026/5/8 12:36:41] analyzeEEGDataThread sbInstance.counter=600
+[2026/5/8 12:36:41] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:41] batteryLevelValue 72
+[2026/5/8 12:36:41] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:41] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:41] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:41] Evoke: 0
+[2026/5/8 12:36:41] SPO2=0
+[2026/5/8 12:36:41] HeartRate=0
+[2026/5/8 12:36:41] HeartRateDetect=0
+[2026/5/8 12:36:41] AccXYZ= 0.01800537>0.996521>0.04510498>2.900391>0.5273438>327.8101>0>0>0>
+[2026/5/8 12:36:41] get direction 2.900390625 0.52734375 327.81005859375 NW
+[2026/5/8 12:36:41] HeaderFound!
+[2026/5/8 12:36:41] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:41] Full Package is received!
+[2026/5/8 12:36:41] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:41] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:41] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:41] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:41] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:41] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:41] Correct header in do_analyze
+[2026/5/8 12:36:41] analyzeEEGDataThread sbInstance.packetCounter=4
+[2026/5/8 12:36:41] analyzeEEGDataThread sbInstance.counter=750
+[2026/5/8 12:36:41] EEG_GetFreqTypePower sbInstances.ContainsKey(deviceID)=True
+[2026/5/8 12:36:41] EEG_GetFreqTypePower sbInstance.signal_ready=False
+[2026/5/8 12:36:41] EEG_GetAmpOhmsFromEEG: 0 0 0 0
+[2026/5/8 12:36:42] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:42] batteryLevelValue 71
+[2026/5/8 12:36:42] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:42] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:42] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:42] Evoke: 0
+[2026/5/8 12:36:42] SPO2=0
+[2026/5/8 12:36:42] HeartRate=0
+[2026/5/8 12:36:42] HeartRateDetect=0
+[2026/5/8 12:36:42] AccXYZ= 0.01574707>0.9959717>0.04498291>2.91687>0.4174805>327.8101>0>0>0>
+[2026/5/8 12:36:42] get direction 2.9168701171875 0.41748046875 327.81005859375 NW
+[2026/5/8 12:36:42] HeaderFound!
+[2026/5/8 12:36:42] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] Full Package is received!
+[2026/5/8 12:36:42] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:42] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:42] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:42] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:42] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:42] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:42] Correct header in do_analyze
+[2026/5/8 12:36:42] analyzeEEGDataThread sbInstance.packetCounter=0
+[2026/5/8 12:36:42] analyzeEEGDataThread sbInstance.counter=150
+[2026/5/8 12:36:42] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:42] batteryLevelValue 71
+[2026/5/8 12:36:42] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:42] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:42] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:42] Evoke: 0
+[2026/5/8 12:36:42] SPO2=0
+[2026/5/8 12:36:42] HeartRate=0
+[2026/5/8 12:36:42] HeartRateDetect=0
+[2026/5/8 12:36:42] AccXYZ= 0.01763916>0.9963989>0.04498291>2.900391>0.5163574>327.821>0>0>0>
+[2026/5/8 12:36:42] get direction 2.900390625 0.516357421875 327.821044921875 NW
+[2026/5/8 12:36:42] HeaderFound!
+[2026/5/8 12:36:42] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] Full Package is received!
+[2026/5/8 12:36:42] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:42] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:42] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:42] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:42] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:42] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:42] Correct header in do_analyze
+[2026/5/8 12:36:42] analyzeEEGDataThread sbInstance.packetCounter=1
+[2026/5/8 12:36:42] analyzeEEGDataThread sbInstance.counter=300
+[2026/5/8 12:36:42] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:42] batteryLevelValue 71
+[2026/5/8 12:36:42] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:42] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:42] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:42] Evoke: 0
+[2026/5/8 12:36:42] SPO2=0
+[2026/5/8 12:36:42] HeartRate=0
+[2026/5/8 12:36:42] HeartRateDetect=0
+[2026/5/8 12:36:42] AccXYZ= 0.01647949>0.9956055>0.04516602>2.905884>0.4559326>327.8101>0>0>0>
+[2026/5/8 12:36:42] get direction 2.9058837890625 0.4559326171875 327.81005859375 NW
+[2026/5/8 12:36:42] HeaderFound!
+[2026/5/8 12:36:42] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] Full Package is received!
+[2026/5/8 12:36:42] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:42] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:42] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:42] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:42] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:42] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:42] Correct header in do_analyze
+[2026/5/8 12:36:42] analyzeEEGDataThread sbInstance.packetCounter=2
+[2026/5/8 12:36:42] analyzeEEGDataThread sbInstance.counter=450
+[2026/5/8 12:36:42] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:42] batteryLevelValue 72
+[2026/5/8 12:36:42] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:42] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:42] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:42] Evoke: 0
+[2026/5/8 12:36:42] SPO2=0
+[2026/5/8 12:36:42] HeartRate=0
+[2026/5/8 12:36:42] HeartRateDetect=0
+[2026/5/8 12:36:42] AccXYZ= 0.01763916>0.9962158>0.04589844>2.955322>0.5108643>327.8101>0>0>0>
+[2026/5/8 12:36:42] get direction 2.955322265625 0.5108642578125 327.81005859375 NW
+[2026/5/8 12:36:42] HeaderFound!
+[2026/5/8 12:36:42] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] Full Package is received!
+[2026/5/8 12:36:42] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:42] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:42] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:42] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:42] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:42] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:42] Correct header in do_analyze
+[2026/5/8 12:36:42] analyzeEEGDataThread sbInstance.packetCounter=3
+[2026/5/8 12:36:42] analyzeEEGDataThread sbInstance.counter=600
+[2026/5/8 12:36:42] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:42] batteryLevelValue 71
+[2026/5/8 12:36:42] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:42] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:42] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:42] Evoke: 0
+[2026/5/8 12:36:42] SPO2=0
+[2026/5/8 12:36:42] HeartRate=0
+[2026/5/8 12:36:42] HeartRateDetect=0
+[2026/5/8 12:36:42] AccXYZ= 0.01806641>0.9969482>0.04595947>2.944336>0.5328369>327.7551>0>0>0>
+[2026/5/8 12:36:42] get direction 2.9443359375 0.5328369140625 327.755126953125 NW
+[2026/5/8 12:36:42] HeaderFound!
+[2026/5/8 12:36:42] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] Full Package is received!
+[2026/5/8 12:36:42] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:42] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:42] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:42] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:42] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:42] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:42] Correct header in do_analyze
+[2026/5/8 12:36:42] analyzeEEGDataThread sbInstance.packetCounter=4
+[2026/5/8 12:36:42] analyzeEEGDataThread sbInstance.counter=750
+[2026/5/8 12:36:42] EEG_GetFreqTypePower sbInstances.ContainsKey(deviceID)=True
+[2026/5/8 12:36:42] EEG_GetFreqTypePower sbInstance.signal_ready=False
+[2026/5/8 12:36:42] EEG_GetAmpOhmsFromEEG: 0 0 0 0
+[2026/5/8 12:36:42] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:42] batteryLevelValue 72
+[2026/5/8 12:36:42] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:42] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:42] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:42] Evoke: 0
+[2026/5/8 12:36:42] SPO2=0
+[2026/5/8 12:36:42] HeartRate=0
+[2026/5/8 12:36:42] HeartRateDetect=0
+[2026/5/8 12:36:42] AccXYZ= 0.01708984>0.9962158>0.04547119>2.91687>0.4833984>327.7606>0>0>0>
+[2026/5/8 12:36:42] get direction 2.9168701171875 0.4833984375 327.760620117188 NW
+[2026/5/8 12:36:42] HeaderFound!
+[2026/5/8 12:36:42] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:42] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] Full Package is received!
+[2026/5/8 12:36:43] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:43] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:43] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:43] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:43] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:43] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:43] Correct header in do_analyze
+[2026/5/8 12:36:43] analyzeEEGDataThread sbInstance.packetCounter=0
+[2026/5/8 12:36:43] analyzeEEGDataThread sbInstance.counter=150
+[2026/5/8 12:36:43] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:43] batteryLevelValue 72
+[2026/5/8 12:36:43] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:43] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:43] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:43] Evoke: 0
+[2026/5/8 12:36:43] SPO2=0
+[2026/5/8 12:36:43] HeartRate=0
+[2026/5/8 12:36:43] HeartRateDetect=0
+[2026/5/8 12:36:43] AccXYZ= 0.01727295>0.9970703>0.04559326>2.93335>0.4943848>327.7551>0>0>0>
+[2026/5/8 12:36:43] get direction 2.933349609375 0.494384765625 327.755126953125 NW
+[2026/5/8 12:36:43] HeaderFound!
+[2026/5/8 12:36:43] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] Full Package is received!
+[2026/5/8 12:36:43] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:43] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:43] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:43] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:43] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:43] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:43] Correct header in do_analyze
+[2026/5/8 12:36:43] analyzeEEGDataThread sbInstance.packetCounter=1
+[2026/5/8 12:36:43] analyzeEEGDataThread sbInstance.counter=300
+[2026/5/8 12:36:43] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:43] batteryLevelValue 72
+[2026/5/8 12:36:43] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:43] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:43] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:43] Evoke: 0
+[2026/5/8 12:36:43] SPO2=0
+[2026/5/8 12:36:43] HeartRate=0
+[2026/5/8 12:36:43] HeartRateDetect=0
+[2026/5/8 12:36:43] AccXYZ= 0.01745605>0.9966431>0.04620361>2.949829>0.4943848>327.7551>0>0>0>
+[2026/5/8 12:36:43] get direction 2.9498291015625 0.494384765625 327.755126953125 NW
+[2026/5/8 12:36:43] HeaderFound!
+[2026/5/8 12:36:43] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] Full Package is received!
+[2026/5/8 12:36:43] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:43] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:43] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:43] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:43] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:43] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:43] Correct header in do_analyze
+[2026/5/8 12:36:43] analyzeEEGDataThread sbInstance.packetCounter=2
+[2026/5/8 12:36:43] analyzeEEGDataThread sbInstance.counter=450
+[2026/5/8 12:36:43] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:43] batteryLevelValue 72
+[2026/5/8 12:36:43] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:43] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:43] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:43] Evoke: 0
+[2026/5/8 12:36:43] SPO2=0
+[2026/5/8 12:36:43] HeartRate=0
+[2026/5/8 12:36:43] HeartRateDetect=0
+[2026/5/8 12:36:43] AccXYZ= 0.01611328>0.9996948>0.03814697>2.532349>0.5657959>327.6947>0>0>0>
+[2026/5/8 12:36:43] get direction 2.5323486328125 0.5657958984375 327.694702148438 NW
+[2026/5/8 12:36:43] HeaderFound!
+[2026/5/8 12:36:43] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] Full Package is received!
+[2026/5/8 12:36:43] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:43] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:43] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:43] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:43] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:43] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:43] Correct header in do_analyze
+[2026/5/8 12:36:43] analyzeEEGDataThread sbInstance.packetCounter=3
+[2026/5/8 12:36:43] analyzeEEGDataThread sbInstance.counter=600
+[2026/5/8 12:36:43] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:43] batteryLevelValue 71
+[2026/5/8 12:36:43] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:43] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:43] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:43] Evoke: 0
+[2026/5/8 12:36:43] SPO2=0
+[2026/5/8 12:36:43] HeartRate=0
+[2026/5/8 12:36:43] HeartRateDetect=0
+[2026/5/8 12:36:43] AccXYZ= 3.919312>1.230713>0.09942627>4.482422>354.2322>326.7554>0>0>0>
+[2026/5/8 12:36:43] get direction 4.482421875 354.232177734375 326.75537109375 NW
+[2026/5/8 12:36:43] HeaderFound!
+[2026/5/8 12:36:43] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:43] Full Package is received!
+[2026/5/8 12:36:43] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:43] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:43] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:43] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:43] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:43] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:43] Correct header in do_analyze
+[2026/5/8 12:36:43] analyzeEEGDataThread sbInstance.packetCounter=4
+[2026/5/8 12:36:43] analyzeEEGDataThread sbInstance.counter=750
+[2026/5/8 12:36:43] EEG_GetFreqTypePower sbInstances.ContainsKey(deviceID)=True
+[2026/5/8 12:36:43] EEG_GetFreqTypePower sbInstance.signal_ready=False
+[2026/5/8 12:36:43] EEG_GetAmpOhmsFromEEG: 21934.29 21939.88 22010.66 22044.19
+[2026/5/8 12:36:44] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:44] batteryLevelValue 71
+[2026/5/8 12:36:44] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:44] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:44] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:44] Evoke: 0
+[2026/5/8 12:36:44] SPO2=0
+[2026/5/8 12:36:44] HeartRate=0
+[2026/5/8 12:36:44] HeartRateDetect=0
+[2026/5/8 12:36:44] AccXYZ= 3.711304>0.6547852>0.842041>40.18799>345.2014>337.6428>0>0>0>
+[2026/5/8 12:36:44] get direction 40.18798828125 345.201416015625 337.642822265625 W
+[2026/5/8 12:36:44] HeaderFound!
+[2026/5/8 12:36:44] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] Full Package is received!
+[2026/5/8 12:36:44] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:44] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:44] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:44] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:44] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:44] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:44] Correct header in do_analyze
+[2026/5/8 12:36:44] analyzeEEGDataThread sbInstance.packetCounter=0
+[2026/5/8 12:36:44] analyzeEEGDataThread sbInstance.counter=150
+[2026/5/8 12:36:44] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:44] batteryLevelValue 71
+[2026/5/8 12:36:44] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:44] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:44] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:44] Evoke: 0
+[2026/5/8 12:36:44] SPO2=0
+[2026/5/8 12:36:44] HeartRate=0
+[2026/5/8 12:36:44] HeartRateDetect=0
+[2026/5/8 12:36:44] AccXYZ= 0.05084229>0.5543213>0.5828857>58.77136>1.142578>332.7374>0>0>0>
+[2026/5/8 12:36:44] get direction 58.7713623046875 1.142578125 332.737426757813 NW
+[2026/5/8 12:36:44] HeaderFound!
+[2026/5/8 12:36:44] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] Full Package is received!
+[2026/5/8 12:36:44] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:44] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:44] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:44] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:44] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:44] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:44] Correct header in do_analyze
+[2026/5/8 12:36:44] analyzeEEGDataThread sbInstance.packetCounter=1
+[2026/5/8 12:36:44] analyzeEEGDataThread sbInstance.counter=300
+[2026/5/8 12:36:44] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:44] batteryLevelValue 72
+[2026/5/8 12:36:44] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:44] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:44] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:44] Evoke: 0
+[2026/5/8 12:36:44] SPO2=0
+[2026/5/8 12:36:44] HeartRate=0
+[2026/5/8 12:36:44] HeartRateDetect=0
+[2026/5/8 12:36:44] AccXYZ= 3.917053>0.5518188>0.8052979>57.57385>354.8254>331.0785>0>0>0>
+[2026/5/8 12:36:44] get direction 57.5738525390625 354.825439453125 331.078491210938 NW
+[2026/5/8 12:36:44] HeaderFound!
+[2026/5/8 12:36:44] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] Full Package is received!
+[2026/5/8 12:36:44] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:44] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:44] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:44] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:44] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:44] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:44] Correct header in do_analyze
+[2026/5/8 12:36:44] analyzeEEGDataThread sbInstance.packetCounter=2
+[2026/5/8 12:36:44] analyzeEEGDataThread sbInstance.counter=450
+[2026/5/8 12:36:44] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:44] batteryLevelValue 71
+[2026/5/8 12:36:44] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:44] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:44] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:44] Evoke: 0
+[2026/5/8 12:36:44] SPO2=0
+[2026/5/8 12:36:44] HeartRate=0
+[2026/5/8 12:36:44] HeartRateDetect=0
+[2026/5/8 12:36:44] AccXYZ= 0.08508301>0.4703979>0.9310303>63.19336>0.8239746>338.2196>0>0>0>
+[2026/5/8 12:36:44] get direction 63.193359375 0.823974609375 338.219604492188 W
+[2026/5/8 12:36:44] HeaderFound!
+[2026/5/8 12:36:44] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] Full Package is received!
+[2026/5/8 12:36:44] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:44] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:44] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:44] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:44] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:44] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:44] Correct header in do_analyze
+[2026/5/8 12:36:44] analyzeEEGDataThread sbInstance.packetCounter=3
+[2026/5/8 12:36:44] analyzeEEGDataThread sbInstance.counter=600
+[2026/5/8 12:36:44] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:44] batteryLevelValue 71
+[2026/5/8 12:36:44] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:44] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:44] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:44] Evoke: 0
+[2026/5/8 12:36:44] SPO2=0
+[2026/5/8 12:36:44] HeartRate=0
+[2026/5/8 12:36:44] HeartRateDetect=0
+[2026/5/8 12:36:44] AccXYZ= 0.1133423>0.3353882>0.868042>70.7959>5.471191>344.9707>0>0>0>
+[2026/5/8 12:36:44] get direction 70.7958984375 5.47119140625 344.970703125 W
+[2026/5/8 12:36:44] HeaderFound!
+[2026/5/8 12:36:44] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] Full Package is received!
+[2026/5/8 12:36:44] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:44] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:44] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:44] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:44] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:44] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:44] Correct header in do_analyze
+[2026/5/8 12:36:44] analyzeEEGDataThread sbInstance.packetCounter=4
+[2026/5/8 12:36:44] analyzeEEGDataThread sbInstance.counter=750
+[2026/5/8 12:36:44] EEG_GetFreqTypePower sbInstances.ContainsKey(deviceID)=True
+[2026/5/8 12:36:44] EEG_GetFreqTypePower sbInstance.signal_ready=False
+[2026/5/8 12:36:44] EEG_GetAmpOhmsFromEEG: 27591.14 27596.74 92249.14 27710.36
+[2026/5/8 12:36:44] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:44] batteryLevelValue 71
+[2026/5/8 12:36:44] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:44] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:44] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:44] Evoke: 0
+[2026/5/8 12:36:44] SPO2=0
+[2026/5/8 12:36:44] HeartRate=0
+[2026/5/8 12:36:44] HeartRateDetect=0
+[2026/5/8 12:36:44] AccXYZ= 3.856934>0.2807007>1.067078>74.04785>353.1061>353.5455>0>0>0>
+[2026/5/8 12:36:44] get direction 74.0478515625 353.106079101563 353.545532226563 W
+[2026/5/8 12:36:44] HeaderFound!
+[2026/5/8 12:36:44] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:44] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] Full Package is received!
+[2026/5/8 12:36:45] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:45] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:45] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:45] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:45] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:45] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:45] Correct header in do_analyze
+[2026/5/8 12:36:45] analyzeEEGDataThread sbInstance.packetCounter=0
+[2026/5/8 12:36:45] analyzeEEGDataThread sbInstance.counter=150
+[2026/5/8 12:36:45] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:45] batteryLevelValue 71
+[2026/5/8 12:36:45] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:45] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:45] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:45] Evoke: 0
+[2026/5/8 12:36:45] SPO2=0
+[2026/5/8 12:36:45] HeartRate=0
+[2026/5/8 12:36:45] HeartRateDetect=0
+[2026/5/8 12:36:45] AccXYZ= 3.86377>0.234375>1.040466>77.34924>352.7655>356.9458>0>0>0>
+[2026/5/8 12:36:45] get direction 77.3492431640625 352.765502929688 356.94580078125 W
+[2026/5/8 12:36:45] HeaderFound!
+[2026/5/8 12:36:45] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] Full Package is received!
+[2026/5/8 12:36:45] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:45] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:45] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:45] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:45] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:45] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:45] Correct header in do_analyze
+[2026/5/8 12:36:45] analyzeEEGDataThread sbInstance.packetCounter=1
+[2026/5/8 12:36:45] analyzeEEGDataThread sbInstance.counter=300
+[2026/5/8 12:36:45] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:45] batteryLevelValue 72
+[2026/5/8 12:36:45] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:45] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:45] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:45] Evoke: 0
+[2026/5/8 12:36:45] SPO2=0
+[2026/5/8 12:36:45] HeartRate=0
+[2026/5/8 12:36:45] HeartRateDetect=0
+[2026/5/8 12:36:45] AccXYZ= 3.945435>0.1551514>1.022522>81.4032>356.9019>358.3191>0>0>0>
+[2026/5/8 12:36:45] get direction 81.4031982421875 356.90185546875 358.319091796875 W
+[2026/5/8 12:36:45] HeaderFound!
+[2026/5/8 12:36:45] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] Full Package is received!
+[2026/5/8 12:36:45] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:45] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:45] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:45] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:45] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:45] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:45] Correct header in do_analyze
+[2026/5/8 12:36:45] analyzeEEGDataThread sbInstance.packetCounter=2
+[2026/5/8 12:36:45] analyzeEEGDataThread sbInstance.counter=450
+[2026/5/8 12:36:45] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:45] batteryLevelValue 71
+[2026/5/8 12:36:45] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:45] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:45] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:45] Evoke: 0
+[2026/5/8 12:36:45] SPO2=0
+[2026/5/8 12:36:45] HeartRate=0
+[2026/5/8 12:36:45] HeartRateDetect=0
+[2026/5/8 12:36:45] AccXYZ= 3.945313>0.1795044>1.060303>80.755>357.0996>358.1543>0>0>0>
+[2026/5/8 12:36:45] get direction 80.7550048828125 357.099609375 358.154296875 W
+[2026/5/8 12:36:45] HeaderFound!
+[2026/5/8 12:36:45] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] Full Package is received!
+[2026/5/8 12:36:45] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:45] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:45] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:45] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:45] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:45] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:45] Correct header in do_analyze
+[2026/5/8 12:36:45] analyzeEEGDataThread sbInstance.packetCounter=3
+[2026/5/8 12:36:45] analyzeEEGDataThread sbInstance.counter=600
+[2026/5/8 12:36:45] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:45] batteryLevelValue 71
+[2026/5/8 12:36:45] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:45] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:45] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:45] Evoke: 0
+[2026/5/8 12:36:45] SPO2=0
+[2026/5/8 12:36:45] HeartRate=0
+[2026/5/8 12:36:45] HeartRateDetect=0
+[2026/5/8 12:36:45] AccXYZ= 3.951416>0.1846313>1.042297>80.16174>357.4017>357.9456>0>0>0>
+[2026/5/8 12:36:45] get direction 80.1617431640625 357.401733398438 357.945556640625 W
+[2026/5/8 12:36:45] HeaderFound!
+[2026/5/8 12:36:45] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:45] Full Package is received!
+[2026/5/8 12:36:45] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:45] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:45] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:45] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:45] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:45] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:45] Correct header in do_analyze
+[2026/5/8 12:36:45] analyzeEEGDataThread sbInstance.packetCounter=4
+[2026/5/8 12:36:45] analyzeEEGDataThread sbInstance.counter=750
+[2026/5/8 12:36:45] EEG_GetFreqTypePower sbInstances.ContainsKey(deviceID)=True
+[2026/5/8 12:36:45] EEG_GetFreqTypePower sbInstance.signal_ready=False
+[2026/5/8 12:36:45] EEG_GetAmpOhmsFromEEG: 2026.344 2020.754 2030.062 2037.518
+[2026/5/8 12:36:46] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:46] batteryLevelValue 71
+[2026/5/8 12:36:46] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:46] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:46] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:46] Evoke: 0
+[2026/5/8 12:36:46] SPO2=0
+[2026/5/8 12:36:46] HeartRate=0
+[2026/5/8 12:36:46] HeartRateDetect=0
+[2026/5/8 12:36:46] AccXYZ= 3.972717>0.2144775>1.02887>78.48633>358.4564>357.572>0>0>0>
+[2026/5/8 12:36:46] get direction 78.486328125 358.456420898438 357.572021484375 W
+[2026/5/8 12:36:46] HeaderFound!
+[2026/5/8 12:36:46] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] Full Package is received!
+[2026/5/8 12:36:46] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:46] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:46] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:46] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:46] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:46] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:46] Correct header in do_analyze
+[2026/5/8 12:36:46] analyzeEEGDataThread sbInstance.packetCounter=0
+[2026/5/8 12:36:46] analyzeEEGDataThread sbInstance.counter=150
+[2026/5/8 12:36:46] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:46] batteryLevelValue 71
+[2026/5/8 12:36:46] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:46] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:46] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:46] Evoke: 0
+[2026/5/8 12:36:46] SPO2=0
+[2026/5/8 12:36:46] HeartRate=0
+[2026/5/8 12:36:46] HeartRateDetect=0
+[2026/5/8 12:36:46] AccXYZ= 3.967529>0.1934204>1.042847>79.63989>358.1543>357.5116>0>0>0>
+[2026/5/8 12:36:46] get direction 79.639892578125 358.154296875 357.511596679688 W
+[2026/5/8 12:36:46] HeaderFound!
+[2026/5/8 12:36:46] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] Full Package is received!
+[2026/5/8 12:36:46] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:46] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:46] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:46] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:46] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:46] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:46] Correct header in do_analyze
+[2026/5/8 12:36:46] analyzeEEGDataThread sbInstance.packetCounter=1
+[2026/5/8 12:36:46] analyzeEEGDataThread sbInstance.counter=300
+[2026/5/8 12:36:46] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:46] batteryLevelValue 71
+[2026/5/8 12:36:46] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:46] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:46] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:46] Evoke: 0
+[2026/5/8 12:36:46] SPO2=0
+[2026/5/8 12:36:46] HeartRate=0
+[2026/5/8 12:36:46] HeartRateDetect=0
+[2026/5/8 12:36:46] AccXYZ= 3.955627>0.2056274>1.050171>79.14551>357.7478>357.4896>0>0>0>
+[2026/5/8 12:36:46] get direction 79.1455078125 357.747802734375 357.489624023438 W
+[2026/5/8 12:36:46] HeaderFound!
+[2026/5/8 12:36:46] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] Full Package is received!
+[2026/5/8 12:36:46] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:46] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:46] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:46] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:46] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:46] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:46] Correct header in do_analyze
+[2026/5/8 12:36:46] analyzeEEGDataThread sbInstance.packetCounter=2
+[2026/5/8 12:36:46] analyzeEEGDataThread sbInstance.counter=450
+[2026/5/8 12:36:46] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:46] batteryLevelValue 72
+[2026/5/8 12:36:46] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:46] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:46] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:46] Evoke: 0
+[2026/5/8 12:36:46] SPO2=0
+[2026/5/8 12:36:46] HeartRate=0
+[2026/5/8 12:36:46] HeartRateDetect=0
+[2026/5/8 12:36:46] AccXYZ= 3.976135>0.203064>1.036682>79.11255>358.6871>357.4731>0>0>0>
+[2026/5/8 12:36:46] get direction 79.112548828125 358.687133789063 357.47314453125 W
+[2026/5/8 12:36:46] HeaderFound!
+[2026/5/8 12:36:46] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=320 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=400 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=480 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=560 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=640 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] Full Package is received!
+[2026/5/8 12:36:46] dataCheck PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:46] dataCheck intbyteBuffer.size=645
+[2026/5/8 12:36:46] doAnalyze sbInstance.correctHeader: True
+[2026/5/8 12:36:46] doAnalyze tmpBuffer.Length=600
+[2026/5/8 12:36:46] doAnalyze PACKAGE_HEADER_SIZE=45
+[2026/5/8 12:36:46] doAnalyze sbInstance.intBufferCount=645
+[2026/5/8 12:36:46] Correct header in do_analyze
+[2026/5/8 12:36:46] analyzeEEGDataThread sbInstance.packetCounter=3
+[2026/5/8 12:36:46] analyzeEEGDataThread sbInstance.counter=600
+[2026/5/8 12:36:46] sbInstance.intBufferCount=0 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] header_signature 78 69 69 85 82 79 50
+[2026/5/8 12:36:46] batteryLevelValue 72
+[2026/5/8 12:36:46] leadOffToChannelStatus leadOff = 00001111
+[2026/5/8 12:36:46] leadOffToChannelStatus channelStatusStr = 1111
+[2026/5/8 12:36:46] leadOffToChannelStatus result = False False False False
+[2026/5/8 12:36:46] Evoke: 0
+[2026/5/8 12:36:46] SPO2=0
+[2026/5/8 12:36:46] HeartRate=0
+[2026/5/8 12:36:46] HeartRateDetect=0
+[2026/5/8 12:36:46] AccXYZ= 3.977722>0.2164917>1.034302>78.349>358.7036>357.3358>0>0>0>
+[2026/5/8 12:36:46] get direction 78.3489990234375 358.70361328125 357.335815429688 W
+[2026/5/8 12:36:46] HeaderFound!
+[2026/5/8 12:36:46] sbInstance.intBufferCount=80 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=160 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:46] sbInstance.intBufferCount=240 sbInstance.byteBuffer.Length=645
+[2026/5/8 12:36:49] BluetoothLEDevice connect status Disconnected. Address: EADF41970BB4
+[2026/5/8 12:36:49] Disconnect 3 258244599024564
+[2026/5/8 12:36:49] Disconnect 4 258244599024564
+[2026/5/8 12:36:49] Disconnect 5 258244599024564
+[2026/5/8 12:36:49] Disconnect 6 258244599024564

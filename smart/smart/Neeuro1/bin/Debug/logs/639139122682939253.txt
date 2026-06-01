@@ -1,0 +1,36 @@
+[2026/5/9 0:31:08] SenzeBandWindowsInterface()
+[2026/5/9 0:31:08] SenzeBandWindowsInterface.initializeSBWI()
+[2026/5/9 0:31:08] ScanBLEDevice initialize
+[2026/5/9 0:31:08] Scan device initialized!
+[2026/5/9 0:31:10] SBWI startScanning
+[2026/5/9 0:31:10] startScan start
+[2026/5/9 0:31:18] auth_url=https://apiapp.neeuro.com/registration/checkDeveloperCode/?developerCode=029c5096-ce51-427b-9132-5e4c82df3a75&deviceUniqueId=97D660B2-B284-7841-81D2-7292945FC253&mcuid=&devicePlatform=Windows
+[2026/5/9 0:31:20] Authentication attempt succeeded, retry in 00:10:00
+[2026/5/9 0:31:29] connecting 258244599024564
+[2026/5/9 0:31:29] bleWatcher.Status is Created
+[2026/5/9 0:31:29] connecting 2 258244599024564
+[2026/5/9 0:31:29] Setting TX failed. Disconnecting
+[2026/5/9 0:31:29] Disconnect 258244599024564
+[2026/5/9 0:31:29] Disconnect 2 258244599024564
+[2026/5/9 0:31:29] Disconnect 3 258244599024564
+[2026/5/9 0:31:29] Disconnect 4 258244599024564
+[2026/5/9 0:31:29] Disconnect 5258244599024564
+[2026/5/9 0:31:29] Disconnect 6258244599024564
+[2026/5/9 0:31:35] SBWI startScanning
+[2026/5/9 0:31:35] startScan start
+[2026/5/9 0:31:37] auth_url=https://apiapp.neeuro.com/registration/checkDeveloperCode/?developerCode=029c5096-ce51-427b-9132-5e4c82df3a75&deviceUniqueId=97D660B2-B284-7841-81D2-7292945FC253&mcuid=&devicePlatform=Windows
+[2026/5/9 0:31:38] Authentication attempt succeeded, retry in 00:10:00
+[2026/5/9 0:31:42] connecting 258244599024564
+[2026/5/9 0:31:42] bleWatcher.Status is Created
+[2026/5/9 0:31:42] connecting 2 258244599024564
+[2026/5/9 0:31:42] Setting TX failed. Disconnecting
+[2026/5/9 0:31:42] Disconnect 258244599024564
+[2026/5/9 0:31:42] Disconnect 2 258244599024564
+[2026/5/9 0:31:42] Disconnect 3 258244599024564
+[2026/5/9 0:31:42] Disconnect 4 258244599024564
+[2026/5/9 0:31:42] Disconnect 5258244599024564
+[2026/5/9 0:31:42] Disconnect 6258244599024564
+[2026/5/9 0:31:46] SBWI startScanning
+[2026/5/9 0:31:46] startScan start
+[2026/5/9 0:31:53] auth_url=https://apiapp.neeuro.com/registration/checkDeveloperCode/?developerCode=029c5096-ce51-427b-9132-5e4c82df3a75&deviceUniqueId=97D660B2-B284-7841-81D2-7292945FC253&mcuid=&devicePlatform=Windows
+[2026/5/9 0:31:53] Authentication attempt succeeded, retry in 00:10:00

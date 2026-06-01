@@ -280,8 +280,8 @@ export default function EmergencyPlan() {
         }
         extra={
           <Space>
-            <Button size="small" type="primary" icon={<SafetyCertificateOutlined />}>新建预案</Button>
-            <Button size="small" icon={<ThunderboltOutlined />}>批量演练</Button>
+            <Button size="small" type="primary" icon={<SafetyCertificateOutlined />} onClick={() => message.info('打开新建预案表单')}>新建预案</Button>
+            <Button size="small" icon={<ThunderboltOutlined />} onClick={() => message.info('启动批量应急演练...')}>批量演练</Button>
           </Space>
         }
         styles={{ body: { padding: 0 } }}

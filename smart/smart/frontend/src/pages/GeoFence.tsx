@@ -325,8 +325,8 @@ export default function GeoFence() {
                   onSearch={setSearchText}
                   prefix={<SearchOutlined />}
                 />
-                <Button size="small" icon={<FilterOutlined />}>筛选</Button>
-                <Button size="small" icon={<ReloadOutlined />}>刷新</Button>
+                <Button size="small" icon={<FilterOutlined />} onClick={() => message.info('打开围栏筛选面板')}>筛选</Button>
+                <Button size="small" icon={<ReloadOutlined />} onClick={() => message.info('正在刷新围栏列表...')}>刷新</Button>
                 <Button type="primary" size="small" icon={<PlusOutlined />} onClick={handleAdd}>新建围栏</Button>
               </Space>
             </Col>
@@ -410,7 +410,7 @@ export default function GeoFence() {
           }
           extra={
             <Space size={8}>
-              <Button size="small" icon={<SettingOutlined />}>批量配置</Button>
+              <Button size="small" icon={<SettingOutlined />} onClick={() => message.info('打开批量围栏配置')}>批量配置</Button>
             </Space>
           }
         >
